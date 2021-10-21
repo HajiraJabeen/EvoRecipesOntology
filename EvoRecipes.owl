@@ -1,2643 +1,1628 @@
-<?xml version="1.0"?>
-<Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology">
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Declaration>
-        <Class IRI="#Action"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Africa"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AfricanCuisine"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Alcohol"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#America"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AmericanCuisine"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Appetizer"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Apple"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Asia"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AsianCuisine"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AsianNoodle"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AsianSquash"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Author"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AuthorRating"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Avocados"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Bacon"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#BakedGoods"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#BakingEquipment"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#BarEquipment"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Barley"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#BeanProducts"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Beef"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Berries"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#BlueCheese"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#BowlsAndContainers"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Bread"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#BreakFast"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Brunch"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#BuckWheat"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Cabbage"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Cake"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Candy"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Carbohydrates"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CaviarRoe"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Cheese"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CheeseSubstitute"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Chef"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Chocolate"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CitrusFruit"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CleaningTools"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ColdCuts"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CominationHeat"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CommonTropicalFruit"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CookTime"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Cookie"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CookingGreens"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CookingUtensil"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Corn"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Cracker"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Crumb"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Cucumber"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CulturedMilkProduct"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CulturedMilkProducts"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CurvedMeats"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CuttingTools"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Dairy"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#DairyMilkAndCream"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Dessert"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#DifficultyLevel"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Dinner"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Dough"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#DriedBeans"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#DriedChile"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#DriedFruit"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#DriedMeats"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#DriedPeas"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Drinks"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#DryHeat"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EdiblePods"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EggPlants"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Eggs"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Europe"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EuropeanCuisine"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ExoticTropicalFruit"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ExtractingAndStrainingTools"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ExtractsAndEssences"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Fat"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Fats"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FatsAndOils"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FattyFirmTextured"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FattyFlakyTextured"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FirmCheese"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Fish"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FlatBread"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Flavorings"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FoodWrapper"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FreshBeans"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FreshCheese"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FreshChile"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FreshPeas"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FruitButters"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FruitJuices"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FruitVegetables"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Fruits"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Frying"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#GameMeat"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Garlic"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Gelatin"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#GrainProducts"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Grains"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#GrindingAndMashingTools"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Ham"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Heating"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#HerbAndSpiceMix"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Herbs"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Hispanic"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#India"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#InflorescentVegetables"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Ingredient"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#IngredientQuantity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#IngredientType"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Instruction"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Juices"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Kamut"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Lamb"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#LeanFirmTextured"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#LeanFlakyTextured"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#LegumesAndNuts"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Lentils"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#LiquidSweetner"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#LiquidSweetners"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Liquids"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Liquors"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Lunch"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MainCourse"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MainIngredient"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MealType"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MeasuringTools"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Meats"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Melons"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MiddleEast"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MilkAndCream"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Mineral"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MoistHeat"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Mushrooms"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Non-dairyMilkAndCream"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#NonWheatFlour"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#NutAndSeed"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#NutFlour"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Nutrient"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Nutrition"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#NutritionQuantity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Nuts"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#NutsAndSeedPaste"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Oat"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#OceanicCuisine"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#OilsAndCookingSprays"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Olive"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Onion"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#OtherAction"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#OtherEquipment"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#OtherGrains"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#OtherMeats"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#OtherNoodle"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#OtherVegetables"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#OutdoorCookingEquipment"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Pan"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Pasta"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Pear"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Person"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PomeFruit"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Pork"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Poultry"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PrepTime"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Preperation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Preserves"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ProcessedChesse"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Protein"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Quantity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#RecipeClassification"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#RecipeCourse"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#RecipeCuisine"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#RecipeRating"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Rhizomes"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Rice"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Roasting"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#RoastingEquipment"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Roots"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Rye"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SaladGreens"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Salads"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Salt"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SaturatedFat"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Sausages"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SeaVegetables"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Seeds"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SemiFirmCheese"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SemiSoftCheese"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ShellFish"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SideDish"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SideIngredient"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Snack"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SnapBeans"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SoftCheese"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Soup"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Source"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SoyProducts"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Spelt"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Spice"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Spices"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Sprouts"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#StalkVegetables"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#StarchThickener"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Stocks"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#StoneFruit"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#StovetopEquipment"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SubProcedure"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SummerSquash"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SweetPepper"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Syrups"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Thickener"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Tomatoes"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TotalTime"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Triticale"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Tubers"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#VarietyMeats"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Veal"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Vegetable"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Vinegar"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Vitamin"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#VitaminA"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#VitaminC"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Water"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#WaterAndSoda"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Wheat"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#WheatFlour"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Wines"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#WinterSquash"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#YieldQuantity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="https://schema.org/AggregateRating"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="https://schema.org/Recipe"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="https://schema.org/Time"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#alternateAction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#alternateProcedure"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#belongsTo"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasCookTime"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasDifficultyLevel"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasIngredient"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasIngredientAction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasIngredientQuantity"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasIngredientType"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasMealType"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasNext"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasNutritionContent"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasNutritionQuantity"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasPrepTime"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasPrevious"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasRecipeAction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasRecipeCuisine"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasRecipeType"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSubstitute"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasTotalTime"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usedInRecipe"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#wasDerivedFrom"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="https://schema.org/aggregateRating"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="https://schema.org/author"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="https://schema.org/hasRecipeInstructions"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="https://schema.org/recipeIngredient"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="https://schema.org/recipeYield"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="https://schema.org/tool"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#chillTime"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#cookTime"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#difficultyLevel"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#email"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasIngredientName"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasTitle"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasURL"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasUnit"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasValue"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#nutrientName"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#prepTime"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#toolName"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="https://schema.org/image"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="https://schema.org/name"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="https://schema.org/ratingCount"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="https://schema.org/recipeInstructions"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="https://schema.org/reviewCount"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="https://schema.org/url"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Easy"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Hard"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Moderate"/>
-    </Declaration>
-    <SubClassOf>
-        <Class IRI="#Africa"/>
-        <Class IRI="#Herbs"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Africa"/>
-        <Class IRI="#Spices"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AfricanCuisine"/>
-        <Class IRI="#RecipeCuisine"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Alcohol"/>
-        <Class IRI="#Liquids"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#America"/>
-        <Class IRI="#Herbs"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#America"/>
-        <Class IRI="#Spices"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AmericanCuisine"/>
-        <Class IRI="#RecipeCuisine"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Appetizer"/>
-        <Class IRI="#RecipeCourse"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Apple"/>
-        <Class IRI="#PomeFruit"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Asia"/>
-        <Class IRI="#Herbs"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Asia"/>
-        <Class IRI="#Spices"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AsianCuisine"/>
-        <Class IRI="#RecipeCuisine"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AsianNoodle"/>
-        <Class IRI="#GrainProducts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AsianSquash"/>
-        <Class IRI="#FruitVegetables"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Author"/>
-        <Class IRI="#Person"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AuthorRating"/>
-        <Class IRI="https://schema.org/AggregateRating"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Avocados"/>
-        <Class IRI="#FruitVegetables"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Bacon"/>
-        <Class IRI="#CurvedMeats"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#BakedGoods"/>
-        <Class IRI="#Ingredient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#BakingEquipment"/>
-        <Class IRI="#CookingUtensil"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#BarEquipment"/>
-        <Class IRI="#CookingUtensil"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Barley"/>
-        <Class IRI="#Grains"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#BeanProducts"/>
-        <Class IRI="#LegumesAndNuts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Beef"/>
-        <Class IRI="#Meats"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Berries"/>
-        <Class IRI="#Fruits"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#BlueCheese"/>
-        <Class IRI="#Cheese"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#BowlsAndContainers"/>
-        <Class IRI="#CookingUtensil"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Bread"/>
-        <Class IRI="#BakedGoods"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#BreakFast"/>
-        <Class IRI="#MealType"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Brunch"/>
-        <Class IRI="#MealType"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#BuckWheat"/>
-        <Class IRI="#Grains"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Cabbage"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Cake"/>
-        <Class IRI="#BakedGoods"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Candy"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Carbohydrates"/>
-        <Class IRI="#Nutrient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CaviarRoe"/>
-        <Class IRI="#Fish"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Cheese"/>
-        <Class IRI="#Dairy"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CheeseSubstitute"/>
-        <Class IRI="#Cheese"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Chef"/>
-        <Class IRI="#Person"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Chocolate"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CitrusFruit"/>
-        <Class IRI="#Fruits"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CleaningTools"/>
-        <Class IRI="#CookingUtensil"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ColdCuts"/>
-        <Class IRI="#CurvedMeats"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CominationHeat"/>
-        <Class IRI="#Heating"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CommonTropicalFruit"/>
-        <Class IRI="#Fruits"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CookTime"/>
-        <Class IRI="https://schema.org/Time"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Cookie"/>
-        <Class IRI="#BakedGoods"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CookingGreens"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Corn"/>
-        <Class IRI="#Grains"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Cracker"/>
-        <Class IRI="#BakedGoods"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Crumb"/>
-        <Class IRI="#BakedGoods"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Cucumber"/>
-        <Class IRI="#FruitVegetables"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CulturedMilkProduct"/>
-        <Class IRI="#Liquids"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CulturedMilkProducts"/>
-        <Class IRI="#Dairy"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CurvedMeats"/>
-        <Class IRI="#Meats"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CuttingTools"/>
-        <Class IRI="#CookingUtensil"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Dairy"/>
-        <Class IRI="#Ingredient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DairyMilkAndCream"/>
-        <Class IRI="#MilkAndCream"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Dessert"/>
-        <Class IRI="#RecipeCourse"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Dinner"/>
-        <Class IRI="#MealType"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Dough"/>
-        <Class IRI="#GrainProducts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DriedBeans"/>
-        <Class IRI="#LegumesAndNuts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DriedChile"/>
-        <Class IRI="#FruitVegetables"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DriedFruit"/>
-        <Class IRI="#Fruits"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DriedMeats"/>
-        <Class IRI="#Meats"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DriedPeas"/>
-        <Class IRI="#LegumesAndNuts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Drinks"/>
-        <Class IRI="#RecipeCourse"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DryHeat"/>
-        <Class IRI="#Heating"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EdiblePods"/>
-        <Class IRI="#LegumesAndNuts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EdiblePods"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EggPlants"/>
-        <Class IRI="#FruitVegetables"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Eggs"/>
-        <Class IRI="#Dairy"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Europe"/>
-        <Class IRI="#Herbs"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Europe"/>
-        <Class IRI="#Spices"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EuropeanCuisine"/>
-        <Class IRI="#RecipeCuisine"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ExoticTropicalFruit"/>
-        <Class IRI="#Fruits"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ExtractingAndStrainingTools"/>
-        <Class IRI="#CookingUtensil"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ExtractsAndEssences"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Fat"/>
-        <Class IRI="#Nutrient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Fats"/>
-        <Class IRI="#FatsAndOils"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FatsAndOils"/>
-        <Class IRI="#Ingredient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FattyFirmTextured"/>
-        <Class IRI="#Fish"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FattyFlakyTextured"/>
-        <Class IRI="#Fish"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FirmCheese"/>
-        <Class IRI="#Cheese"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Fish"/>
-        <Class IRI="#Ingredient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FlatBread"/>
-        <Class IRI="#BakedGoods"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Flavorings"/>
-        <Class IRI="#Ingredient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FoodWrapper"/>
-        <Class IRI="#GrainProducts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FreshBeans"/>
-        <Class IRI="#LegumesAndNuts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FreshBeans"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FreshCheese"/>
-        <Class IRI="#Cheese"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FreshChile"/>
-        <Class IRI="#FruitVegetables"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FreshPeas"/>
-        <Class IRI="#LegumesAndNuts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FreshPeas"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FruitButters"/>
-        <Class IRI="#Fruits"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FruitJuices"/>
-        <Class IRI="#Fruits"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FruitVegetables"/>
-        <Class IRI="#Fruits"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FruitVegetables"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Fruits"/>
-        <Class IRI="#Ingredient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Frying"/>
-        <Class IRI="#DryHeat"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#GameMeat"/>
-        <Class IRI="#Meats"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Garlic"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Garlic"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Gelatin"/>
-        <Class IRI="#Thickener"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#GrainProducts"/>
-        <Class IRI="#Ingredient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Grains"/>
-        <Class IRI="#Ingredient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#GrindingAndMashingTools"/>
-        <Class IRI="#CookingUtensil"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Ham"/>
-        <Class IRI="#CurvedMeats"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Heating"/>
-        <Class IRI="#Action"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#HerbAndSpiceMix"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Herbs"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Hispanic"/>
-        <Class IRI="#Herbs"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Hispanic"/>
-        <Class IRI="#Spices"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#India"/>
-        <Class IRI="#Herbs"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#India"/>
-        <Class IRI="#Spices"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#InflorescentVegetables"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#IngredientQuantity"/>
-        <Class IRI="#Quantity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Juices"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Juices"/>
-        <Class IRI="#Liquids"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Kamut"/>
-        <Class IRI="#Grains"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Lamb"/>
-        <Class IRI="#Meats"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#LeanFirmTextured"/>
-        <Class IRI="#Fish"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#LeanFlakyTextured"/>
-        <Class IRI="#Fish"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#LegumesAndNuts"/>
-        <Class IRI="#Ingredient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Lentils"/>
-        <Class IRI="#LegumesAndNuts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#LiquidSweetner"/>
-        <Class IRI="#Liquids"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#LiquidSweetners"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Liquids"/>
-        <Class IRI="#Ingredient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Liquors"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Lunch"/>
-        <Class IRI="#MealType"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MainCourse"/>
-        <Class IRI="#RecipeCourse"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MainIngredient"/>
-        <Class IRI="#IngredientType"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MealType"/>
-        <Class IRI="#RecipeClassification"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MeasuringTools"/>
-        <Class IRI="#CookingUtensil"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Meats"/>
-        <Class IRI="#Ingredient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Melons"/>
-        <Class IRI="#Fruits"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MiddleEast"/>
-        <Class IRI="#Herbs"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MiddleEast"/>
-        <Class IRI="#Spices"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MilkAndCream"/>
-        <Class IRI="#Dairy"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MilkAndCream"/>
-        <Class IRI="#Liquids"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Mineral"/>
-        <Class IRI="#Nutrient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MoistHeat"/>
-        <Class IRI="#Heating"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Mushrooms"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Non-dairyMilkAndCream"/>
-        <Class IRI="#Liquids"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Non-dairyMilkAndCream"/>
-        <Class IRI="#MilkAndCream"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#NonWheatFlour"/>
-        <Class IRI="#GrainProducts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#NutAndSeed"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#NutFlour"/>
-        <Class IRI="#GrainProducts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#NutFlour"/>
-        <Class IRI="#LegumesAndNuts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Nutrient"/>
-        <Class IRI="#Nutrition"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#NutritionQuantity"/>
-        <Class IRI="#Quantity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Nuts"/>
-        <Class IRI="#LegumesAndNuts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#NutsAndSeedPaste"/>
-        <Class IRI="#LegumesAndNuts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Oat"/>
-        <Class IRI="#Grains"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#OceanicCuisine"/>
-        <Class IRI="#RecipeCuisine"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#OilsAndCookingSprays"/>
-        <Class IRI="#FatsAndOils"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Olive"/>
-        <Class IRI="#FruitVegetables"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Onion"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Onion"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#OtherAction"/>
-        <Class IRI="#Action"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#OtherEquipment"/>
-        <Class IRI="#CookingUtensil"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#OtherGrains"/>
-        <Class IRI="#Grains"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#OtherMeats"/>
-        <Class IRI="#Meats"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#OtherNoodle"/>
-        <Class IRI="#GrainProducts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#OtherVegetables"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#OutdoorCookingEquipment"/>
-        <Class IRI="#CookingUtensil"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Pan"/>
-        <Class IRI="#BakingEquipment"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Pasta"/>
-        <Class IRI="#GrainProducts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Pear"/>
-        <Class IRI="#PomeFruit"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PomeFruit"/>
-        <Class IRI="#Fruits"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Pork"/>
-        <Class IRI="#Meats"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Poultry"/>
-        <Class IRI="#Meats"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PrepTime"/>
-        <Class IRI="https://schema.org/Time"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Preperation"/>
-        <Class IRI="#Action"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Preserves"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Preserves"/>
-        <Class IRI="#Fruits"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ProcessedChesse"/>
-        <Class IRI="#Cheese"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Protein"/>
-        <Class IRI="#Nutrient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RecipeCourse"/>
-        <Class IRI="#RecipeClassification"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RecipeCuisine"/>
-        <Class IRI="#RecipeClassification"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RecipeRating"/>
-        <Class IRI="https://schema.org/AggregateRating"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Rhizomes"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Rhizomes"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Rice"/>
-        <Class IRI="#Grains"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Roasting"/>
-        <Class IRI="#DryHeat"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RoastingEquipment"/>
-        <Class IRI="#CookingUtensil"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Roots"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Rye"/>
-        <Class IRI="#Grains"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SaladGreens"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Salads"/>
-        <Class IRI="#RecipeCourse"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Salt"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SaturatedFat"/>
-        <Class IRI="#Fat"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Sausages"/>
-        <Class IRI="#CurvedMeats"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SeaVegetables"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Seeds"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SemiFirmCheese"/>
-        <Class IRI="#Cheese"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SemiSoftCheese"/>
-        <Class IRI="#Cheese"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ShellFish"/>
-        <Class IRI="#Fish"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SideDish"/>
-        <Class IRI="#RecipeCourse"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SideIngredient"/>
-        <Class IRI="#IngredientType"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Snack"/>
-        <Class IRI="#MealType"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SnapBeans"/>
-        <Class IRI="#LegumesAndNuts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SnapBeans"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SoftCheese"/>
-        <Class IRI="#Cheese"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Soup"/>
-        <Class IRI="#RecipeCourse"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SoyProducts"/>
-        <Class IRI="#LegumesAndNuts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Spelt"/>
-        <Class IRI="#Grains"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Spice"/>
-        <Class IRI="#IngredientType"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Spices"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Sprouts"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#StalkVegetables"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#StarchThickener"/>
-        <Class IRI="#Thickener"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Stocks"/>
-        <Class IRI="#Liquids"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#StoneFruit"/>
-        <Class IRI="#Fruits"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#StovetopEquipment"/>
-        <Class IRI="#CookingUtensil"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SummerSquash"/>
-        <Class IRI="#FruitVegetables"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SweetPepper"/>
-        <Class IRI="#FruitVegetables"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Syrups"/>
-        <Class IRI="#LiquidSweetners"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Thickener"/>
-        <Class IRI="#GrainProducts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Tomatoes"/>
-        <Class IRI="#FruitVegetables"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#TotalTime"/>
-        <Class IRI="https://schema.org/Time"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Triticale"/>
-        <Class IRI="#Grains"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Tubers"/>
-        <Class IRI="#Vegetable"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#VarietyMeats"/>
-        <Class IRI="#Meats"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Veal"/>
-        <Class IRI="#Meats"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Vegetable"/>
-        <Class IRI="#Ingredient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Vinegar"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Vinegar"/>
-        <Class IRI="#Liquids"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Vitamin"/>
-        <Class IRI="#Nutrient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#VitaminA"/>
-        <Class IRI="#Vitamin"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#VitaminC"/>
-        <Class IRI="#Vitamin"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Water"/>
-        <Class IRI="#Nutrient"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#WaterAndSoda"/>
-        <Class IRI="#Liquids"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Wheat"/>
-        <Class IRI="#Grains"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#WheatFlour"/>
-        <Class IRI="#GrainProducts"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Wines"/>
-        <Class IRI="#Flavorings"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#WinterSquash"/>
-        <Class IRI="#FruitVegetables"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#YieldQuantity"/>
-        <Class IRI="#Quantity"/>
-    </SubClassOf>
-    <DisjointClasses>
-        <Class IRI="#AfricanCuisine"/>
-        <Class IRI="#AmericanCuisine"/>
-        <Class IRI="#AsianCuisine"/>
-        <Class IRI="#EuropeanCuisine"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Alcohol"/>
-        <Class IRI="#CulturedMilkProduct"/>
-        <Class IRI="#Juices"/>
-        <Class IRI="#LiquidSweetner"/>
-        <Class IRI="#MilkAndCream"/>
-        <Class IRI="#Non-dairyMilkAndCream"/>
-        <Class IRI="#Stocks"/>
-        <Class IRI="#Vinegar"/>
-        <Class IRI="#WaterAndSoda"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Appetizer"/>
-        <Class IRI="#Dessert"/>
-        <Class IRI="#Drinks"/>
-        <Class IRI="#MainCourse"/>
-        <Class IRI="#Salads"/>
-        <Class IRI="#SideDish"/>
-        <Class IRI="#Soup"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Apple"/>
-        <Class IRI="#Pear"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#AsianNoodle"/>
-        <Class IRI="#Dough"/>
-        <Class IRI="#FoodWrapper"/>
-        <Class IRI="#NonWheatFlour"/>
-        <Class IRI="#NutFlour"/>
-        <Class IRI="#OtherNoodle"/>
-        <Class IRI="#Pasta"/>
-        <Class IRI="#Thickener"/>
-        <Class IRI="#WheatFlour"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#AsianSquash"/>
-        <Class IRI="#Avocados"/>
-        <Class IRI="#Cucumber"/>
-        <Class IRI="#DriedChile"/>
-        <Class IRI="#EggPlants"/>
-        <Class IRI="#FreshChile"/>
-        <Class IRI="#Olive"/>
-        <Class IRI="#SummerSquash"/>
-        <Class IRI="#SweetPepper"/>
-        <Class IRI="#Tomatoes"/>
-        <Class IRI="#WinterSquash"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#AuthorRating"/>
-        <Class IRI="#RecipeRating"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Bacon"/>
-        <Class IRI="#ColdCuts"/>
-        <Class IRI="#Ham"/>
-        <Class IRI="#Sausages"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#BakingEquipment"/>
-        <Class IRI="#BarEquipment"/>
-        <Class IRI="#BowlsAndContainers"/>
-        <Class IRI="#CleaningTools"/>
-        <Class IRI="#CuttingTools"/>
-        <Class IRI="#ExtractingAndStrainingTools"/>
-        <Class IRI="#GrindingAndMashingTools"/>
-        <Class IRI="#MeasuringTools"/>
-        <Class IRI="#OtherEquipment"/>
-        <Class IRI="#OutdoorCookingEquipment"/>
-        <Class IRI="#RoastingEquipment"/>
-        <Class IRI="#StovetopEquipment"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Barley"/>
-        <Class IRI="#BuckWheat"/>
-        <Class IRI="#Corn"/>
-        <Class IRI="#Kamut"/>
-        <Class IRI="#Oat"/>
-        <Class IRI="#OtherGrains"/>
-        <Class IRI="#Rice"/>
-        <Class IRI="#Rye"/>
-        <Class IRI="#Spelt"/>
-        <Class IRI="#Triticale"/>
-        <Class IRI="#Wheat"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#BeanProducts"/>
-        <Class IRI="#DriedBeans"/>
-        <Class IRI="#DriedPeas"/>
-        <Class IRI="#EdiblePods"/>
-        <Class IRI="#FreshBeans"/>
-        <Class IRI="#FreshPeas"/>
-        <Class IRI="#Lentils"/>
-        <Class IRI="#NutFlour"/>
-        <Class IRI="#Nuts"/>
-        <Class IRI="#NutsAndSeedPaste"/>
-        <Class IRI="#SnapBeans"/>
-        <Class IRI="#SoyProducts"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Beef"/>
-        <Class IRI="#CurvedMeats"/>
-        <Class IRI="#DriedMeats"/>
-        <Class IRI="#GameMeat"/>
-        <Class IRI="#Lamb"/>
-        <Class IRI="#OtherMeats"/>
-        <Class IRI="#Pork"/>
-        <Class IRI="#Poultry"/>
-        <Class IRI="#VarietyMeats"/>
-        <Class IRI="#Veal"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Berries"/>
-        <Class IRI="#CitrusFruit"/>
-        <Class IRI="#CommonTropicalFruit"/>
-        <Class IRI="#DriedFruit"/>
-        <Class IRI="#ExoticTropicalFruit"/>
-        <Class IRI="#FruitButters"/>
-        <Class IRI="#FruitJuices"/>
-        <Class IRI="#FruitVegetables"/>
-        <Class IRI="#Melons"/>
-        <Class IRI="#PomeFruit"/>
-        <Class IRI="#Preserves"/>
-        <Class IRI="#StoneFruit"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#BlueCheese"/>
-        <Class IRI="#CheeseSubstitute"/>
-        <Class IRI="#FirmCheese"/>
-        <Class IRI="#FreshCheese"/>
-        <Class IRI="#ProcessedChesse"/>
-        <Class IRI="#SemiFirmCheese"/>
-        <Class IRI="#SemiSoftCheese"/>
-        <Class IRI="#SoftCheese"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Bread"/>
-        <Class IRI="#Cake"/>
-        <Class IRI="#Cookie"/>
-        <Class IRI="#Cracker"/>
-        <Class IRI="#Crumb"/>
-        <Class IRI="#FlatBread"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#BreakFast"/>
-        <Class IRI="#Brunch"/>
-        <Class IRI="#Dinner"/>
-        <Class IRI="#Lunch"/>
-        <Class IRI="#Snack"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Cabbage"/>
-        <Class IRI="#CookingGreens"/>
-        <Class IRI="#EdiblePods"/>
-        <Class IRI="#FreshBeans"/>
-        <Class IRI="#FreshPeas"/>
-        <Class IRI="#FruitVegetables"/>
-        <Class IRI="#Garlic"/>
-        <Class IRI="#InflorescentVegetables"/>
-        <Class IRI="#Mushrooms"/>
-        <Class IRI="#Onion"/>
-        <Class IRI="#OtherVegetables"/>
-        <Class IRI="#Rhizomes"/>
-        <Class IRI="#Roots"/>
-        <Class IRI="#SaladGreens"/>
-        <Class IRI="#SeaVegetables"/>
-        <Class IRI="#SnapBeans"/>
-        <Class IRI="#Sprouts"/>
-        <Class IRI="#StalkVegetables"/>
-        <Class IRI="#Tubers"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Carbohydrates"/>
-        <Class IRI="#Fat"/>
-        <Class IRI="#Mineral"/>
-        <Class IRI="#Protein"/>
-        <Class IRI="#Vitamin"/>
-        <Class IRI="#Water"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#CaviarRoe"/>
-        <Class IRI="#FattyFirmTextured"/>
-        <Class IRI="#FattyFlakyTextured"/>
-        <Class IRI="#LeanFirmTextured"/>
-        <Class IRI="#LeanFlakyTextured"/>
-        <Class IRI="#ShellFish"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Cheese"/>
-        <Class IRI="#CulturedMilkProducts"/>
-        <Class IRI="#Eggs"/>
-        <Class IRI="#MilkAndCream"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#DairyMilkAndCream"/>
-        <Class IRI="#Non-dairyMilkAndCream"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#DryHeat"/>
-        <Class IRI="#MoistHeat"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Fats"/>
-        <Class IRI="#OilsAndCookingSprays"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Gelatin"/>
-        <Class IRI="#StarchThickener"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#IngredientQuantity"/>
-        <Class IRI="#NutritionQuantity"/>
-        <Class IRI="#YieldQuantity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#VitaminA"/>
-        <Class IRI="#VitaminC"/>
-    </DisjointClasses>
-    <ClassAssertion>
-        <Class IRI="#DifficultyLevel"/>
-        <NamedIndividual IRI="#Easy"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#DifficultyLevel"/>
-        <NamedIndividual IRI="#Hard"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#DifficultyLevel"/>
-        <NamedIndividual IRI="#Moderate"/>
-    </ClassAssertion>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasCookTime"/>
-        <ObjectProperty IRI="#hasTotalTime"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasDifficultyLevel"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasIngredientAction"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasIngredientQuantity"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasIngredientType"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasMealType"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasNext"/>
-        <ObjectProperty IRI="https://schema.org/hasRecipeInstructions"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasNutritionContent"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasNutritionQuantity"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasPrepTime"/>
-        <ObjectProperty IRI="#hasTotalTime"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasPrevious"/>
-        <ObjectProperty IRI="https://schema.org/hasRecipeInstructions"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasRecipeCuisine"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasRecipeType"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasSubstitute"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasTotalTime"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#usedInRecipe"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#wasDerivedFrom"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="https://schema.org/aggregateRating"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="https://schema.org/author"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="https://schema.org/hasRecipeInstructions"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="https://schema.org/recipeIngredient"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="https://schema.org/recipeYield"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="https://schema.org/tool"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#hasIngredient"/>
-        <ObjectProperty IRI="#hasIngredientAction"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#usedInRecipe"/>
-        <ObjectProperty IRI="https://schema.org/recipeIngredient"/>
-    </InverseObjectProperties>
-    <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#hasSubstitute"/>
-    </InverseFunctionalObjectProperty>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#alternateAction"/>
-        <Class IRI="#Action"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#alternateProcedure"/>
-        <Class IRI="#SubProcedure"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#belongsTo"/>
-        <Class IRI="#Action"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasCookTime"/>
-        <Class IRI="#TotalTime"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasDifficultyLevel"/>
-        <Class IRI="https://schema.org/Recipe"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasIngredient"/>
-        <Class IRI="#Action"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasIngredientAction"/>
-        <Class IRI="#Ingredient"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasIngredientQuantity"/>
-        <Class IRI="#Ingredient"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasIngredientType"/>
-        <Class IRI="#Ingredient"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasMealType"/>
-        <Class IRI="https://schema.org/Recipe"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasNext"/>
-        <Class IRI="#Action"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasNutritionContent"/>
-        <Class IRI="https://schema.org/Recipe"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasNutritionQuantity"/>
-        <Class IRI="#Nutrition"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasPrepTime"/>
-        <Class IRI="#TotalTime"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasPrevious"/>
-        <Class IRI="#Action"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasRecipeAction"/>
-        <Class IRI="https://schema.org/Recipe"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasRecipeCuisine"/>
-        <Class IRI="https://schema.org/Recipe"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasRecipeType"/>
-        <Class IRI="https://schema.org/Recipe"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasSubstitute"/>
-        <Class IRI="#Ingredient"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasTotalTime"/>
-        <Class IRI="https://schema.org/Recipe"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usedInRecipe"/>
-        <Class IRI="#Ingredient"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#wasDerivedFrom"/>
-        <Class IRI="https://schema.org/Recipe"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="https://schema.org/aggregateRating"/>
-        <Class IRI="https://schema.org/Recipe"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="https://schema.org/author"/>
-        <Class IRI="https://schema.org/Recipe"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="https://schema.org/hasRecipeInstructions"/>
-        <Class IRI="https://schema.org/Recipe"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="https://schema.org/recipeIngredient"/>
-        <Class IRI="https://schema.org/Recipe"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="https://schema.org/recipeYield"/>
-        <Class IRI="https://schema.org/Recipe"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="https://schema.org/tool"/>
-        <Class IRI="https://schema.org/Recipe"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#alternateAction"/>
-        <Class IRI="#Action"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#alternateProcedure"/>
-        <Class IRI="#SubProcedure"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#belongsTo"/>
-        <Class IRI="#SubProcedure"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasCookTime"/>
-        <Class IRI="#CookTime"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasDifficultyLevel"/>
-        <Class IRI="#DifficultyLevel"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasIngredient"/>
-        <Class IRI="#Ingredient"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasIngredientAction"/>
-        <Class IRI="#Action"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasIngredientQuantity"/>
-        <Class IRI="#Quantity"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasIngredientType"/>
-        <Class IRI="#IngredientType"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasMealType"/>
-        <Class IRI="#MealType"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasNext"/>
-        <Class IRI="#Action"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasNutritionContent"/>
-        <Class IRI="#Nutrition"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasNutritionQuantity"/>
-        <Class IRI="#Quantity"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasPrepTime"/>
-        <Class IRI="#PrepTime"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasPrevious"/>
-        <Class IRI="#Action"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasRecipeAction"/>
-        <Class IRI="#Action"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasRecipeCuisine"/>
-        <Class IRI="#RecipeCuisine"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasRecipeType"/>
-        <Class IRI="#RecipeCourse"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasSubstitute"/>
-        <Class IRI="#Ingredient"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasTotalTime"/>
-        <Class IRI="#TotalTime"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usedInRecipe"/>
-        <Class IRI="https://schema.org/Recipe"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#wasDerivedFrom"/>
-        <Class IRI="#Source"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="https://schema.org/aggregateRating"/>
-        <Class IRI="https://schema.org/AggregateRating"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="https://schema.org/author"/>
-        <Class IRI="#Person"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="https://schema.org/hasRecipeInstructions"/>
-        <Class IRI="#Instruction"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="https://schema.org/recipeIngredient"/>
-        <Class IRI="#Ingredient"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="https://schema.org/recipeYield"/>
-        <Class IRI="#Quantity"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="https://schema.org/tool"/>
-        <Class IRI="#CookingUtensil"/>
-    </ObjectPropertyRange>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#chillTime"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#cookTime"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#difficultyLevel"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#email"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasIngredientName"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasTitle"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasURL"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasUnit"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#hasValue"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#nutrientName"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#prepTime"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#toolName"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="https://schema.org/image"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="https://schema.org/name"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="https://schema.org/ratingCount"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="https://schema.org/recipeInstructions"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="https://schema.org/reviewCount"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="https://schema.org/url"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <DataPropertyDomain>
-        <DataProperty IRI="#chillTime"/>
-        <Class IRI="#CookTime"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#cookTime"/>
-        <Class IRI="#CookTime"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#difficultyLevel"/>
-        <Class IRI="#DifficultyLevel"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#email"/>
-        <Class IRI="#Person"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasIngredientName"/>
-        <Class IRI="#IngredientType"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasTitle"/>
-        <Class IRI="https://schema.org/Recipe"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasURL"/>
-        <Class IRI="#Person"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasUnit"/>
-        <Class IRI="#Quantity"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasValue"/>
-        <Class IRI="#Quantity"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#nutrientName"/>
-        <Class IRI="#Nutrition"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#prepTime"/>
-        <Class IRI="#PrepTime"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#toolName"/>
-        <Class IRI="#CookingUtensil"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="https://schema.org/image"/>
-        <Class IRI="https://schema.org/Recipe"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="https://schema.org/name"/>
-        <Class IRI="#Person"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="https://schema.org/ratingCount"/>
-        <Class IRI="https://schema.org/AggregateRating"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="https://schema.org/recipeInstructions"/>
-        <Class IRI="#Instruction"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="https://schema.org/reviewCount"/>
-        <Class IRI="https://schema.org/AggregateRating"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="https://schema.org/url"/>
-        <Class IRI="#Source"/>
-    </DataPropertyDomain>
-    <DataPropertyRange>
-        <DataProperty IRI="#chillTime"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#cookTime"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#difficultyLevel"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#email"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasIngredientName"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasTitle"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasURL"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasUnit"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#hasValue"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#nutrientName"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#prepTime"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#toolName"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="https://schema.org/image"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="https://schema.org/name"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="https://schema.org/ratingCount"/>
-        <Datatype abbreviatedIRI="xsd:integer"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="https://schema.org/recipeInstructions"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="https://schema.org/reviewCount"/>
-        <Datatype abbreviatedIRI="xsd:integer"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="https://schema.org/url"/>
-        <Datatype abbreviatedIRI="xsd:anyURI"/>
-    </DataPropertyRange>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#CookTime</IRI>
-        <Literal>Cooktime contains the cook time as well as the chill time.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#DifficultyLevel</IRI>
-        <Literal>Difficulty Level specifies the overall difficulty of the recipe as either beginner level, novice or advanced level.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#PrepTime</IRI>
-        <Literal>Preptime specifies the time taking preparing for the ingredients before cooking. Also known as, Pre-cooking time.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#RecipeClassification</IRI>
-        <Literal>Recipe classification specifies whether this is a vegetarian recipe or non-vegetarian recipe.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Source</IRI>
-        <Literal>Source contains the informations about the instance, from where the recipe data was collected. The URL to the webpage</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#TotalTime</IRI>
-        <Literal>Total time of the recipe is a combination of the prep time and the cooking time.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#alternateAction</IRI>
-        <Literal xml:lang="en">hasAlternateAction</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#alternateProcedure</IRI>
-        <Literal xml:lang="en">hasAlternateSubProcedure</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#belongsTo</IRI>
-        <Literal xml:lang="en">hasSubProcedure</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasIngredientAction</IRI>
-        <Literal xml:lang="en">hasAction</Literal>
-    </AnnotationAssertion>
-</Ontology>
+@prefix : <http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#> .
+@prefix ex: <http://example.org/> .
+@prefix tp: <http://www.ontologydesignpatterns.org/cp/owl/timeperiod.owl#> .
+@prefix evo: <http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix qudt: <http://qudt.org/2.1/schema/qudt#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@base <http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology> .
+
+<http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://qudt.org/2.1/schema/qudt#hasQuantity
+qudt:hasQuantity rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf evo:recipe ;
+                 rdfs:domain evo:Ingredient ;
+                 rdfs:range qudt:Quantity .
 
 
+###  http://qudt.org/2.1/schema/qudt#hasQuantityValue
+qudt:hasQuantityValue rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf evo:quantity ;
+                      rdfs:domain qudt:Quantity ;
+                      rdfs:range qudt:QuantityValue .
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
+###  http://qudt.org/2.1/schema/qudt#hasUnit
+qudt:hasUnit rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf evo:quantity ;
+             rdfs:domain qudt:Quantity ;
+             rdfs:range qudt:Unit .
+
+
+###  http://schema.org/aggregateRating
+<http://schema.org/aggregateRating> rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf evo:recipe ;
+                                    rdfs:domain <http://schema.org/Recipe> ;
+                                    rdfs:range <http://schema.org/AggregateRating> .
+
+
+###  http://schema.org/author
+<http://schema.org/author> rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf evo:recipe ;
+                           rdfs:domain <http://schema.org/Recipe> ;
+                           rdfs:range <http://schema.org/Person> .
+
+
+###  http://schema.org/nutrition
+<http://schema.org/nutrition> rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf evo:recipe ;
+                              rdfs:domain <http://schema.org/Recipe> ;
+                              rdfs:range <http://schema.org/NutritionInformation> .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#action
+evo:action rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#actionIngredient
+evo:actionIngredient rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf evo:action ;
+                     owl:inverseOf evo:ingredientAction ;
+                     rdfs:domain owl:Action ;
+                     rdfs:range evo:Ingredient .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#actionProcedure
+evo:actionProcedure rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf evo:action ;
+                    owl:inverseOf evo:procedureAction ;
+                    rdfs:domain owl:Action ;
+                    rdfs:range evo:Procedure .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#alternateAction
+evo:alternateAction rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf evo:action ;
+                    rdfs:domain owl:Action ;
+                    rdfs:range owl:Action .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#alternateIngredient
+evo:alternateIngredient rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf evo:ingredient ;
+                        rdfs:domain evo:Ingredient ;
+                        rdfs:range evo:Ingredient .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#alternateProcedure
+evo:alternateProcedure rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf evo:procedure ;
+                       rdfs:domain evo:Procedure ;
+                       rdfs:range evo:Procedure .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#hasIngredient
+evo:hasIngredient rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf evo:ingredient ;
+                  owl:inverseOf evo:hasIngredientType ;
+                  rdfs:domain evo:IngredientType ;
+                  rdfs:range evo:Ingredient .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#hasIngredientType
+evo:hasIngredientType rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf evo:ingredient ;
+                      rdfs:domain evo:Ingredient ;
+                      rdfs:range evo:IngredientType .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#ingredient
+evo:ingredient rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#ingredientAction
+evo:ingredientAction rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf evo:ingredient ;
+                     rdfs:domain evo:Ingredient ;
+                     rdfs:range owl:Action .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#procedure
+evo:procedure rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#procedureAction
+evo:procedureAction rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf evo:procedure ;
+                    rdfs:domain evo:Procedure ;
+                    rdfs:range owl:Action .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#quantity
+evo:quantity rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#recipe
+evo:recipe rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#recipeAction
+evo:recipeAction rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf evo:recipe ;
+                 rdfs:domain <http://schema.org/Recipe> ;
+                 rdfs:range owl:Action .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#recipeIngredient
+evo:recipeIngredient rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf evo:recipe ;
+                     rdfs:domain <http://schema.org/Recipe> ;
+                     rdfs:range evo:Ingredient .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#recipeProcedure
+evo:recipeProcedure rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf evo:recipe ;
+                    rdfs:domain <http://schema.org/Recipe> ;
+                    rdfs:range evo:Procedure .
+
+
+###  http://www.w3.org/2002/07/owl#is_consequence_of
+owl:is_consequence_of rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf evo:action ;
+                      rdfs:domain owl:Action ;
+                      rdfs:range owl:Action .
+
+
+###  http://www.w3.org/2002/07/owl#is_dependent_on
+owl:is_dependent_on rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf evo:action ;
+                    rdfs:domain owl:Action ;
+                    rdfs:range owl:Action .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://qudt.org/2.1/schema/qudt#QuantityValue
+qudt:QuantityValue rdf:type owl:DatatypeProperty ;
+                   rdfs:domain evo:Ingredient ;
+                   rdfs:range xsd:double .
+
+
+###  http://qudt.org/2.1/schema/qudt#Unit
+qudt:Unit rdf:type owl:DatatypeProperty ;
+          rdfs:domain evo:Ingredient ;
+          rdfs:range xsd:string .
+
+
+###  http://schema.org/calories
+<http://schema.org/calories> rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf evo:nutrient ;
+                             rdfs:domain <http://schema.org/NutritionInformation> ;
+                             rdfs:range xsd:double .
+
+
+###  http://schema.org/carbohydrateContent
+<http://schema.org/carbohydrateContent> rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf evo:nutrient ;
+                                        rdfs:domain <http://schema.org/NutritionInformation> ;
+                                        rdfs:range xsd:double .
+
+
+###  http://schema.org/cholesterolContent
+<http://schema.org/cholesterolContent> rdf:type owl:DatatypeProperty ;
+                                       rdfs:subPropertyOf evo:nutrient ;
+                                       rdfs:domain <http://schema.org/NutritionInformation> ;
+                                       rdfs:range xsd:double .
+
+
+###  http://schema.org/cookTime
+<http://schema.org/cookTime> rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf evo:time ;
+                             rdfs:domain <http://schema.org/Recipe> ;
+                             rdfs:range xsd:integer .
+
+
+###  http://schema.org/email
+<http://schema.org/email> rdf:type owl:DatatypeProperty ;
+                          rdfs:domain <http://schema.org/Person> ;
+                          rdfs:range xsd:string .
+
+
+###  http://schema.org/fatContent
+<http://schema.org/fatContent> rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf evo:nutrient ;
+                               rdfs:domain <http://schema.org/NutritionInformation> ;
+                               rdfs:range xsd:double .
+
+
+###  http://schema.org/fiberContent
+<http://schema.org/fiberContent> rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf evo:nutrient ;
+                                 rdfs:domain <http://schema.org/NutritionInformation> ;
+                                 rdfs:range xsd:double .
+
+
+###  http://schema.org/givenName
+<http://schema.org/givenName> rdf:type owl:DatatypeProperty ;
+                              rdfs:domain <http://schema.org/Person> ;
+                              rdfs:range xsd:string .
+
+
+###  http://schema.org/image
+<http://schema.org/image> rdf:type owl:DatatypeProperty ;
+                          rdfs:domain <http://schema.org/Recipe> ;
+                          rdfs:range xsd:string .
+
+
+###  http://schema.org/name
+<http://schema.org/name> rdf:type owl:DatatypeProperty ;
+                         rdfs:domain <http://schema.org/Recipe> ;
+                         rdfs:range xsd:string .
+
+
+###  http://schema.org/prepTime
+<http://schema.org/prepTime> rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf evo:time ;
+                             rdfs:domain <http://schema.org/Recipe> ;
+                             rdfs:range xsd:integer .
+
+
+###  http://schema.org/proteinContent
+<http://schema.org/proteinContent> rdf:type owl:DatatypeProperty ;
+                                   rdfs:subPropertyOf evo:nutrient ;
+                                   rdfs:domain <http://schema.org/NutritionInformation> ;
+                                   rdfs:range xsd:double .
+
+
+###  http://schema.org/ratingCount
+<http://schema.org/ratingCount> rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf evo:aggregate ;
+                                rdfs:domain <http://schema.org/AggregateRating> ;
+                                rdfs:range xsd:integer .
+
+
+###  http://schema.org/recipeCategory
+<http://schema.org/recipeCategory> rdf:type owl:DatatypeProperty ;
+                                   rdfs:subPropertyOf evo:recipeClassification ;
+                                   rdfs:domain <http://schema.org/Recipe> ;
+                                   rdfs:range xsd:string .
+
+
+###  http://schema.org/recipeCuisine
+<http://schema.org/recipeCuisine> rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf evo:recipeClassification ;
+                                  rdfs:domain <http://schema.org/Recipe> ;
+                                  rdfs:range xsd:string .
+
+
+###  http://schema.org/recipeYield
+<http://schema.org/recipeYield> rdf:type owl:DatatypeProperty ;
+                                rdfs:domain <http://schema.org/Recipe> ;
+                                rdfs:range xsd:integer .
+
+
+###  http://schema.org/reviewCount
+<http://schema.org/reviewCount> rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf evo:aggregate ;
+                                rdfs:domain <http://schema.org/AggregateRating> ;
+                                rdfs:range xsd:integer .
+
+
+###  http://schema.org/saturatedFatContent
+<http://schema.org/saturatedFatContent> rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf evo:nutrient ;
+                                        rdfs:domain <http://schema.org/NutritionInformation> ;
+                                        rdfs:range xsd:double .
+
+
+###  http://schema.org/servingSize
+<http://schema.org/servingSize> rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf evo:nutrient ;
+                                rdfs:domain <http://schema.org/NutritionInformation> ;
+                                rdfs:range xsd:double .
+
+
+###  http://schema.org/sodiumContent
+<http://schema.org/sodiumContent> rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf evo:nutrient ;
+                                  rdfs:domain <http://schema.org/NutritionInformation> ;
+                                  rdfs:range xsd:double .
+
+
+###  http://schema.org/sugarContent
+<http://schema.org/sugarContent> rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf evo:nutrient ;
+                                 rdfs:domain <http://schema.org/NutritionInformation> ;
+                                 rdfs:range xsd:double .
+
+
+###  http://schema.org/tool
+<http://schema.org/tool> rdf:type owl:DatatypeProperty ;
+                         rdfs:domain <http://schema.org/Recipe> ;
+                         rdfs:range xsd:string .
+
+
+###  http://schema.org/totalTime
+<http://schema.org/totalTime> rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf evo:time ;
+                              rdfs:domain <http://schema.org/Recipe> ;
+                              rdfs:range xsd:integer .
+
+
+###  http://schema.org/transFatContent
+<http://schema.org/transFatContent> rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf evo:nutrient ;
+                                    rdfs:domain <http://schema.org/NutritionInformation> ;
+                                    rdfs:range xsd:double .
+
+
+###  http://schema.org/unsaturatedFatContent
+<http://schema.org/unsaturatedFatContent> rdf:type owl:DatatypeProperty ;
+                                          rdfs:subPropertyOf evo:nutrient ;
+                                          rdfs:domain <http://schema.org/NutritionInformation> ;
+                                          rdfs:range xsd:double .
+
+
+###  http://schema.org/url
+<http://schema.org/url> rdf:type owl:DatatypeProperty ;
+                        rdfs:domain <http://schema.org/Recipe> ;
+                        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#aggregate
+evo:aggregate rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#difficultyLevel
+evo:difficultyLevel rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf evo:recipeClassification ;
+                    rdfs:domain <http://schema.org/Recipe> ;
+                    rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#mealType
+evo:mealType rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf evo:recipeClassification ;
+             rdfs:domain <http://schema.org/Recipe> ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#nutrient
+evo:nutrient rdf:type owl:DatatypeProperty ;
+             rdfs:domain <http://schema.org/NutritionInformation> ;
+             rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#recipeClassification
+evo:recipeClassification rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#recipeCourse
+evo:recipeCourse rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf evo:recipeClassification ;
+                 rdfs:domain <http://schema.org/Recipe> ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#time
+evo:time rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/2002/07/owl#has_duration
+owl:has_duration rdf:type owl:DatatypeProperty ;
+                 rdfs:domain owl:Action ;
+                 rdfs:range xsd:integer .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://qudt.org/2.1/schema/qudt#Quantity
+qudt:Quantity rdf:type owl:Class .
+
+
+###  http://qudt.org/2.1/schema/qudt#QuantityValue
+qudt:QuantityValue rdf:type owl:Class .
+
+
+###  http://qudt.org/2.1/schema/qudt#Unit
+qudt:Unit rdf:type owl:Class .
+
+
+###  http://schema.org/AggregateRating
+<http://schema.org/AggregateRating> rdf:type owl:Class .
+
+
+###  http://schema.org/NutritionInformation
+<http://schema.org/NutritionInformation> rdf:type owl:Class .
+
+
+###  http://schema.org/Person
+<http://schema.org/Person> rdf:type owl:Class .
+
+
+###  http://schema.org/Recipe
+<http://schema.org/Recipe> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Africa
+evo:Africa rdf:type owl:Class ;
+           rdfs:subClassOf evo:Herbs ,
+                           evo:Spices .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Alcohol
+evo:Alcohol rdf:type owl:Class ;
+            rdfs:subClassOf evo:Liquids .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#America
+evo:America rdf:type owl:Class ;
+            rdfs:subClassOf evo:Herbs ,
+                            evo:Spices .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Apple
+evo:Apple rdf:type owl:Class ;
+          rdfs:subClassOf evo:PomeFruit ;
+          owl:disjointWith evo:Pear .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Asia
+evo:Asia rdf:type owl:Class ;
+         rdfs:subClassOf evo:Herbs ,
+                         evo:Spices .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#AsianNoodle
+evo:AsianNoodle rdf:type owl:Class ;
+                rdfs:subClassOf evo:GrainProducts .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#AsianSquash
+evo:AsianSquash rdf:type owl:Class ;
+                rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Avocados
+evo:Avocados rdf:type owl:Class ;
+             rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Bacon
+evo:Bacon rdf:type owl:Class ;
+          rdfs:subClassOf evo:CurvedMeats .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Bake
+evo:Bake rdf:type owl:Class ;
+         rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#BakedGoods
+evo:BakedGoods rdf:type owl:Class ;
+               rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Barbecue
+evo:Barbecue rdf:type owl:Class ;
+             rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Barley
+evo:Barley rdf:type owl:Class ;
+           rdfs:subClassOf evo:Grains .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#BeanProducts
+evo:BeanProducts rdf:type owl:Class ;
+                 rdfs:subClassOf evo:LegumesAndNuts .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Beef
+evo:Beef rdf:type owl:Class ;
+         rdfs:subClassOf evo:Meats .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Berries
+evo:Berries rdf:type owl:Class ;
+            rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#BlueCheese
+evo:BlueCheese rdf:type owl:Class ;
+               rdfs:subClassOf evo:Cheese .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Bread
+evo:Bread rdf:type owl:Class ;
+          rdfs:subClassOf evo:BakedGoods .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Broil
+evo:Broil rdf:type owl:Class ;
+          rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#BuckWheat
+evo:BuckWheat rdf:type owl:Class ;
+              rdfs:subClassOf evo:Grains .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Cabbage
+evo:Cabbage rdf:type owl:Class ;
+            rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Cake
+evo:Cake rdf:type owl:Class ;
+         rdfs:subClassOf evo:BakedGoods .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Candy
+evo:Candy rdf:type owl:Class ;
+          rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Caramelize
+evo:Caramelize rdf:type owl:Class ;
+               rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#CaviarRoe
+evo:CaviarRoe rdf:type owl:Class ;
+              rdfs:subClassOf evo:Fish .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Cheese
+evo:Cheese rdf:type owl:Class ;
+           rdfs:subClassOf evo:Dairy .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#CheeseSubstitute
+evo:CheeseSubstitute rdf:type owl:Class ;
+                     rdfs:subClassOf evo:Cheese .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Chocolate
+evo:Chocolate rdf:type owl:Class ;
+              rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#CitrusFruit
+evo:CitrusFruit rdf:type owl:Class ;
+                rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Clean
+evo:Clean rdf:type owl:Class ;
+          rdfs:subClassOf evo:Preparatory .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Close
+evo:Close rdf:type owl:Class ;
+          rdfs:subClassOf evo:Preparatory .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#ColdCuts
+evo:ColdCuts rdf:type owl:Class ;
+             rdfs:subClassOf evo:CurvedMeats .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#CommonTropicalFruit
+evo:CommonTropicalFruit rdf:type owl:Class ;
+                        rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Cookie
+evo:Cookie rdf:type owl:Class ;
+           rdfs:subClassOf evo:BakedGoods .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Cooking
+evo:Cooking rdf:type owl:Class ;
+            rdfs:subClassOf owl:Action .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#CookingGreens
+evo:CookingGreens rdf:type owl:Class ;
+                  rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Corn
+evo:Corn rdf:type owl:Class ;
+         rdfs:subClassOf evo:Grains .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Cover
+evo:Cover rdf:type owl:Class ;
+          rdfs:subClassOf evo:Preparatory .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Cracker
+evo:Cracker rdf:type owl:Class ;
+            rdfs:subClassOf evo:BakedGoods .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Crumb
+evo:Crumb rdf:type owl:Class ;
+          rdfs:subClassOf evo:BakedGoods .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Cucumber
+evo:Cucumber rdf:type owl:Class ;
+             rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#CulturedMilkProduct
+evo:CulturedMilkProduct rdf:type owl:Class ;
+                        rdfs:subClassOf evo:Liquids .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#CulturedMilkProducts
+evo:CulturedMilkProducts rdf:type owl:Class ;
+                         rdfs:subClassOf evo:Dairy .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#CurvedMeats
+evo:CurvedMeats rdf:type owl:Class ;
+                rdfs:subClassOf evo:Meats .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Dairy
+evo:Dairy rdf:type owl:Class ;
+          rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#DairyMilkAndCream
+evo:DairyMilkAndCream rdf:type owl:Class ;
+                      rdfs:subClassOf evo:MilkAndCream ;
+                      owl:disjointWith evo:Non-dairyMilkAndCream .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Dough
+evo:Dough rdf:type owl:Class ;
+          rdfs:subClassOf evo:GrainProducts .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#DriedBeans
+evo:DriedBeans rdf:type owl:Class ;
+               rdfs:subClassOf evo:LegumesAndNuts .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#DriedChile
+evo:DriedChile rdf:type owl:Class ;
+               rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#DriedFruit
+evo:DriedFruit rdf:type owl:Class ;
+               rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#DriedMeats
+evo:DriedMeats rdf:type owl:Class ;
+               rdfs:subClassOf evo:Meats .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#DriedPeas
+evo:DriedPeas rdf:type owl:Class ;
+              rdfs:subClassOf evo:LegumesAndNuts .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#EdiblePods
+evo:EdiblePods rdf:type owl:Class ;
+               rdfs:subClassOf evo:LegumesAndNuts ,
+                               evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#EggPlants
+evo:EggPlants rdf:type owl:Class ;
+              rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Eggs
+evo:Eggs rdf:type owl:Class ;
+         rdfs:subClassOf evo:Dairy .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Europe
+evo:Europe rdf:type owl:Class ;
+           rdfs:subClassOf evo:Herbs ,
+                           evo:Spices .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#ExoticTropicalFruit
+evo:ExoticTropicalFruit rdf:type owl:Class ;
+                        rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#ExtractsAndEssences
+evo:ExtractsAndEssences rdf:type owl:Class ;
+                        rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Fats
+evo:Fats rdf:type owl:Class ;
+         rdfs:subClassOf evo:FatsAndOils ;
+         owl:disjointWith evo:OilsAndCookingSprays .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#FatsAndOils
+evo:FatsAndOils rdf:type owl:Class ;
+                rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#FattyFirmTextured
+evo:FattyFirmTextured rdf:type owl:Class ;
+                      rdfs:subClassOf evo:Fish .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#FattyFlakyTextured
+evo:FattyFlakyTextured rdf:type owl:Class ;
+                       rdfs:subClassOf evo:Fish .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#FirmCheese
+evo:FirmCheese rdf:type owl:Class ;
+               rdfs:subClassOf evo:Cheese .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Fish
+evo:Fish rdf:type owl:Class ;
+         rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#FlatBread
+evo:FlatBread rdf:type owl:Class ;
+              rdfs:subClassOf evo:BakedGoods .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Flavorings
+evo:Flavorings rdf:type owl:Class ;
+               rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#FoodWrapper
+evo:FoodWrapper rdf:type owl:Class ;
+                rdfs:subClassOf evo:GrainProducts .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#FreshBeans
+evo:FreshBeans rdf:type owl:Class ;
+               rdfs:subClassOf evo:LegumesAndNuts ,
+                               evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#FreshCheese
+evo:FreshCheese rdf:type owl:Class ;
+                rdfs:subClassOf evo:Cheese .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#FreshChile
+evo:FreshChile rdf:type owl:Class ;
+               rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#FreshPeas
+evo:FreshPeas rdf:type owl:Class ;
+              rdfs:subClassOf evo:LegumesAndNuts ,
+                              evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#FruitButters
+evo:FruitButters rdf:type owl:Class ;
+                 rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#FruitJuices
+evo:FruitJuices rdf:type owl:Class ;
+                rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#FruitVegetables
+evo:FruitVegetables rdf:type owl:Class ;
+                    rdfs:subClassOf evo:Fruits ,
+                                    evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Fruits
+evo:Fruits rdf:type owl:Class ;
+           rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#GameMeat
+evo:GameMeat rdf:type owl:Class ;
+             rdfs:subClassOf evo:Meats .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Garlic
+evo:Garlic rdf:type owl:Class ;
+           rdfs:subClassOf evo:Flavorings ,
+                           evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Gelatin
+evo:Gelatin rdf:type owl:Class ;
+            rdfs:subClassOf evo:Thickener ;
+            owl:disjointWith evo:StarchThickener .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Glaze
+evo:Glaze rdf:type owl:Class ;
+          rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#GrainProducts
+evo:GrainProducts rdf:type owl:Class ;
+                  rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Grains
+evo:Grains rdf:type owl:Class ;
+           rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Gratin
+evo:Gratin rdf:type owl:Class ;
+           rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Grill
+evo:Grill rdf:type owl:Class ;
+          rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Ham
+evo:Ham rdf:type owl:Class ;
+        rdfs:subClassOf evo:CurvedMeats .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#HerbAndSpiceMix
+evo:HerbAndSpiceMix rdf:type owl:Class ;
+                    rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Herbs
+evo:Herbs rdf:type owl:Class ;
+          rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Hispanic
+evo:Hispanic rdf:type owl:Class ;
+             rdfs:subClassOf evo:Herbs ,
+                             evo:Spices .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#India
+evo:India rdf:type owl:Class ;
+          rdfs:subClassOf evo:Herbs ,
+                          evo:Spices .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#InflorescentVegetables
+evo:InflorescentVegetables rdf:type owl:Class ;
+                           rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Ingredient
+evo:Ingredient rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#IngredientType
+evo:IngredientType rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Introduce
+evo:Introduce rdf:type owl:Class ;
+              rdfs:subClassOf evo:Preparatory .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Juices
+evo:Juices rdf:type owl:Class ;
+           rdfs:subClassOf evo:Flavorings ,
+                           evo:Liquids .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Kamut
+evo:Kamut rdf:type owl:Class ;
+          rdfs:subClassOf evo:Grains .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Lamb
+evo:Lamb rdf:type owl:Class ;
+         rdfs:subClassOf evo:Meats .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#LeanFirmTextured
+evo:LeanFirmTextured rdf:type owl:Class ;
+                     rdfs:subClassOf evo:Fish .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#LeanFlakyTextured
+evo:LeanFlakyTextured rdf:type owl:Class ;
+                      rdfs:subClassOf evo:Fish .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#LegumesAndNuts
+evo:LegumesAndNuts rdf:type owl:Class ;
+                   rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Lentils
+evo:Lentils rdf:type owl:Class ;
+            rdfs:subClassOf evo:LegumesAndNuts .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#LiquidSweetner
+evo:LiquidSweetner rdf:type owl:Class ;
+                   rdfs:subClassOf evo:Liquids .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#LiquidSweetners
+evo:LiquidSweetners rdf:type owl:Class ;
+                    rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Liquids
+evo:Liquids rdf:type owl:Class ;
+            rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Liquors
+evo:Liquors rdf:type owl:Class ;
+            rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#MainIngredient
+evo:MainIngredient rdf:type owl:Class ;
+                   rdfs:subClassOf evo:IngredientType .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Meats
+evo:Meats rdf:type owl:Class ;
+          rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Melons
+evo:Melons rdf:type owl:Class ;
+           rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Microwave
+evo:Microwave rdf:type owl:Class ;
+              rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#MiddleEast
+evo:MiddleEast rdf:type owl:Class ;
+               rdfs:subClassOf evo:Herbs ,
+                               evo:Spices .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#MilkAndCream
+evo:MilkAndCream rdf:type owl:Class ;
+                 rdfs:subClassOf evo:Dairy ,
+                                 evo:Liquids .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Mix
+evo:Mix rdf:type owl:Class ;
+        rdfs:subClassOf evo:Preparatory .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Move
+evo:Move rdf:type owl:Class ;
+         rdfs:subClassOf evo:Preparatory .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Mushrooms
+evo:Mushrooms rdf:type owl:Class ;
+              rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Non-dairyMilkAndCream
+evo:Non-dairyMilkAndCream rdf:type owl:Class ;
+                          rdfs:subClassOf evo:Liquids ,
+                                          evo:MilkAndCream .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#NonWheatFlour
+evo:NonWheatFlour rdf:type owl:Class ;
+                  rdfs:subClassOf evo:GrainProducts .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#NutAndSeed
+evo:NutAndSeed rdf:type owl:Class ;
+               rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#NutFlour
+evo:NutFlour rdf:type owl:Class ;
+             rdfs:subClassOf evo:GrainProducts ,
+                             evo:LegumesAndNuts .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Nuts
+evo:Nuts rdf:type owl:Class ;
+         rdfs:subClassOf evo:LegumesAndNuts .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#NutsAndSeedPaste
+evo:NutsAndSeedPaste rdf:type owl:Class ;
+                     rdfs:subClassOf evo:LegumesAndNuts .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Oat
+evo:Oat rdf:type owl:Class ;
+        rdfs:subClassOf evo:Grains .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#OilsAndCookingSprays
+evo:OilsAndCookingSprays rdf:type owl:Class ;
+                         rdfs:subClassOf evo:FatsAndOils .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Olive
+evo:Olive rdf:type owl:Class ;
+          rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Onion
+evo:Onion rdf:type owl:Class ;
+          rdfs:subClassOf evo:Flavorings ,
+                          evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#OtherGrains
+evo:OtherGrains rdf:type owl:Class ;
+                rdfs:subClassOf evo:Grains .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#OtherMeats
+evo:OtherMeats rdf:type owl:Class ;
+               rdfs:subClassOf evo:Meats .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#OtherNoodle
+evo:OtherNoodle rdf:type owl:Class ;
+                rdfs:subClassOf evo:GrainProducts .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#OtherVegetables
+evo:OtherVegetables rdf:type owl:Class ;
+                    rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Pasta
+evo:Pasta rdf:type owl:Class ;
+          rdfs:subClassOf evo:GrainProducts .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Pear
+evo:Pear rdf:type owl:Class ;
+         rdfs:subClassOf evo:PomeFruit .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Plating
+evo:Plating rdf:type owl:Class ;
+            rdfs:subClassOf owl:Action .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Poach
+evo:Poach rdf:type owl:Class ;
+          rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#PomeFruit
+evo:PomeFruit rdf:type owl:Class ;
+              rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Pork
+evo:Pork rdf:type owl:Class ;
+         rdfs:subClassOf evo:Meats .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Poultry
+evo:Poultry rdf:type owl:Class ;
+            rdfs:subClassOf evo:Meats .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Preparatory
+evo:Preparatory rdf:type owl:Class ;
+                rdfs:subClassOf owl:Action .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Preserves
+evo:Preserves rdf:type owl:Class ;
+              rdfs:subClassOf evo:Flavorings ,
+                              evo:Fruits .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Procedure
+evo:Procedure rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#ProcessedChesse
+evo:ProcessedChesse rdf:type owl:Class ;
+                    rdfs:subClassOf evo:Cheese .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#ReduceSize
+evo:ReduceSize rdf:type owl:Class ;
+               rdfs:subClassOf evo:Preparatory .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Rhizomes
+evo:Rhizomes rdf:type owl:Class ;
+             rdfs:subClassOf evo:Flavorings ,
+                             evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Rice
+evo:Rice rdf:type owl:Class ;
+         rdfs:subClassOf evo:Grains .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Roast
+evo:Roast rdf:type owl:Class ;
+          rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Roots
+evo:Roots rdf:type owl:Class ;
+          rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Rye
+evo:Rye rdf:type owl:Class ;
+        rdfs:subClassOf evo:Grains .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#SaladGreens
+evo:SaladGreens rdf:type owl:Class ;
+                rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Salt
+evo:Salt rdf:type owl:Class ;
+         rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Sanitation
+evo:Sanitation rdf:type owl:Class ;
+               rdfs:subClassOf owl:Action .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Sausages
+evo:Sausages rdf:type owl:Class ;
+             rdfs:subClassOf evo:CurvedMeats .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Saute
+evo:Saute rdf:type owl:Class ;
+          rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Scramble
+evo:Scramble rdf:type owl:Class ;
+             rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#SeaVegetables
+evo:SeaVegetables rdf:type owl:Class ;
+                  rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Seeds
+evo:Seeds rdf:type owl:Class ;
+          rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#SemiFirmCheese
+evo:SemiFirmCheese rdf:type owl:Class ;
+                   rdfs:subClassOf evo:Cheese .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#SemiSoftCheese
+evo:SemiSoftCheese rdf:type owl:Class ;
+                   rdfs:subClassOf evo:Cheese .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Separate
+evo:Separate rdf:type owl:Class ;
+             rdfs:subClassOf evo:Preparatory .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Shape
+evo:Shape rdf:type owl:Class ;
+          rdfs:subClassOf evo:Preparatory .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#ShellFish
+evo:ShellFish rdf:type owl:Class ;
+              rdfs:subClassOf evo:Fish .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#SideIngredient
+evo:SideIngredient rdf:type owl:Class ;
+                   rdfs:subClassOf evo:IngredientType .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Simmer
+evo:Simmer rdf:type owl:Class ;
+           rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#SnapBeans
+evo:SnapBeans rdf:type owl:Class ;
+              rdfs:subClassOf evo:LegumesAndNuts ,
+                              evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#SoftCheese
+evo:SoftCheese rdf:type owl:Class ;
+               rdfs:subClassOf evo:Cheese .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#SoyProducts
+evo:SoyProducts rdf:type owl:Class ;
+                rdfs:subClassOf evo:LegumesAndNuts .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Spelt
+evo:Spelt rdf:type owl:Class ;
+          rdfs:subClassOf evo:Grains .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Spice
+evo:Spice rdf:type owl:Class ;
+          rdfs:subClassOf evo:IngredientType .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Spices
+evo:Spices rdf:type owl:Class ;
+           rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Sprouts
+evo:Sprouts rdf:type owl:Class ;
+            rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#StalkVegetables
+evo:StalkVegetables rdf:type owl:Class ;
+                    rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#StarchThickener
+evo:StarchThickener rdf:type owl:Class ;
+                    rdfs:subClassOf evo:Thickener .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Steam
+evo:Steam rdf:type owl:Class ;
+          rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Stew
+evo:Stew rdf:type owl:Class ;
+         rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Stocks
+evo:Stocks rdf:type owl:Class ;
+           rdfs:subClassOf evo:Liquids .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#StoneFruit
+evo:StoneFruit rdf:type owl:Class ;
+               rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#StriFry
+evo:StriFry rdf:type owl:Class ;
+            rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#SummerSquash
+evo:SummerSquash rdf:type owl:Class ;
+                 rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#SweetPepper
+evo:SweetPepper rdf:type owl:Class ;
+                rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Syrups
+evo:Syrups rdf:type owl:Class ;
+           rdfs:subClassOf evo:LiquidSweetners .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Thickener
+evo:Thickener rdf:type owl:Class ;
+              rdfs:subClassOf evo:GrainProducts .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Toast
+evo:Toast rdf:type owl:Class ;
+          rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Tomatoes
+evo:Tomatoes rdf:type owl:Class ;
+             rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Triticale
+evo:Triticale rdf:type owl:Class ;
+              rdfs:subClassOf evo:Grains .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Tubers
+evo:Tubers rdf:type owl:Class ;
+           rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#VarietyMeats
+evo:VarietyMeats rdf:type owl:Class ;
+                 rdfs:subClassOf evo:Meats .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Veal
+evo:Veal rdf:type owl:Class ;
+         rdfs:subClassOf evo:Meats .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Vegetable
+evo:Vegetable rdf:type owl:Class ;
+              rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Vinegar
+evo:Vinegar rdf:type owl:Class ;
+            rdfs:subClassOf evo:Flavorings ,
+                            evo:Liquids .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#WaterAndSoda
+evo:WaterAndSoda rdf:type owl:Class ;
+                 rdfs:subClassOf evo:Liquids .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Wheat
+evo:Wheat rdf:type owl:Class ;
+          rdfs:subClassOf evo:Grains .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#WheatFlour
+evo:WheatFlour rdf:type owl:Class ;
+               rdfs:subClassOf evo:GrainProducts .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Wines
+evo:Wines rdf:type owl:Class ;
+          rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#WinterSquash
+evo:WinterSquash rdf:type owl:Class ;
+                 rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.w3.org/2002/07/owl#Action
+owl:Action rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Easy
+evo:Easy rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Hard
+evo:Hard rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Moderate
+evo:Moderate rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( evo:Alcohol
+                evo:CulturedMilkProduct
+                evo:Juices
+                evo:LiquidSweetner
+                evo:MilkAndCream
+                evo:Non-dairyMilkAndCream
+                evo:Stocks
+                evo:Vinegar
+                evo:WaterAndSoda
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( evo:AsianNoodle
+                evo:Dough
+                evo:FoodWrapper
+                evo:NonWheatFlour
+                evo:NutFlour
+                evo:OtherNoodle
+                evo:Pasta
+                evo:Thickener
+                evo:WheatFlour
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( evo:AsianSquash
+                evo:Avocados
+                evo:Cucumber
+                evo:DriedChile
+                evo:EggPlants
+                evo:FreshChile
+                evo:Olive
+                evo:SummerSquash
+                evo:SweetPepper
+                evo:Tomatoes
+                evo:WinterSquash
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( evo:Bacon
+                evo:ColdCuts
+                evo:Ham
+                evo:Sausages
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( evo:Barley
+                evo:BuckWheat
+                evo:Corn
+                evo:Kamut
+                evo:Oat
+                evo:OtherGrains
+                evo:Rice
+                evo:Rye
+                evo:Spelt
+                evo:Triticale
+                evo:Wheat
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( evo:BeanProducts
+                evo:DriedBeans
+                evo:DriedPeas
+                evo:EdiblePods
+                evo:FreshBeans
+                evo:FreshPeas
+                evo:Lentils
+                evo:NutFlour
+                evo:Nuts
+                evo:NutsAndSeedPaste
+                evo:SnapBeans
+                evo:SoyProducts
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( evo:Beef
+                evo:CurvedMeats
+                evo:DriedMeats
+                evo:GameMeat
+                evo:Lamb
+                evo:OtherMeats
+                evo:Pork
+                evo:Poultry
+                evo:VarietyMeats
+                evo:Veal
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( evo:Berries
+                evo:CitrusFruit
+                evo:CommonTropicalFruit
+                evo:DriedFruit
+                evo:ExoticTropicalFruit
+                evo:FruitButters
+                evo:FruitJuices
+                evo:FruitVegetables
+                evo:Melons
+                evo:PomeFruit
+                evo:Preserves
+                evo:StoneFruit
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( evo:BlueCheese
+                evo:CheeseSubstitute
+                evo:FirmCheese
+                evo:FreshCheese
+                evo:ProcessedChesse
+                evo:SemiFirmCheese
+                evo:SemiSoftCheese
+                evo:SoftCheese
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( evo:Bread
+                evo:Cake
+                evo:Cookie
+                evo:Cracker
+                evo:Crumb
+                evo:FlatBread
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( evo:Cabbage
+                evo:CookingGreens
+                evo:EdiblePods
+                evo:FreshBeans
+                evo:FreshPeas
+                evo:FruitVegetables
+                evo:Garlic
+                evo:InflorescentVegetables
+                evo:Mushrooms
+                evo:Onion
+                evo:OtherVegetables
+                evo:Rhizomes
+                evo:Roots
+                evo:SaladGreens
+                evo:SeaVegetables
+                evo:SnapBeans
+                evo:Sprouts
+                evo:StalkVegetables
+                evo:Tubers
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( evo:CaviarRoe
+                evo:FattyFirmTextured
+                evo:FattyFlakyTextured
+                evo:LeanFirmTextured
+                evo:LeanFlakyTextured
+                evo:ShellFish
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( evo:Cheese
+                evo:CulturedMilkProducts
+                evo:Eggs
+                evo:MilkAndCream
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
