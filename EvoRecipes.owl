@@ -19,53 +19,42 @@
 
 ###  http://qudt.org/2.1/schema/qudt#hasQuantity
 qudt:hasQuantity rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf evo:recipe ;
                  rdfs:domain evo:Ingredient ;
                  rdfs:range qudt:Quantity .
 
 
 ###  http://qudt.org/2.1/schema/qudt#hasQuantityValue
 qudt:hasQuantityValue rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf evo:quantity ;
                       rdfs:domain qudt:Quantity ;
                       rdfs:range qudt:QuantityValue .
 
 
 ###  http://qudt.org/2.1/schema/qudt#hasUnit
 qudt:hasUnit rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf evo:quantity ;
              rdfs:domain qudt:Quantity ;
              rdfs:range qudt:Unit .
 
 
 ###  http://schema.org/aggregateRating
 <http://schema.org/aggregateRating> rdf:type owl:ObjectProperty ;
-                                    rdfs:subPropertyOf evo:recipe ;
                                     rdfs:domain <http://schema.org/Recipe> ;
                                     rdfs:range <http://schema.org/AggregateRating> .
 
 
 ###  http://schema.org/author
 <http://schema.org/author> rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf evo:recipe ;
                            rdfs:domain <http://schema.org/Recipe> ;
                            rdfs:range <http://schema.org/Person> .
 
 
 ###  http://schema.org/nutrition
 <http://schema.org/nutrition> rdf:type owl:ObjectProperty ;
-                              rdfs:subPropertyOf evo:recipe ;
                               rdfs:domain <http://schema.org/Recipe> ;
                               rdfs:range <http://schema.org/NutritionInformation> .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#action
-evo:action rdf:type owl:ObjectProperty .
-
-
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#actionIngredient
 evo:actionIngredient rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf evo:action ;
                      owl:inverseOf evo:ingredientAction ;
                      rdfs:domain owl:Action ;
                      rdfs:range evo:Ingredient .
@@ -73,7 +62,6 @@ evo:actionIngredient rdf:type owl:ObjectProperty ;
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#actionProcedure
 evo:actionProcedure rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf evo:action ;
                     owl:inverseOf evo:procedureAction ;
                     rdfs:domain owl:Action ;
                     rdfs:range evo:Procedure .
@@ -81,101 +69,85 @@ evo:actionProcedure rdf:type owl:ObjectProperty ;
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#alternateAction
 evo:alternateAction rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf evo:action ;
                     rdfs:domain owl:Action ;
                     rdfs:range owl:Action .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#alternateIngredient
 evo:alternateIngredient rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf evo:ingredient ;
                         rdfs:domain evo:Ingredient ;
                         rdfs:range evo:Ingredient .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#alternateProcedure
 evo:alternateProcedure rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf evo:procedure ;
                        rdfs:domain evo:Procedure ;
                        rdfs:range evo:Procedure .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#hasIngredient
 evo:hasIngredient rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf evo:ingredient ;
-                  owl:inverseOf evo:hasIngredientType ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
                   rdfs:domain evo:IngredientType ;
                   rdfs:range evo:Ingredient .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#hasIngredientType
 evo:hasIngredientType rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf evo:ingredient ;
-                      rdfs:domain evo:Ingredient ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain <http://schema.org/Recipe> ;
                       rdfs:range evo:IngredientType .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#ingredient
-evo:ingredient rdf:type owl:ObjectProperty .
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#hasSpice
+evo:hasSpice rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf evo:hasIngredient ;
+             rdfs:domain evo:Spice ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( evo:HerbAndSpiceMix
+                                        evo:Spices
+                                      )
+                        ] .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#ingredientAction
 evo:ingredientAction rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf evo:ingredient ;
                      rdfs:domain evo:Ingredient ;
                      rdfs:range owl:Action .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#procedure
-evo:procedure rdf:type owl:ObjectProperty .
-
-
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#procedureAction
 evo:procedureAction rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf evo:procedure ;
                     rdfs:domain evo:Procedure ;
                     rdfs:range owl:Action .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#quantity
-evo:quantity rdf:type owl:ObjectProperty .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#recipe
-evo:recipe rdf:type owl:ObjectProperty .
-
-
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#recipeAction
 evo:recipeAction rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf evo:recipe ;
                  rdfs:domain <http://schema.org/Recipe> ;
                  rdfs:range owl:Action .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#recipeIngredient
 evo:recipeIngredient rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf evo:recipe ;
                      rdfs:domain <http://schema.org/Recipe> ;
                      rdfs:range evo:Ingredient .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#recipeProcedure
 evo:recipeProcedure rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf evo:recipe ;
                     rdfs:domain <http://schema.org/Recipe> ;
                     rdfs:range evo:Procedure .
 
 
 ###  http://www.w3.org/2002/07/owl#is_consequence_of
 owl:is_consequence_of rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf evo:action ;
                       rdfs:domain owl:Action ;
                       rdfs:range owl:Action .
 
 
 ###  http://www.w3.org/2002/07/owl#is_dependent_on
 owl:is_dependent_on rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf evo:action ;
                     rdfs:domain owl:Action ;
                     rdfs:range owl:Action .
 
@@ -448,33 +420,15 @@ qudt:Unit rdf:type owl:Class .
 <http://schema.org/Recipe> rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Africa
-evo:Africa rdf:type owl:Class ;
-           rdfs:subClassOf evo:Herbs ,
-                           evo:Spices .
-
-
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Alcohol
 evo:Alcohol rdf:type owl:Class ;
             rdfs:subClassOf evo:Liquids .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#America
-evo:America rdf:type owl:Class ;
-            rdfs:subClassOf evo:Herbs ,
-                            evo:Spices .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Apple
 evo:Apple rdf:type owl:Class ;
           rdfs:subClassOf evo:PomeFruit ;
           owl:disjointWith evo:Pear .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Asia
-evo:Asia rdf:type owl:Class ;
-         rdfs:subClassOf evo:Herbs ,
-                         evo:Spices .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#AsianNoodle
@@ -499,17 +453,16 @@ evo:Bacon rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Bake
 evo:Bake rdf:type owl:Class ;
-         rdfs:subClassOf evo:Cooking .
+         rdfs:subClassOf evo:Cooking ;
+         rdfs:comment """Cooking by dry heat, especially in some kind of oven
+
+Like 
+Blind Bake or Pre Bake"""@en .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#BakedGoods
 evo:BakedGoods rdf:type owl:Class ;
                rdfs:subClassOf evo:Ingredient .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Barbecue
-evo:Barbecue rdf:type owl:Class ;
-             rdfs:subClassOf evo:Cooking .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Barley
@@ -519,12 +472,21 @@ evo:Barley rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#BeanProducts
 evo:BeanProducts rdf:type owl:Class ;
-                 rdfs:subClassOf evo:LegumesAndNuts .
+                 rdfs:subClassOf evo:Legumes .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Beef
 evo:Beef rdf:type owl:Class ;
          rdfs:subClassOf evo:Meats .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Bending
+evo:Bending rdf:type owl:Class ;
+            rdfs:subClassOf evo:Preparatory ;
+            rdfs:comment """Bend:
+Turn:
+Fold:
+Unfold"""@en .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Berries
@@ -537,14 +499,20 @@ evo:BlueCheese rdf:type owl:Class ;
                rdfs:subClassOf evo:Cheese .
 
 
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Boiling
+evo:Boiling rdf:type owl:Class ;
+            rdfs:subClassOf evo:Cooking ;
+            rdfs:comment """Boil:
+Simmer:
+Poach:
+Stew:
+Parboil:
+Steam:"""@en .
+
+
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Bread
 evo:Bread rdf:type owl:Class ;
           rdfs:subClassOf evo:BakedGoods .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Broil
-evo:Broil rdf:type owl:Class ;
-          rdfs:subClassOf evo:Cooking .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#BuckWheat
@@ -552,9 +520,26 @@ evo:BuckWheat rdf:type owl:Class ;
               rdfs:subClassOf evo:Grains .
 
 
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Bulb
+evo:Bulb rdf:type owl:Class ;
+         rdfs:subClassOf evo:Vegetable ;
+         rdfs:comment "Garlic, Onion"@en .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Burn
+evo:Burn rdf:type owl:Class ;
+         rdfs:subClassOf evo:Cooking ;
+         rdfs:comment """Brown:
+Caramelize:
+Sear:
+Toast:
+Glaze: A glaze is a sauce that is cooked onto a protein or vegetable so that the sugars caramelize, get slightly sticky, and adhere to whatever it is that you're cooking."""@en .
+
+
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Cabbage
 evo:Cabbage rdf:type owl:Class ;
-            rdfs:subClassOf evo:Vegetable .
+            rdfs:subClassOf evo:Vegetable ;
+            rdfs:comment "Green cabbage, Red cabbage, Collards, Kohlrabi, Broccoli, Brussels sprouts, Cauliflower, and Kale"@en .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Cake
@@ -565,11 +550,6 @@ evo:Cake rdf:type owl:Class ;
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Candy
 evo:Candy rdf:type owl:Class ;
           rdfs:subClassOf evo:Flavorings .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Caramelize
-evo:Caramelize rdf:type owl:Class ;
-               rdfs:subClassOf evo:Cooking .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#CaviarRoe
@@ -597,14 +577,15 @@ evo:CitrusFruit rdf:type owl:Class ;
                 rdfs:subClassOf evo:Fruits .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Clean
-evo:Clean rdf:type owl:Class ;
-          rdfs:subClassOf evo:Preparatory .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Close
-evo:Close rdf:type owl:Class ;
-          rdfs:subClassOf evo:Preparatory .
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Cleaning
+evo:Cleaning rdf:type owl:Class ;
+             rdfs:subClassOf evo:Preparatory ;
+             rdfs:comment """Clean:
+Wash:
+Scrub:
+Sterilize:
+Rinse:
+Wipe:"""@en .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#ColdCuts
@@ -632,14 +613,21 @@ evo:CookingGreens rdf:type owl:Class ;
                   rdfs:subClassOf evo:Vegetable .
 
 
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Cooling
+evo:Cooling rdf:type owl:Class ;
+            rdfs:subClassOf evo:PostCooking ;
+            rdfs:comment """Cool:
+
+Chill:
+
+Refrigerate:
+
+Fan:"""@en .
+
+
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Corn
 evo:Corn rdf:type owl:Class ;
          rdfs:subClassOf evo:Grains .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Cover
-evo:Cover rdf:type owl:Class ;
-          rdfs:subClassOf evo:Preparatory .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Cracker
@@ -672,6 +660,19 @@ evo:CurvedMeats rdf:type owl:Class ;
                 rdfs:subClassOf evo:Meats .
 
 
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Cutting
+evo:Cutting rdf:type owl:Class ;
+            rdfs:subClassOf evo:Preparatory ;
+            rdfs:comment """Cut:
+Chop:
+Mince:
+Cube:
+Dice:
+Split:
+Shred:
+Strip:"""@en .
+
+
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Dairy
 evo:Dairy rdf:type owl:Class ;
           rdfs:subClassOf evo:Ingredient .
@@ -683,6 +684,28 @@ evo:DairyMilkAndCream rdf:type owl:Class ;
                       owl:disjointWith evo:Non-dairyMilkAndCream .
 
 
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Dipping
+evo:Dipping rdf:type owl:Class ;
+            rdfs:subClassOf evo:Preparatory ;
+            rdfs:comment """Dip:
+Douse:
+Plunge:
+Soak:
+Submerge:
+Immerse:"""@en .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#DirectHeating
+evo:DirectHeating rdf:type owl:Class ;
+                  rdfs:subClassOf evo:Cooking ;
+                  rdfs:comment """Barbecue:
+Broil
+Charbroil
+Grill
+Roast
+Grill"""@en .
+
+
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Dough
 evo:Dough rdf:type owl:Class ;
           rdfs:subClassOf evo:GrainProducts .
@@ -690,7 +713,7 @@ evo:Dough rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#DriedBeans
 evo:DriedBeans rdf:type owl:Class ;
-               rdfs:subClassOf evo:LegumesAndNuts .
+               rdfs:subClassOf evo:Legumes .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#DriedChile
@@ -710,29 +733,19 @@ evo:DriedMeats rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#DriedPeas
 evo:DriedPeas rdf:type owl:Class ;
-              rdfs:subClassOf evo:LegumesAndNuts .
+              rdfs:subClassOf evo:Legumes .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#EdiblePods
 evo:EdiblePods rdf:type owl:Class ;
-               rdfs:subClassOf evo:LegumesAndNuts ,
-                               evo:Vegetable .
+               rdfs:subClassOf evo:Legumes ,
+                               evo:Vegetable ;
+               rdfs:comment "Sugar Pea, Chinese Pea, Ladyfinger"@en .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#EggPlants
 evo:EggPlants rdf:type owl:Class ;
               rdfs:subClassOf evo:FruitVegetables .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Eggs
-evo:Eggs rdf:type owl:Class ;
-         rdfs:subClassOf evo:Dairy .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Europe
-evo:Europe rdf:type owl:Class ;
-           rdfs:subClassOf evo:Herbs ,
-                           evo:Spices .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#ExoticTropicalFruit
@@ -766,6 +779,20 @@ evo:FattyFlakyTextured rdf:type owl:Class ;
                        rdfs:subClassOf evo:Fish .
 
 
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Finishing
+evo:Finishing rdf:type owl:Class ;
+              rdfs:subClassOf evo:PostCooking ;
+              rdfs:comment """Dust:
+Sprinkle:
+Garnish:
+Dredge:
+Dust:
+Spray:
+Top:
+Drizzle:
+Layer:"""@en .
+
+
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#FirmCheese
 evo:FirmCheese rdf:type owl:Class ;
                rdfs:subClassOf evo:Cheese .
@@ -793,8 +820,9 @@ evo:FoodWrapper rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#FreshBeans
 evo:FreshBeans rdf:type owl:Class ;
-               rdfs:subClassOf evo:LegumesAndNuts ,
-                               evo:Vegetable .
+               rdfs:subClassOf evo:Legumes ,
+                               evo:Vegetable ;
+               rdfs:comment "Soybean, Beer bean"@en .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#FreshCheese
@@ -809,7 +837,7 @@ evo:FreshChile rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#FreshPeas
 evo:FreshPeas rdf:type owl:Class ;
-              rdfs:subClassOf evo:LegumesAndNuts ,
+              rdfs:subClassOf evo:Legumes ,
                               evo:Vegetable .
 
 
@@ -834,26 +862,27 @@ evo:Fruits rdf:type owl:Class ;
            rdfs:subClassOf evo:Ingredient .
 
 
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Fry
+evo:Fry rdf:type owl:Class ;
+        rdfs:subClassOf evo:Cooking ;
+        rdfs:comment """StirFry:
+Saute: fry quickly in a little hot fat.
+DeepFry:
+ShallowFry:
+AirFry:
+PanFry:
+Braise: fry (food) lightly and then stew it slowly in a closed container."""@en .
+
+
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#GameMeat
 evo:GameMeat rdf:type owl:Class ;
              rdfs:subClassOf evo:Meats .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Garlic
-evo:Garlic rdf:type owl:Class ;
-           rdfs:subClassOf evo:Flavorings ,
-                           evo:Vegetable .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Gelatin
 evo:Gelatin rdf:type owl:Class ;
             rdfs:subClassOf evo:Thickener ;
             owl:disjointWith evo:StarchThickener .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Glaze
-evo:Glaze rdf:type owl:Class ;
-          rdfs:subClassOf evo:Cooking .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#GrainProducts
@@ -864,16 +893,6 @@ evo:GrainProducts rdf:type owl:Class ;
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Grains
 evo:Grains rdf:type owl:Class ;
            rdfs:subClassOf evo:Ingredient .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Gratin
-evo:Gratin rdf:type owl:Class ;
-           rdfs:subClassOf evo:Cooking .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Grill
-evo:Grill rdf:type owl:Class ;
-          rdfs:subClassOf evo:Cooking .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Ham
@@ -891,18 +910,6 @@ evo:Herbs rdf:type owl:Class ;
           rdfs:subClassOf evo:Flavorings .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Hispanic
-evo:Hispanic rdf:type owl:Class ;
-             rdfs:subClassOf evo:Herbs ,
-                             evo:Spices .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#India
-evo:India rdf:type owl:Class ;
-          rdfs:subClassOf evo:Herbs ,
-                          evo:Spices .
-
-
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#InflorescentVegetables
 evo:InflorescentVegetables rdf:type owl:Class ;
                            rdfs:subClassOf evo:Vegetable .
@@ -914,11 +921,6 @@ evo:Ingredient rdf:type owl:Class .
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#IngredientType
 evo:IngredientType rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Introduce
-evo:Introduce rdf:type owl:Class ;
-              rdfs:subClassOf evo:Preparatory .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Juices
@@ -947,14 +949,14 @@ evo:LeanFlakyTextured rdf:type owl:Class ;
                       rdfs:subClassOf evo:Fish .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#LegumesAndNuts
-evo:LegumesAndNuts rdf:type owl:Class ;
-                   rdfs:subClassOf evo:Ingredient .
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Legumes
+evo:Legumes rdf:type owl:Class ;
+            rdfs:subClassOf evo:Ingredient .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Lentils
 evo:Lentils rdf:type owl:Class ;
-            rdfs:subClassOf evo:LegumesAndNuts .
+            rdfs:subClassOf evo:Ingredient .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#LiquidSweetner
@@ -977,9 +979,26 @@ evo:Liquors rdf:type owl:Class ;
             rdfs:subClassOf evo:Flavorings .
 
 
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Lubricate
+evo:Lubricate rdf:type owl:Class ;
+              rdfs:subClassOf evo:Preparatory ;
+              rdfs:comment """Grease:
+
+Oil:
+
+Smear:"""@en .
+
+
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#MainIngredient
 evo:MainIngredient rdf:type owl:Class ;
                    rdfs:subClassOf evo:IngredientType .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#MeatSpecific
+evo:MeatSpecific rdf:type owl:Class ;
+                 rdfs:subClassOf evo:Preparatory ;
+                 rdfs:comment """Bone:
+DeBone:"""@en .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Meats
@@ -992,15 +1011,22 @@ evo:Melons rdf:type owl:Class ;
            rdfs:subClassOf evo:Fruits .
 
 
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Melting
+evo:Melting rdf:type owl:Class ;
+            rdfs:subClassOf evo:Preparatory ;
+            rdfs:comment """Melt:
+Liquefy:
+Defrost:
+Thaw:
+Unfreeze:
+Soften:"""@en .
+
+
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Microwave
 evo:Microwave rdf:type owl:Class ;
-              rdfs:subClassOf evo:Cooking .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#MiddleEast
-evo:MiddleEast rdf:type owl:Class ;
-               rdfs:subClassOf evo:Herbs ,
-                               evo:Spices .
+              rdfs:subClassOf evo:Cooking ;
+              rdfs:comment """Heat
+Preheat"""@en .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#MilkAndCream
@@ -1009,14 +1035,26 @@ evo:MilkAndCream rdf:type owl:Class ;
                                  evo:Liquids .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Mix
-evo:Mix rdf:type owl:Class ;
-        rdfs:subClassOf evo:Preparatory .
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Mixing
+evo:Mixing rdf:type owl:Class ;
+           rdfs:subClassOf evo:Preparatory ;
+           rdfs:comment """Mix:
 
+Blend:
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Move
-evo:Move rdf:type owl:Class ;
-         rdfs:subClassOf evo:Preparatory .
+Stir:
+
+Whip:
+
+Wisk:
+
+Beat:
+
+Add:
+
+Pour:
+
+Combine:"""@en .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Mushrooms
@@ -1035,25 +1073,9 @@ evo:NonWheatFlour rdf:type owl:Class ;
                   rdfs:subClassOf evo:GrainProducts .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#NutAndSeed
-evo:NutAndSeed rdf:type owl:Class ;
-               rdfs:subClassOf evo:Flavorings .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#NutFlour
-evo:NutFlour rdf:type owl:Class ;
-             rdfs:subClassOf evo:GrainProducts ,
-                             evo:LegumesAndNuts .
-
-
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Nuts
 evo:Nuts rdf:type owl:Class ;
-         rdfs:subClassOf evo:LegumesAndNuts .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#NutsAndSeedPaste
-evo:NutsAndSeedPaste rdf:type owl:Class ;
-                     rdfs:subClassOf evo:LegumesAndNuts .
+         rdfs:subClassOf evo:Flavorings .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Oat
@@ -1069,12 +1091,6 @@ evo:OilsAndCookingSprays rdf:type owl:Class ;
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Olive
 evo:Olive rdf:type owl:Class ;
           rdfs:subClassOf evo:FruitVegetables .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Onion
-evo:Onion rdf:type owl:Class ;
-          rdfs:subClassOf evo:Flavorings ,
-                          evo:Vegetable .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#OtherGrains
@@ -1107,14 +1123,41 @@ evo:Pear rdf:type owl:Class ;
          rdfs:subClassOf evo:PomeFruit .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Plating
-evo:Plating rdf:type owl:Class ;
-            rdfs:subClassOf owl:Action .
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Peeling
+evo:Peeling rdf:type owl:Class ;
+            rdfs:subClassOf evo:Preparatory ;
+            rdfs:comment """Peel: remove the outer covering or skin from (a fruit or vegetable).
+
+Shave: cut (a thin slice or slices) from the surface of something.
+
+Hull: The hull or calyx is the green leafy top of the strawberry, which is generally removed before cooking or serving.
+
+Pare:
+
+Skin:
+
+Strip:
+
+Trim: Remove all unwanted or inedible parts (i.e. sinews, skin, fat etc.) from meat, fish poultry or vegetables.
+
+Shell:
+
+Husk:
+
+Shuck:"""@en .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Poach
-evo:Poach rdf:type owl:Class ;
-          rdfs:subClassOf evo:Cooking .
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Placement
+evo:Placement rdf:type owl:Class ;
+              rdfs:subClassOf evo:Preparatory ;
+              rdfs:comment """Place:
+Position:
+Set:
+Lay:
+Put:
+Leave:
+Arrange:
+Alternate:"""@en .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#PomeFruit
@@ -1125,6 +1168,11 @@ evo:PomeFruit rdf:type owl:Class ;
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Pork
 evo:Pork rdf:type owl:Class ;
          rdfs:subClassOf evo:Meats .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#PostCooking
+evo:PostCooking rdf:type owl:Class ;
+                rdfs:subClassOf owl:Action .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Poultry
@@ -1152,25 +1200,19 @@ evo:ProcessedChesse rdf:type owl:Class ;
                     rdfs:subClassOf evo:Cheese .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#ReduceSize
-evo:ReduceSize rdf:type owl:Class ;
-               rdfs:subClassOf evo:Preparatory .
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Remove
+evo:Remove rdf:type owl:Class ;
+           rdfs:subClassOf evo:Preparatory ;
+           rdfs:comment """Drain:
 
+Clear:
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Rhizomes
-evo:Rhizomes rdf:type owl:Class ;
-             rdfs:subClassOf evo:Flavorings ,
-                             evo:Vegetable .
+Remove:"""@en .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Rice
 evo:Rice rdf:type owl:Class ;
          rdfs:subClassOf evo:Grains .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Roast
-evo:Roast rdf:type owl:Class ;
-          rdfs:subClassOf evo:Cooking .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Roots
@@ -1188,24 +1230,9 @@ evo:SaladGreens rdf:type owl:Class ;
                 rdfs:subClassOf evo:Vegetable .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Salt
-evo:Salt rdf:type owl:Class ;
-         rdfs:subClassOf evo:Flavorings .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Sanitation
-evo:Sanitation rdf:type owl:Class ;
-               rdfs:subClassOf owl:Action .
-
-
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Sausages
 evo:Sausages rdf:type owl:Class ;
              rdfs:subClassOf evo:CurvedMeats .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Saute
-evo:Saute rdf:type owl:Class ;
-          rdfs:subClassOf evo:Cooking .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Scramble
@@ -1216,6 +1243,17 @@ evo:Scramble rdf:type owl:Class ;
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#SeaVegetables
 evo:SeaVegetables rdf:type owl:Class ;
                   rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Seasoning
+evo:Seasoning rdf:type owl:Class ;
+              rdfs:subClassOf evo:Preparatory ;
+              rdfs:comment """Season
+Flavor
+Salt
+Spice
+Re-spice
+Re-season"""@en .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Seeds
@@ -1233,16 +1271,6 @@ evo:SemiSoftCheese rdf:type owl:Class ;
                    rdfs:subClassOf evo:Cheese .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Separate
-evo:Separate rdf:type owl:Class ;
-             rdfs:subClassOf evo:Preparatory .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Shape
-evo:Shape rdf:type owl:Class ;
-          rdfs:subClassOf evo:Preparatory .
-
-
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#ShellFish
 evo:ShellFish rdf:type owl:Class ;
               rdfs:subClassOf evo:Fish .
@@ -1253,14 +1281,9 @@ evo:SideIngredient rdf:type owl:Class ;
                    rdfs:subClassOf evo:IngredientType .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Simmer
-evo:Simmer rdf:type owl:Class ;
-           rdfs:subClassOf evo:Cooking .
-
-
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#SnapBeans
 evo:SnapBeans rdf:type owl:Class ;
-              rdfs:subClassOf evo:LegumesAndNuts ,
+              rdfs:subClassOf evo:Legumes ,
                               evo:Vegetable .
 
 
@@ -1271,7 +1294,7 @@ evo:SoftCheese rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#SoyProducts
 evo:SoyProducts rdf:type owl:Class ;
-                rdfs:subClassOf evo:LegumesAndNuts .
+                rdfs:subClassOf evo:Legumes .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Spelt
@@ -1304,14 +1327,10 @@ evo:StarchThickener rdf:type owl:Class ;
                     rdfs:subClassOf evo:Thickener .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Steam
-evo:Steam rdf:type owl:Class ;
-          rdfs:subClassOf evo:Cooking .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Stew
-evo:Stew rdf:type owl:Class ;
-         rdfs:subClassOf evo:Cooking .
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Stems
+evo:Stems rdf:type owl:Class ;
+          rdfs:subClassOf evo:Vegetable ;
+          rdfs:comment "Ginger, Turmeric, Galangal, Lesser galangal, Finger Root"@en .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Stocks
@@ -1324,9 +1343,13 @@ evo:StoneFruit rdf:type owl:Class ;
                rdfs:subClassOf evo:Fruits .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#StriFry
-evo:StriFry rdf:type owl:Class ;
-            rdfs:subClassOf evo:Cooking .
+###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Storage
+evo:Storage rdf:type owl:Class ;
+            rdfs:subClassOf evo:PostCooking ;
+            rdfs:comment """Bottle
+Bowl
+Store
+Save"""@en .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#SummerSquash
@@ -1339,19 +1362,9 @@ evo:SweetPepper rdf:type owl:Class ;
                 rdfs:subClassOf evo:FruitVegetables .
 
 
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Syrups
-evo:Syrups rdf:type owl:Class ;
-           rdfs:subClassOf evo:LiquidSweetners .
-
-
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Thickener
 evo:Thickener rdf:type owl:Class ;
               rdfs:subClassOf evo:GrainProducts .
-
-
-###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Toast
-evo:Toast rdf:type owl:Class ;
-          rdfs:subClassOf evo:Cooking .
 
 
 ###  http://www.semanticweb.org/hammad/ontologies/2021/2RecipeOntology#Tomatoes
@@ -1416,7 +1429,8 @@ evo:WinterSquash rdf:type owl:Class ;
 
 
 ###  http://www.w3.org/2002/07/owl#Action
-owl:Action rdf:type owl:Class .
+owl:Action rdf:type owl:Class ;
+           rdfs:comment "Scramble: cook (eggs) by beating them with a little liquid and then cooking and stirring them gently."@en .
 
 
 #################################################################
@@ -1449,20 +1463,6 @@ evo:Moderate rdf:type owl:NamedIndividual .
                 evo:Stocks
                 evo:Vinegar
                 evo:WaterAndSoda
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( evo:AsianNoodle
-                evo:Dough
-                evo:FoodWrapper
-                evo:NonWheatFlour
-                evo:NutFlour
-                evo:OtherNoodle
-                evo:Pasta
-                evo:Thickener
-                evo:WheatFlour
               )
 ] .
 
@@ -1504,23 +1504,6 @@ evo:Moderate rdf:type owl:NamedIndividual .
                 evo:Spelt
                 evo:Triticale
                 evo:Wheat
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( evo:BeanProducts
-                evo:DriedBeans
-                evo:DriedPeas
-                evo:EdiblePods
-                evo:FreshBeans
-                evo:FreshPeas
-                evo:Lentils
-                evo:NutFlour
-                evo:Nuts
-                evo:NutsAndSeedPaste
-                evo:SnapBeans
-                evo:SoyProducts
               )
 ] .
 
@@ -1582,45 +1565,12 @@ evo:Moderate rdf:type owl:NamedIndividual .
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( evo:Cabbage
-                evo:CookingGreens
-                evo:EdiblePods
-                evo:FreshBeans
-                evo:FreshPeas
-                evo:FruitVegetables
-                evo:Garlic
-                evo:InflorescentVegetables
-                evo:Mushrooms
-                evo:Onion
-                evo:OtherVegetables
-                evo:Rhizomes
-                evo:Roots
-                evo:SaladGreens
-                evo:SeaVegetables
-                evo:SnapBeans
-                evo:Sprouts
-                evo:StalkVegetables
-                evo:Tubers
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
   owl:members ( evo:CaviarRoe
                 evo:FattyFirmTextured
                 evo:FattyFlakyTextured
                 evo:LeanFirmTextured
                 evo:LeanFlakyTextured
                 evo:ShellFish
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( evo:Cheese
-                evo:CulturedMilkProducts
-                evo:Eggs
-                evo:MilkAndCream
               )
 ] .
 
