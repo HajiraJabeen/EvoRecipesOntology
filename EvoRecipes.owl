@@ -207,15 +207,18 @@ evo:hasTypePreparatory rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.w3.org/2002/07/owl#hasMainIngredient
-owl:hasMainIngredient rdf:type owl:ObjectProperty .
+owl:hasMainIngredient rdf:type owl:ObjectProperty ;
+                      rdfs:domain <http://schema.org/Recipe> .
 
 
 ###  http://www.w3.org/2002/07/owl#hasSideIngredient
-owl:hasSideIngredient rdf:type owl:ObjectProperty .
+owl:hasSideIngredient rdf:type owl:ObjectProperty ;
+                      rdfs:domain <http://schema.org/Recipe> .
 
 
 ###  http://www.w3.org/2002/07/owl#hasSpice
-owl:hasSpice rdf:type owl:ObjectProperty .
+owl:hasSpice rdf:type owl:ObjectProperty ;
+             rdfs:domain <http://schema.org/Recipe> .
 
 
 ###  http://www.w3.org/2002/07/owl#has_duration
@@ -408,48 +411,48 @@ evo:recipeCourse rdf:type owl:DatatypeProperty ;
 
 ###  http://qudt.org/2.1/schema/qudt#Quantity
 qudt:Quantity rdf:type owl:Class ;
-              owl:equivalentClass [ rdf:type owl:Restriction ;
-                                    owl:onProperty qudt:hasQuantityValue ;
-                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onClass qudt:QuantityValue
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty qudt:hasUnit ;
-                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onClass qudt:Unit
-                                  ] .
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty qudt:hasQuantityValue ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass qudt:QuantityValue
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty qudt:hasUnit ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass qudt:Unit
+                              ] .
 
 
 ###  http://qudt.org/2.1/schema/qudt#QuantityValue
 qudt:QuantityValue rdf:type owl:Class ;
-                   owl:equivalentClass [ rdf:type owl:Restriction ;
-                                         owl:onProperty qudt:hasNumericValue ;
-                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                         owl:onDataRange xsd:double
-                                       ] .
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty qudt:hasNumericValue ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onDataRange xsd:double
+                                   ] .
 
 
 ###  http://qudt.org/2.1/schema/qudt#Unit
 qudt:Unit rdf:type owl:Class ;
-          owl:equivalentClass [ rdf:type owl:Restriction ;
-                                owl:onProperty qudt:Abbreviation ;
-                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onDataRange xsd:string
-                              ] .
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty qudt:Abbreviation ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] .
 
 
 ###  http://schema.org/AggregateRating
 <http://schema.org/AggregateRating> rdf:type owl:Class ;
-                                    owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                          owl:onProperty <http://schema.org/ratingCount> ;
-                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                          owl:onDataRange xsd:integer
-                                                        ] ,
-                                                        [ rdf:type owl:Restriction ;
-                                                          owl:onProperty <http://schema.org/reviewCount> ;
-                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                          owl:onDataRange xsd:integer
-                                                        ] .
+                                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://schema.org/ratingCount> ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onDataRange xsd:integer
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://schema.org/reviewCount> ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onDataRange xsd:integer
+                                                    ] .
 
 
 ###  http://schema.org/NutritionInformation
@@ -458,55 +461,55 @@ qudt:Unit rdf:type owl:Class ;
 
 ###  http://schema.org/Person
 <http://schema.org/Person> rdf:type owl:Class ;
-                           owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                 owl:onProperty <http://schema.org/email> ;
-                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                 owl:onDataRange xsd:string
-                                               ] ,
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty <http://schema.org/givenName> ;
-                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                 owl:onDataRange xsd:string
-                                               ] .
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/email> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/givenName> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] .
 
 
 ###  http://schema.org/Recipe
 <http://schema.org/Recipe> rdf:type owl:Class ;
-                           owl:equivalentClass [ rdf:type owl:Restriction ;
-                                                 owl:onProperty evo:hasRecipeIngredient ;
-                                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                 owl:onClass evo:Ingredient
-                                               ] ,
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty <http://schema.org/author> ;
-                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                 owl:onClass <http://schema.org/Person>
-                                               ] ,
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty evo:hasAggregateRating ;
-                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                 owl:onClass <http://schema.org/AggregateRating>
-                                               ] ,
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty <http://schema.org/cookTime> ;
-                                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                 owl:onClass qudt:Quantity
-                                               ] ,
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty <http://schema.org/prepTime> ;
-                                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                 owl:onClass qudt:Quantity
-                                               ] ,
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty <http://schema.org/totalTime> ;
-                                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                 owl:onClass qudt:Quantity
-                                               ] ,
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty <http://schema.org/url> ;
-                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                 owl:onDataRange xsd:string
-                                               ] .
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty evo:hasRecipeIngredient ;
+                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass evo:Ingredient
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/author> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass <http://schema.org/Person>
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty evo:hasAggregateRating ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass <http://schema.org/AggregateRating>
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/cookTime> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass qudt:Quantity
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/prepTime> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass qudt:Quantity
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/totalTime> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass qudt:Quantity
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/url> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] .
 
 
 ###  http://www.evorecipes.org#ActionType
@@ -1046,24 +1049,24 @@ evo:InflorescentVegetables rdf:type owl:Class ;
 
 ###  http://www.evorecipes.org#Ingredient
 evo:Ingredient rdf:type owl:Class ;
-               owl:equivalentClass [ rdf:type owl:Restriction ;
-                                     owl:onProperty evo:hasAction ;
-                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass owl:Action
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty evo:hasQuantity ;
-                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass qudt:Quantity
-                                   ] .
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty evo:hasAction ;
+                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass owl:Action
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty evo:hasQuantity ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass qudt:Quantity
+                               ] .
 
 
 ###  http://www.evorecipes.org#IngredientType
 evo:IngredientType rdf:type owl:Class ;
-                   owl:equivalentClass [ rdf:type owl:Restriction ;
-                                         owl:onProperty evo:hasIngredient ;
-                                         owl:someValuesFrom evo:Ingredient
-                                       ] .
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty evo:hasIngredient ;
+                                     owl:someValuesFrom evo:Ingredient
+                                   ] .
 
 
 ###  http://www.evorecipes.org#Juices
@@ -1361,11 +1364,11 @@ evo:Preserves rdf:type owl:Class ;
 
 ###  http://www.evorecipes.org#Procedure
 evo:Procedure rdf:type owl:Class ;
-              owl:equivalentClass [ rdf:type owl:Restriction ;
-                                    owl:onProperty evo:hasAction ;
-                                    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                    owl:onClass owl:Action
-                                  ] .
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty evo:hasAction ;
+                                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                owl:onClass owl:Action
+                              ] .
 
 
 ###  http://www.evorecipes.org#ProcessedChesse
@@ -1653,46 +1656,33 @@ evo:WinterSquash rdf:type owl:Class ;
 
 ###  http://www.w3.org/2002/07/owl#Action
 owl:Action rdf:type owl:Class ;
-           owl:equivalentClass [ rdf:type owl:Restriction ;
-                                 owl:onProperty seq:directlyFollows ;
-                                 owl:someValuesFrom owl:Action
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty seq:directlyPrecedes ;
-                                 owl:someValuesFrom owl:Action
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty evo:hasTypeAction ;
-                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onClass evo:ActionType
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty evo:hasActionName ;
-                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onDataRange xsd:string
-                               ] .
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty seq:directlyFollows ;
+                             owl:someValuesFrom owl:Action
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty seq:directlyPrecedes ;
+                             owl:someValuesFrom owl:Action
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty evo:hasTypeAction ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass evo:ActionType
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty evo:hasActionName ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] .
 
 
-###  http://www.w3.org/2002/07/owl#restriction
-owl:restriction rdf:type owl:Class .
-
-
-[ rdf:type owl:restriction ;
-  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
 ] .
 
-[ rdf:type owl:restriction ;
-   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
-[ rdf:type owl:restriction
- ] .
-
-[ rdf:type owl:restriction ;
-   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ rdf:type owl:restriction
+[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
