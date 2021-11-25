@@ -1,0 +1,2095 @@
+@prefix : <http://www.evorecipes.org#> .
+@prefix evo: <http://www.evorecipes.org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix seq: <http://ontologydesignpatterns.org/cp/owl/sequence.owl#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix qudt: <http://qudt.org/2.1/schema/qudt#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.evorecipes.org> .
+
+<http://www.evorecipes.org> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#minQualifiedCardinality
+owl:minQualifiedCardinality rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows
+seq:directlyFollows rdf:type owl:ObjectProperty ;
+                    owl:inverseOf seq:directlyPrecedes ;
+                    rdfs:domain evo:Procedure ,
+                                owl:Action ;
+                    rdfs:range evo:Procedure ,
+                               owl:Action .
+
+
+###  http://ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes
+seq:directlyPrecedes rdf:type owl:ObjectProperty ;
+                     rdfs:domain evo:Procedure ,
+                                 owl:Action ;
+                     rdfs:range evo:Procedure ,
+                                owl:Action .
+
+
+###  http://ontologydesignpatterns.org/cp/owl/sequence.owl#follows
+seq:follows rdf:type owl:ObjectProperty ;
+            owl:inverseOf seq:precedes ;
+            rdfs:domain owl:Action ;
+            rdfs:range owl:Action .
+
+
+###  http://ontologydesignpatterns.org/cp/owl/sequence.owl#precedes
+seq:precedes rdf:type owl:ObjectProperty ;
+             rdfs:domain owl:Action ;
+             rdfs:range owl:Action .
+
+
+###  http://qudt.org/2.1/schema/qudt#hasQuantityValue
+qudt:hasQuantityValue rdf:type owl:ObjectProperty ;
+                      rdfs:domain qudt:Quantity ;
+                      rdfs:range qudt:QuantityValue .
+
+
+###  http://qudt.org/2.1/schema/qudt#hasUnit
+qudt:hasUnit rdf:type owl:ObjectProperty ;
+             rdfs:domain qudt:QuantityValue ;
+             rdfs:range qudt:Unit .
+
+
+###  http://schema.org/author
+<http://schema.org/author> rdf:type owl:ObjectProperty ;
+                           rdfs:domain <http://schema.org/Recipe> ;
+                           rdfs:range <http://schema.org/Person> .
+
+
+###  http://schema.org/calories
+<http://schema.org/calories> rdf:type owl:ObjectProperty ;
+                             rdfs:domain <http://schema.org/NutritionInformation> ;
+                             rdfs:range qudt:Quantity .
+
+
+###  http://schema.org/carbohydrateContent
+<http://schema.org/carbohydrateContent> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <http://schema.org/NutritionInformation> ;
+                                        rdfs:range qudt:Quantity .
+
+
+###  http://schema.org/cholesterolContent
+<http://schema.org/cholesterolContent> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <http://schema.org/NutritionInformation> ;
+                                       rdfs:range qudt:Quantity .
+
+
+###  http://schema.org/cookTime
+<http://schema.org/cookTime> rdf:type owl:ObjectProperty ;
+                             rdfs:domain <http://schema.org/Recipe> ;
+                             rdfs:range qudt:Quantity .
+
+
+###  http://schema.org/fatContent
+<http://schema.org/fatContent> rdf:type owl:ObjectProperty ;
+                               rdfs:domain <http://schema.org/NutritionInformation> ;
+                               rdfs:range qudt:Quantity .
+
+
+###  http://schema.org/fiberContent
+<http://schema.org/fiberContent> rdf:type owl:ObjectProperty ;
+                                 rdfs:domain <http://schema.org/NutritionInformation> ;
+                                 rdfs:range qudt:Quantity .
+
+
+###  http://schema.org/nutrition
+<http://schema.org/nutrition> rdf:type owl:ObjectProperty ;
+                              rdfs:domain <http://schema.org/Recipe> ;
+                              rdfs:range <http://schema.org/NutritionInformation> .
+
+
+###  http://schema.org/prepTime
+<http://schema.org/prepTime> rdf:type owl:ObjectProperty ;
+                             rdfs:domain <http://schema.org/Recipe> ;
+                             rdfs:range qudt:Quantity .
+
+
+###  http://schema.org/proteinContent
+<http://schema.org/proteinContent> rdf:type owl:ObjectProperty ;
+                                   rdfs:domain <http://schema.org/NutritionInformation> ;
+                                   rdfs:range qudt:Quantity .
+
+
+###  http://schema.org/saturatedFatContent
+<http://schema.org/saturatedFatContent> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <http://schema.org/NutritionInformation> ;
+                                        rdfs:range qudt:Quantity .
+
+
+###  http://schema.org/sodiumContent
+<http://schema.org/sodiumContent> rdf:type owl:ObjectProperty ;
+                                  rdfs:domain <http://schema.org/NutritionInformation> ;
+                                  rdfs:range qudt:Quantity .
+
+
+###  http://schema.org/sugarContent
+<http://schema.org/sugarContent> rdf:type owl:ObjectProperty ;
+                                 rdfs:domain <http://schema.org/NutritionInformation> ;
+                                 rdfs:range qudt:Quantity .
+
+
+###  http://schema.org/totalTime
+<http://schema.org/totalTime> rdf:type owl:ObjectProperty ;
+                              rdfs:domain <http://schema.org/Recipe> ;
+                              rdfs:range qudt:Quantity .
+
+
+###  http://schema.org/transFatContent
+<http://schema.org/transFatContent> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <http://schema.org/NutritionInformation> ;
+                                    rdfs:range qudt:Quantity .
+
+
+###  http://schema.org/unsaturatedFatContent
+<http://schema.org/unsaturatedFatContent> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <http://schema.org/NutritionInformation> ;
+                                          rdfs:range qudt:Quantity .
+
+
+###  http://schema.org/yield
+<http://schema.org/yield> rdf:type owl:ObjectProperty ;
+                          rdfs:domain <http://schema.org/Recipe> ;
+                          rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#alternateAction
+evo:alternateAction rdf:type owl:ObjectProperty ;
+                    rdfs:domain owl:Action ;
+                    rdfs:range owl:Action .
+
+
+###  http://www.evorecipes.org#calciumContent
+evo:calciumContent rdf:type owl:ObjectProperty ;
+                   rdfs:domain <http://schema.org/NutritionInformation> ;
+                   rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#carbsContent
+evo:carbsContent rdf:type owl:ObjectProperty ;
+                 rdfs:domain <http://schema.org/NutritionInformation> ;
+                 rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#dietaryFiberContent
+evo:dietaryFiberContent rdf:type owl:ObjectProperty ;
+                        rdfs:domain <http://schema.org/NutritionInformation> ;
+                        rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#fiberCarbsContent
+evo:fiberCarbsContent rdf:type owl:ObjectProperty ;
+                      rdfs:domain <http://schema.org/NutritionInformation> ;
+                      rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#hasAction
+evo:hasAction rdf:type owl:ObjectProperty ;
+              rdfs:domain evo:Ingredient ;
+              rdfs:range owl:Action .
+
+
+###  http://www.evorecipes.org#hasAggregateRating
+evo:hasAggregateRating rdf:type owl:ObjectProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:domain <http://schema.org/Recipe> ;
+                       rdfs:range <http://schema.org/AggregateRating> .
+
+
+###  http://www.evorecipes.org#hasAlternateIngredient
+evo:hasAlternateIngredient rdf:type owl:ObjectProperty ;
+                           rdfs:domain evo:Ingredient ;
+                           rdfs:range evo:Ingredient .
+
+
+###  http://www.evorecipes.org#hasAlternateProcedure
+evo:hasAlternateProcedure rdf:type owl:ObjectProperty ;
+                          rdfs:domain evo:Procedure ;
+                          rdfs:range evo:Procedure .
+
+
+###  http://www.evorecipes.org#hasCookingAction
+evo:hasCookingAction rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf evo:hasAction ;
+                     rdfs:domain evo:Ingredient ;
+                     rdfs:range evo:Cooking .
+
+
+###  http://www.evorecipes.org#hasFlavorIngredient
+evo:hasFlavorIngredient rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf evo:hasType ;
+                        rdfs:domain evo:Ingredient ;
+                        rdfs:range evo:FlavorIngredient .
+
+
+###  http://www.evorecipes.org#hasIngredient
+evo:hasIngredient rdf:type owl:ObjectProperty ;
+                  rdfs:domain <http://schema.org/Recipe> ;
+                  rdfs:range evo:Ingredient .
+
+
+###  http://www.evorecipes.org#hasMainIngredient
+evo:hasMainIngredient rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf evo:hasType ;
+                      rdfs:domain evo:Ingredient ;
+                      rdfs:range evo:MainIngredient .
+
+
+###  http://www.evorecipes.org#hasPostCookingAction
+evo:hasPostCookingAction rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf evo:hasAction ;
+                         rdfs:domain evo:Ingredient ;
+                         rdfs:range evo:PostCooking .
+
+
+###  http://www.evorecipes.org#hasPreparatoryAction
+evo:hasPreparatoryAction rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf evo:hasAction ;
+                         rdfs:domain evo:Ingredient ;
+                         rdfs:range evo:Preparatory .
+
+
+###  http://www.evorecipes.org#hasProcedure
+evo:hasProcedure rdf:type owl:ObjectProperty ;
+                 rdfs:domain <http://schema.org/Recipe> ;
+                 rdfs:range evo:Procedure .
+
+
+###  http://www.evorecipes.org#hasProcedureAction
+evo:hasProcedureAction rdf:type owl:ObjectProperty ;
+                       rdfs:domain evo:Procedure ;
+                       rdfs:range owl:Action .
+
+
+###  http://www.evorecipes.org#hasQuantity
+evo:hasQuantity rdf:type owl:ObjectProperty ;
+                rdfs:domain evo:Ingredient ;
+                rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#hasSideIngredient
+evo:hasSideIngredient rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf evo:hasType ;
+                      rdfs:domain evo:Ingredient ;
+                      rdfs:range evo:SideIngredient .
+
+
+###  http://www.evorecipes.org#hasType
+evo:hasType rdf:type owl:ObjectProperty ;
+            rdfs:domain evo:Ingredient ;
+            rdfs:range evo:IngredientType .
+
+
+###  http://www.evorecipes.org#ironContent
+evo:ironContent rdf:type owl:ObjectProperty ;
+                rdfs:domain <http://schema.org/NutritionInformation> ;
+                rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#magnessiumContent
+evo:magnessiumContent rdf:type owl:ObjectProperty ;
+                      rdfs:domain <http://schema.org/NutritionInformation> ;
+                      rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#phosphorousContent
+evo:phosphorousContent rdf:type owl:ObjectProperty ;
+                       rdfs:domain <http://schema.org/NutritionInformation> ;
+                       rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#potassiumContent
+evo:potassiumContent rdf:type owl:ObjectProperty ;
+                     rdfs:domain <http://schema.org/NutritionInformation> ;
+                     rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#sugarCarbsContent
+evo:sugarCarbsContent rdf:type owl:ObjectProperty ;
+                      rdfs:domain <http://schema.org/NutritionInformation> ;
+                      rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#totalCarbsContent
+evo:totalCarbsContent rdf:type owl:ObjectProperty ;
+                      rdfs:domain <http://schema.org/NutritionInformation> ;
+                      rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#totalFatContent
+evo:totalFatContent rdf:type owl:ObjectProperty ;
+                    rdfs:domain <http://schema.org/NutritionInformation> ;
+                    rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#vitaminAContent
+evo:vitaminAContent rdf:type owl:ObjectProperty ;
+                    rdfs:domain <http://schema.org/NutritionInformation> ;
+                    rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#vitaminB12Content
+evo:vitaminB12Content rdf:type owl:ObjectProperty ;
+                      rdfs:domain <http://schema.org/NutritionInformation> ;
+                      rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#vitaminB1Content
+evo:vitaminB1Content rdf:type owl:ObjectProperty ;
+                     rdfs:domain <http://schema.org/NutritionInformation> ;
+                     rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#vitaminB2Content
+evo:vitaminB2Content rdf:type owl:ObjectProperty ;
+                     rdfs:domain <http://schema.org/NutritionInformation> ;
+                     rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#vitaminB3Content
+evo:vitaminB3Content rdf:type owl:ObjectProperty ;
+                     rdfs:domain <http://schema.org/NutritionInformation> ;
+                     rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#vitaminB6Content
+evo:vitaminB6Content rdf:type owl:ObjectProperty ;
+                     rdfs:domain <http://schema.org/NutritionInformation> ;
+                     rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#vitaminB9Content
+evo:vitaminB9Content rdf:type owl:ObjectProperty ;
+                     rdfs:domain <http://schema.org/NutritionInformation> ;
+                     rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#vitaminCContent
+evo:vitaminCContent rdf:type owl:ObjectProperty ;
+                    rdfs:domain <http://schema.org/NutritionInformation> ;
+                    rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#vitaminEContent
+evo:vitaminEContent rdf:type owl:ObjectProperty ;
+                    rdfs:domain <http://schema.org/NutritionInformation> ;
+                    rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#vitaminKContent
+evo:vitaminKContent rdf:type owl:ObjectProperty ;
+                    rdfs:domain <http://schema.org/NutritionInformation> ;
+                    rdfs:range qudt:Quantity .
+
+
+###  http://www.evorecipes.org#zincContent
+evo:zincContent rdf:type owl:ObjectProperty ;
+                rdfs:domain <http://schema.org/NutritionInformation> ;
+                rdfs:range qudt:Quantity .
+
+
+###  http://www.w3.org/2002/07/owl#has_duration
+owl:has_duration rdf:type owl:ObjectProperty ;
+                 rdfs:domain owl:Action ;
+                 rdfs:range qudt:Quantity .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://qudt.org/2.1/schema/qudt#Abbreviation
+qudt:Abbreviation rdf:type owl:DatatypeProperty ;
+                  rdfs:domain qudt:Unit ;
+                  rdfs:range xsd:string .
+
+
+###  http://qudt.org/2.1/schema/qudt#hasNumericValue
+qudt:hasNumericValue rdf:type owl:DatatypeProperty ;
+                     rdfs:domain qudt:QuantityValue ;
+                     rdfs:range xsd:double .
+
+
+###  http://schema.org/cookingMethod
+<http://schema.org/cookingMethod> rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain <http://schema.org/Recipe> ;
+                                  rdfs:range xsd:string .
+
+
+###  http://schema.org/datePublished
+<http://schema.org/datePublished> rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain <http://schema.org/Recipe> ;
+                                  rdfs:range xsd:string .
+
+
+###  http://schema.org/email
+<http://schema.org/email> rdf:type owl:DatatypeProperty ;
+                          rdfs:domain <http://schema.org/Person> ;
+                          rdfs:range xsd:string .
+
+
+###  http://schema.org/givenName
+<http://schema.org/givenName> rdf:type owl:DatatypeProperty ;
+                              rdfs:domain <http://schema.org/Person> ;
+                              rdfs:range xsd:string .
+
+
+###  http://schema.org/keywords
+<http://schema.org/keywords> rdf:type owl:DatatypeProperty ;
+                             rdfs:domain <http://schema.org/Recipe> ;
+                             rdfs:range xsd:string .
+
+
+###  http://schema.org/name
+<http://schema.org/name> rdf:type owl:DatatypeProperty ;
+                         rdfs:domain <http://schema.org/Recipe> ;
+                         rdfs:range xsd:string .
+
+
+###  http://schema.org/ratingCount
+<http://schema.org/ratingCount> rdf:type owl:DatatypeProperty ;
+                                rdfs:domain <http://schema.org/AggregateRating> ;
+                                rdfs:range xsd:integer .
+
+
+###  http://schema.org/recipeCategory
+<http://schema.org/recipeCategory> rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain <http://schema.org/Recipe> ;
+                                   rdfs:range xsd:string .
+
+
+###  http://schema.org/recipeCuisine
+<http://schema.org/recipeCuisine> rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain <http://schema.org/Recipe> ;
+                                  rdfs:range xsd:string .
+
+
+###  http://schema.org/recipeYield
+<http://schema.org/recipeYield> rdf:type owl:DatatypeProperty ;
+                                rdfs:domain <http://schema.org/Recipe> ;
+                                rdfs:range xsd:integer .
+
+
+###  http://schema.org/reviewCount
+<http://schema.org/reviewCount> rdf:type owl:DatatypeProperty ;
+                                rdfs:domain <http://schema.org/AggregateRating> ;
+                                rdfs:range xsd:integer .
+
+
+###  http://schema.org/servingSize
+<http://schema.org/servingSize> rdf:type owl:DatatypeProperty ;
+                                rdfs:domain <http://schema.org/Recipe> ;
+                                rdfs:range xsd:double .
+
+
+###  http://schema.org/suitableForDiet
+<http://schema.org/suitableForDiet> rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain <http://schema.org/Recipe> ;
+                                    rdfs:range xsd:string .
+
+
+###  http://schema.org/tool
+<http://schema.org/tool> rdf:type owl:DatatypeProperty ;
+                         rdfs:domain <http://schema.org/Recipe> ;
+                         rdfs:range xsd:string .
+
+
+###  http://schema.org/url
+<http://schema.org/url> rdf:type owl:DatatypeProperty ;
+                        rdfs:domain <http://schema.org/Recipe> ;
+                        rdfs:range xsd:string .
+
+
+###  http://www.evorecipes.org#hasActionName
+evo:hasActionName rdf:type owl:DatatypeProperty ;
+                  rdfs:domain owl:Action ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.evorecipes.org#hasCourseName
+evo:hasCourseName rdf:type owl:DatatypeProperty ;
+                  rdfs:domain <http://schema.org/Recipe> ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.evorecipes.org#hasDifficultyLevel
+evo:hasDifficultyLevel rdf:type owl:DatatypeProperty ;
+                       rdfs:domain <http://schema.org/Recipe> ;
+                       rdfs:range xsd:string .
+
+
+###  http://www.evorecipes.org#hasIngredientName
+evo:hasIngredientName rdf:type owl:DatatypeProperty ;
+                      rdfs:domain evo:Ingredient ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.evorecipes.org#hasMealType
+evo:hasMealType rdf:type owl:DatatypeProperty ;
+                rdfs:domain <http://schema.org/Recipe> ;
+                rdfs:range xsd:string .
+
+
+###  http://www.evorecipes.org#hasProcedureName
+evo:hasProcedureName rdf:type owl:DatatypeProperty ;
+                     rdfs:domain evo:Procedure ;
+                     rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://qudt.org/2.1/schema/qudt#Quantity
+qudt:Quantity rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty qudt:hasQuantityValue ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass qudt:QuantityValue
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty qudt:hasUnit ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass qudt:Unit
+                              ] .
+
+
+###  http://qudt.org/2.1/schema/qudt#QuantityValue
+qudt:QuantityValue rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty qudt:hasNumericValue ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onDataRange xsd:double
+                                   ] .
+
+
+###  http://qudt.org/2.1/schema/qudt#Unit
+qudt:Unit rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty qudt:Abbreviation ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] .
+
+
+###  http://schema.org/AggregateRating
+<http://schema.org/AggregateRating> rdf:type owl:Class ;
+                                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://schema.org/ratingCount> ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onDataRange xsd:integer
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://schema.org/reviewCount> ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onDataRange xsd:integer
+                                                    ] .
+
+
+###  http://schema.org/NutritionInformation
+<http://schema.org/NutritionInformation> rdf:type owl:Class ;
+                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://schema.org/calories> ;
+                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass qudt:Quantity
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://schema.org/carbohydrateContent> ;
+                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass qudt:Quantity
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://schema.org/cholesterolContent> ;
+                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass qudt:Quantity
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://schema.org/fatContent> ;
+                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass qudt:Quantity
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://schema.org/fiberContent> ;
+                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass qudt:Quantity
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://schema.org/proteinContent> ;
+                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass qudt:Quantity
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://schema.org/saturatedFatContent> ;
+                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass qudt:Quantity
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://schema.org/sodiumContent> ;
+                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass qudt:Quantity
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://schema.org/sugarContent> ;
+                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass qudt:Quantity
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://schema.org/transFatContent> ;
+                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass qudt:Quantity
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://schema.org/unsaturatedFatContent> ;
+                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass qudt:Quantity
+                                                         ] .
+
+
+###  http://schema.org/Person
+<http://schema.org/Person> rdf:type owl:Class ;
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/email> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/givenName> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] .
+
+
+###  http://schema.org/Recipe
+<http://schema.org/Recipe> rdf:type owl:Class ;
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/author> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass <http://schema.org/Person>
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty evo:hasAggregateRating ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass <http://schema.org/AggregateRating>
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/cookTime> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass qudt:Quantity
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/prepTime> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass qudt:Quantity
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/totalTime> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass qudt:Quantity
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/datePublished> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/name> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/recipeCuisine> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/recipeYield> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/url> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty evo:hasDifficultyLevel ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/cookingMethod> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/keywords> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/servingSize> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:double
+                                           ] .
+
+
+###  http://www.evorecipes.org#Alcohol
+evo:Alcohol rdf:type owl:Class ;
+            rdfs:subClassOf evo:Liquids .
+
+
+###  http://www.evorecipes.org#Apple
+evo:Apple rdf:type owl:Class ;
+          rdfs:subClassOf evo:PomeFruit ;
+          owl:disjointWith evo:Pear .
+
+
+###  http://www.evorecipes.org#Apply
+evo:Apply rdf:type owl:Class ;
+          rdfs:subClassOf evo:Preparatory ;
+          rdfs:comment """Apply:
+Knead:
+Spread:
+Massage:
+Rub:
+Pat:
+Butter"""^^xsd:string .
+
+
+###  http://www.evorecipes.org#AsianNoodle
+evo:AsianNoodle rdf:type owl:Class ;
+                rdfs:subClassOf evo:GrainProducts .
+
+
+###  http://www.evorecipes.org#AsianSquash
+evo:AsianSquash rdf:type owl:Class ;
+                rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.evorecipes.org#Avocados
+evo:Avocados rdf:type owl:Class ;
+             rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.evorecipes.org#Bacon
+evo:Bacon rdf:type owl:Class ;
+          rdfs:subClassOf evo:CurvedMeats .
+
+
+###  http://www.evorecipes.org#Bake
+evo:Bake rdf:type owl:Class ;
+         rdfs:subClassOf evo:Cooking ;
+         rdfs:comment """Cooking by dry heat, especially in some kind of oven
+
+Like 
+Blind Bake or Pre Bake"""@en .
+
+
+###  http://www.evorecipes.org#BakedGoods
+evo:BakedGoods rdf:type owl:Class ;
+               rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.evorecipes.org#Barley
+evo:Barley rdf:type owl:Class ;
+           rdfs:subClassOf evo:Grains .
+
+
+###  http://www.evorecipes.org#BeanProducts
+evo:BeanProducts rdf:type owl:Class ;
+                 rdfs:subClassOf evo:Legumes .
+
+
+###  http://www.evorecipes.org#Beef
+evo:Beef rdf:type owl:Class ;
+         rdfs:subClassOf evo:Meats .
+
+
+###  http://www.evorecipes.org#Bend
+evo:Bend rdf:type owl:Class ;
+         rdfs:subClassOf evo:Preparatory ;
+         rdfs:comment """Bend:
+Turn:
+Fold:
+Unfold
+Flip
+Rotate
+Mold
+Unmold"""@en .
+
+
+###  http://www.evorecipes.org#Berries
+evo:Berries rdf:type owl:Class ;
+            rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.evorecipes.org#BlueCheese
+evo:BlueCheese rdf:type owl:Class ;
+               rdfs:subClassOf evo:Cheese .
+
+
+###  http://www.evorecipes.org#Boil
+evo:Boil rdf:type owl:Class ;
+         rdfs:subClassOf evo:Cooking ;
+         rdfs:comment """Boil:
+Simmer:
+Poach:
+Stew:
+Parboil:
+Steam:"""@en .
+
+
+###  http://www.evorecipes.org#Bread
+evo:Bread rdf:type owl:Class ;
+          rdfs:subClassOf evo:BakedGoods .
+
+
+###  http://www.evorecipes.org#BuckWheat
+evo:BuckWheat rdf:type owl:Class ;
+              rdfs:subClassOf evo:Grains .
+
+
+###  http://www.evorecipes.org#Bulb
+evo:Bulb rdf:type owl:Class ;
+         rdfs:subClassOf evo:Vegetable ;
+         rdfs:comment "Garlic, Onion"@en .
+
+
+###  http://www.evorecipes.org#Burn
+evo:Burn rdf:type owl:Class ;
+         rdfs:subClassOf evo:Cooking ;
+         rdfs:comment """Brown:
+Caramelize:
+Sear:
+Toast:
+Glaze: A glaze is a sauce that is cooked onto a protein or vegetable so that the sugars caramelize, get slightly sticky, and adhere to whatever it is that you're cooking."""@en .
+
+
+###  http://www.evorecipes.org#Cabbage
+evo:Cabbage rdf:type owl:Class ;
+            rdfs:subClassOf evo:Vegetable ;
+            rdfs:comment "Green cabbage, Red cabbage, Collards, Kohlrabi, Broccoli, Brussels sprouts, Cauliflower, and Kale"@en .
+
+
+###  http://www.evorecipes.org#Cake
+evo:Cake rdf:type owl:Class ;
+         rdfs:subClassOf evo:BakedGoods .
+
+
+###  http://www.evorecipes.org#Candy
+evo:Candy rdf:type owl:Class ;
+          rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.evorecipes.org#CaviarRoe
+evo:CaviarRoe rdf:type owl:Class ;
+              rdfs:subClassOf evo:Fish .
+
+
+###  http://www.evorecipes.org#Cheese
+evo:Cheese rdf:type owl:Class ;
+           rdfs:subClassOf evo:Dairy .
+
+
+###  http://www.evorecipes.org#CheeseSubstitute
+evo:CheeseSubstitute rdf:type owl:Class ;
+                     rdfs:subClassOf evo:Cheese .
+
+
+###  http://www.evorecipes.org#Chocolate
+evo:Chocolate rdf:type owl:Class ;
+              rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.evorecipes.org#CitrusFruit
+evo:CitrusFruit rdf:type owl:Class ;
+                rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.evorecipes.org#Clean
+evo:Clean rdf:type owl:Class ;
+          rdfs:subClassOf evo:Preparatory ;
+          rdfs:comment """Clean:
+Wash:
+Scrub:
+Sterilize:
+Rinse:
+Wipe:"""@en .
+
+
+###  http://www.evorecipes.org#Coat
+evo:Coat rdf:type owl:Class ;
+         rdfs:subClassOf evo:Preparatory ;
+         rdfs:comment """Coat
+Glaze
+Color
+Frost
+Deglaze"""^^xsd:string .
+
+
+###  http://www.evorecipes.org#ColdCuts
+evo:ColdCuts rdf:type owl:Class ;
+             rdfs:subClassOf evo:CurvedMeats .
+
+
+###  http://www.evorecipes.org#CommonTropicalFruit
+evo:CommonTropicalFruit rdf:type owl:Class ;
+                        rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.evorecipes.org#Cookie
+evo:Cookie rdf:type owl:Class ;
+           rdfs:subClassOf evo:BakedGoods .
+
+
+###  http://www.evorecipes.org#Cooking
+evo:Cooking rdf:type owl:Class ;
+            rdfs:subClassOf owl:Action ;
+            owl:disjointWith [ rdf:type owl:Class ;
+                               owl:unionOf ( evo:PostCooking
+                                             evo:Preparatory
+                                           )
+                             ] .
+
+
+###  http://www.evorecipes.org#CookingGreens
+evo:CookingGreens rdf:type owl:Class ;
+                  rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.evorecipes.org#Cool
+evo:Cool rdf:type owl:Class ;
+         rdfs:subClassOf evo:PostCooking ;
+         rdfs:comment """Cool:
+Chill:
+Refrigerate:
+Fan:
+Freeze:
+Frost"""@en .
+
+
+###  http://www.evorecipes.org#Corn
+evo:Corn rdf:type owl:Class ;
+         rdfs:subClassOf evo:Grains .
+
+
+###  http://www.evorecipes.org#Cracker
+evo:Cracker rdf:type owl:Class ;
+            rdfs:subClassOf evo:BakedGoods .
+
+
+###  http://www.evorecipes.org#Crumb
+evo:Crumb rdf:type owl:Class ;
+          rdfs:subClassOf evo:BakedGoods .
+
+
+###  http://www.evorecipes.org#Cucumber
+evo:Cucumber rdf:type owl:Class ;
+             rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.evorecipes.org#CulturedMilkProduct
+evo:CulturedMilkProduct rdf:type owl:Class ;
+                        rdfs:subClassOf evo:Liquids .
+
+
+###  http://www.evorecipes.org#CulturedMilkProducts
+evo:CulturedMilkProducts rdf:type owl:Class ;
+                         rdfs:subClassOf evo:Dairy .
+
+
+###  http://www.evorecipes.org#CurvedMeats
+evo:CurvedMeats rdf:type owl:Class ;
+                rdfs:subClassOf evo:Meats .
+
+
+###  http://www.evorecipes.org#Cut
+evo:Cut rdf:type owl:Class ;
+        rdfs:subClassOf evo:Preparatory ;
+        rdfs:comment """Cut:
+Chop:
+Mince:
+Cube:
+Dice:
+Split:
+Shred:
+Strip:
+Slice
+Crush
+Grind
+Grate
+Quarter"""@en .
+
+
+###  http://www.evorecipes.org#Dairy
+evo:Dairy rdf:type owl:Class ;
+          rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.evorecipes.org#DairyMilkAndCream
+evo:DairyMilkAndCream rdf:type owl:Class ;
+                      rdfs:subClassOf evo:MilkAndCream ;
+                      owl:disjointWith evo:Non-dairyMilkAndCream .
+
+
+###  http://www.evorecipes.org#Dip
+evo:Dip rdf:type owl:Class ;
+        rdfs:subClassOf evo:Preparatory ;
+        rdfs:comment """Dip:
+Douse:
+Plunge:
+Soak:
+Submerge:
+Immerse:"""@en .
+
+
+###  http://www.evorecipes.org#DirectHeat
+evo:DirectHeat rdf:type owl:Class ;
+               rdfs:subClassOf evo:Cooking ;
+               rdfs:comment """Barbecue:
+Broil
+Charbroil
+Grill
+Roast
+Grill"""@en .
+
+
+###  http://www.evorecipes.org#Dough
+evo:Dough rdf:type owl:Class ;
+          rdfs:subClassOf evo:GrainProducts .
+
+
+###  http://www.evorecipes.org#DriedBeans
+evo:DriedBeans rdf:type owl:Class ;
+               rdfs:subClassOf evo:Legumes .
+
+
+###  http://www.evorecipes.org#DriedChile
+evo:DriedChile rdf:type owl:Class ;
+               rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.evorecipes.org#DriedFruit
+evo:DriedFruit rdf:type owl:Class ;
+               rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.evorecipes.org#DriedMeats
+evo:DriedMeats rdf:type owl:Class ;
+               rdfs:subClassOf evo:Meats .
+
+
+###  http://www.evorecipes.org#DriedPeas
+evo:DriedPeas rdf:type owl:Class ;
+              rdfs:subClassOf evo:Legumes .
+
+
+###  http://www.evorecipes.org#EdiblePods
+evo:EdiblePods rdf:type owl:Class ;
+               rdfs:subClassOf evo:Legumes ,
+                               evo:Vegetable ;
+               rdfs:comment "Sugar Pea, Chinese Pea, Ladyfinger"@en .
+
+
+###  http://www.evorecipes.org#EggPlants
+evo:EggPlants rdf:type owl:Class ;
+              rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.evorecipes.org#ExoticTropicalFruit
+evo:ExoticTropicalFruit rdf:type owl:Class ;
+                        rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.evorecipes.org#ExtractsAndEssences
+evo:ExtractsAndEssences rdf:type owl:Class ;
+                        rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.evorecipes.org#Fats
+evo:Fats rdf:type owl:Class ;
+         rdfs:subClassOf evo:FatsAndOils ;
+         owl:disjointWith evo:OilsAndCookingSprays .
+
+
+###  http://www.evorecipes.org#FatsAndOils
+evo:FatsAndOils rdf:type owl:Class ;
+                rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.evorecipes.org#FattyFirmTextured
+evo:FattyFirmTextured rdf:type owl:Class ;
+                      rdfs:subClassOf evo:Fish .
+
+
+###  http://www.evorecipes.org#FattyFlakyTextured
+evo:FattyFlakyTextured rdf:type owl:Class ;
+                       rdfs:subClassOf evo:Fish .
+
+
+###  http://www.evorecipes.org#Finish
+evo:Finish rdf:type owl:Class ;
+           rdfs:subClassOf evo:PostCooking ;
+           rdfs:comment """Dust:
+Sprinkle:
+Garnish:
+Dredge:
+Dust:
+Spray:
+Top:
+Drizzle:
+Layer:"""@en .
+
+
+###  http://www.evorecipes.org#FirmCheese
+evo:FirmCheese rdf:type owl:Class ;
+               rdfs:subClassOf evo:Cheese .
+
+
+###  http://www.evorecipes.org#Fish
+evo:Fish rdf:type owl:Class ;
+         rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.evorecipes.org#FlatBread
+evo:FlatBread rdf:type owl:Class ;
+              rdfs:subClassOf evo:BakedGoods .
+
+
+###  http://www.evorecipes.org#FlavorIngredient
+evo:FlavorIngredient rdf:type owl:Class ;
+                     rdfs:subClassOf evo:IngredientType .
+
+
+###  http://www.evorecipes.org#Flavorings
+evo:Flavorings rdf:type owl:Class ;
+               rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.evorecipes.org#FoodWrapper
+evo:FoodWrapper rdf:type owl:Class ;
+                rdfs:subClassOf evo:GrainProducts .
+
+
+###  http://www.evorecipes.org#FreshBeans
+evo:FreshBeans rdf:type owl:Class ;
+               rdfs:subClassOf evo:Legumes ,
+                               evo:Vegetable ;
+               rdfs:comment "Soybean, Beer bean"@en .
+
+
+###  http://www.evorecipes.org#FreshCheese
+evo:FreshCheese rdf:type owl:Class ;
+                rdfs:subClassOf evo:Cheese .
+
+
+###  http://www.evorecipes.org#FreshChile
+evo:FreshChile rdf:type owl:Class ;
+               rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.evorecipes.org#FreshPeas
+evo:FreshPeas rdf:type owl:Class ;
+              rdfs:subClassOf evo:Legumes ,
+                              evo:Vegetable .
+
+
+###  http://www.evorecipes.org#FruitButters
+evo:FruitButters rdf:type owl:Class ;
+                 rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.evorecipes.org#FruitJuices
+evo:FruitJuices rdf:type owl:Class ;
+                rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.evorecipes.org#FruitVegetables
+evo:FruitVegetables rdf:type owl:Class ;
+                    rdfs:subClassOf evo:Fruits ,
+                                    evo:Vegetable .
+
+
+###  http://www.evorecipes.org#Fruits
+evo:Fruits rdf:type owl:Class ;
+           rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.evorecipes.org#Fry
+evo:Fry rdf:type owl:Class ;
+        rdfs:subClassOf evo:Cooking ;
+        rdfs:comment """StirFry:
+Saute: fry quickly in a little hot fat.
+DeepFry:
+ShallowFry:
+AirFry:
+PanFry:
+Braise: fry (food) lightly and then stew it slowly in a closed container."""@en .
+
+
+###  http://www.evorecipes.org#GameMeat
+evo:GameMeat rdf:type owl:Class ;
+             rdfs:subClassOf evo:Meats .
+
+
+###  http://www.evorecipes.org#Gelatin
+evo:Gelatin rdf:type owl:Class ;
+            rdfs:subClassOf evo:Thickener ;
+            owl:disjointWith evo:StarchThickener .
+
+
+###  http://www.evorecipes.org#GrainProducts
+evo:GrainProducts rdf:type owl:Class ;
+                  rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.evorecipes.org#Grains
+evo:Grains rdf:type owl:Class ;
+           rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.evorecipes.org#Ham
+evo:Ham rdf:type owl:Class ;
+        rdfs:subClassOf evo:CurvedMeats .
+
+
+###  http://www.evorecipes.org#HerbAndSpiceMix
+evo:HerbAndSpiceMix rdf:type owl:Class ;
+                    rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.evorecipes.org#Herbs
+evo:Herbs rdf:type owl:Class ;
+          rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.evorecipes.org#InflorescentVegetables
+evo:InflorescentVegetables rdf:type owl:Class ;
+                           rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.evorecipes.org#Ingredient
+evo:Ingredient rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty evo:hasAction ;
+                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass owl:Action
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty evo:hasQuantity ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass qudt:Quantity
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty evo:hasType ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass evo:IngredientType
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty evo:hasIngredientName ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:string
+                               ] .
+
+
+###  http://www.evorecipes.org#IngredientType
+evo:IngredientType rdf:type owl:Class .
+
+
+###  http://www.evorecipes.org#Juices
+evo:Juices rdf:type owl:Class ;
+           rdfs:subClassOf evo:Flavorings ,
+                           evo:Liquids .
+
+
+###  http://www.evorecipes.org#Kamut
+evo:Kamut rdf:type owl:Class ;
+          rdfs:subClassOf evo:Grains .
+
+
+###  http://www.evorecipes.org#Lamb
+evo:Lamb rdf:type owl:Class ;
+         rdfs:subClassOf evo:Meats .
+
+
+###  http://www.evorecipes.org#LeanFirmTextured
+evo:LeanFirmTextured rdf:type owl:Class ;
+                     rdfs:subClassOf evo:Fish .
+
+
+###  http://www.evorecipes.org#LeanFlakyTextured
+evo:LeanFlakyTextured rdf:type owl:Class ;
+                      rdfs:subClassOf evo:Fish .
+
+
+###  http://www.evorecipes.org#Legumes
+evo:Legumes rdf:type owl:Class ;
+            rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.evorecipes.org#Lentils
+evo:Lentils rdf:type owl:Class ;
+            rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.evorecipes.org#LiquidSweetner
+evo:LiquidSweetner rdf:type owl:Class ;
+                   rdfs:subClassOf evo:Liquids .
+
+
+###  http://www.evorecipes.org#LiquidSweetners
+evo:LiquidSweetners rdf:type owl:Class ;
+                    rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.evorecipes.org#Liquids
+evo:Liquids rdf:type owl:Class ;
+            rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.evorecipes.org#Liquors
+evo:Liquors rdf:type owl:Class ;
+            rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.evorecipes.org#Lubricate
+evo:Lubricate rdf:type owl:Class ;
+              rdfs:subClassOf evo:Preparatory ;
+              rdfs:comment """Grease:
+
+Oil:
+
+Smear:"""@en .
+
+
+###  http://www.evorecipes.org#MainIngredient
+evo:MainIngredient rdf:type owl:Class ;
+                   rdfs:subClassOf evo:IngredientType .
+
+
+###  http://www.evorecipes.org#MeatSpecific
+evo:MeatSpecific rdf:type owl:Class ;
+                 rdfs:subClassOf evo:Preparatory ;
+                 rdfs:comment """Bone:
+DeBone:"""@en .
+
+
+###  http://www.evorecipes.org#Meats
+evo:Meats rdf:type owl:Class ;
+          rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.evorecipes.org#Melons
+evo:Melons rdf:type owl:Class ;
+           rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.evorecipes.org#Melt
+evo:Melt rdf:type owl:Class ;
+         rdfs:subClassOf evo:Preparatory ;
+         rdfs:comment """Melt:
+Liquefy:
+Defrost:
+Thaw:
+Unfreeze:
+Soften:"""@en .
+
+
+###  http://www.evorecipes.org#Microwave
+evo:Microwave rdf:type owl:Class ;
+              rdfs:subClassOf evo:Cooking ;
+              rdfs:comment """Heat
+Preheat"""@en .
+
+
+###  http://www.evorecipes.org#MilkAndCream
+evo:MilkAndCream rdf:type owl:Class ;
+                 rdfs:subClassOf evo:Dairy ,
+                                 evo:Liquids .
+
+
+###  http://www.evorecipes.org#Mix
+evo:Mix rdf:type owl:Class ;
+        rdfs:subClassOf evo:Preparatory ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty seq:directlyFollows ;
+                          owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                          owl:onClass owl:Action
+                        ] ;
+        rdfs:comment """Mix:
+Blend:
+Stir:
+Whip:
+Wisk:
+Beat:
+Add:
+Pour:
+Combine:
+Shake"""@en .
+
+
+###  http://www.evorecipes.org#Mushrooms
+evo:Mushrooms rdf:type owl:Class ;
+              rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.evorecipes.org#Non-dairyMilkAndCream
+evo:Non-dairyMilkAndCream rdf:type owl:Class ;
+                          rdfs:subClassOf evo:Liquids ,
+                                          evo:MilkAndCream .
+
+
+###  http://www.evorecipes.org#NonWheatFlour
+evo:NonWheatFlour rdf:type owl:Class ;
+                  rdfs:subClassOf evo:GrainProducts .
+
+
+###  http://www.evorecipes.org#Nuts
+evo:Nuts rdf:type owl:Class ;
+         rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.evorecipes.org#Oat
+evo:Oat rdf:type owl:Class ;
+        rdfs:subClassOf evo:Grains .
+
+
+###  http://www.evorecipes.org#OilsAndCookingSprays
+evo:OilsAndCookingSprays rdf:type owl:Class ;
+                         rdfs:subClassOf evo:FatsAndOils .
+
+
+###  http://www.evorecipes.org#Olive
+evo:Olive rdf:type owl:Class ;
+          rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.evorecipes.org#OtherGrains
+evo:OtherGrains rdf:type owl:Class ;
+                rdfs:subClassOf evo:Grains .
+
+
+###  http://www.evorecipes.org#OtherMeats
+evo:OtherMeats rdf:type owl:Class ;
+               rdfs:subClassOf evo:Meats .
+
+
+###  http://www.evorecipes.org#OtherNoodle
+evo:OtherNoodle rdf:type owl:Class ;
+                rdfs:subClassOf evo:GrainProducts .
+
+
+###  http://www.evorecipes.org#OtherVegetables
+evo:OtherVegetables rdf:type owl:Class ;
+                    rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.evorecipes.org#Pasta
+evo:Pasta rdf:type owl:Class ;
+          rdfs:subClassOf evo:GrainProducts .
+
+
+###  http://www.evorecipes.org#Pear
+evo:Pear rdf:type owl:Class ;
+         rdfs:subClassOf evo:PomeFruit .
+
+
+###  http://www.evorecipes.org#Peel
+evo:Peel rdf:type owl:Class ;
+         rdfs:subClassOf evo:Preparatory ;
+         rdfs:comment """Peel: remove the outer covering or skin from (a fruit or vegetable).
+
+Shave: cut (a thin slice or slices) from the surface of something.
+
+Hull: The hull or calyx is the green leafy top of the strawberry, which is generally removed before cooking or serving.
+
+Pare:
+
+Skin:
+
+Strip:
+
+Trim: Remove all unwanted or inedible parts (i.e. sinews, skin, fat etc.) from meat, fish poultry or vegetables.
+
+Shell:
+
+Husk:
+
+Shuck:"""@en .
+
+
+###  http://www.evorecipes.org#Placement
+evo:Placement rdf:type owl:Class ;
+              rdfs:subClassOf evo:Preparatory ;
+              rdfs:comment """Place:
+Position:
+Set:
+Lay:
+Put:
+Leave:
+Arrange:
+Alternate:"""@en .
+
+
+###  http://www.evorecipes.org#PomeFruit
+evo:PomeFruit rdf:type owl:Class ;
+              rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.evorecipes.org#Pork
+evo:Pork rdf:type owl:Class ;
+         rdfs:subClassOf evo:Meats .
+
+
+###  http://www.evorecipes.org#PostCooking
+evo:PostCooking rdf:type owl:Class ;
+                rdfs:subClassOf owl:Action ;
+                owl:disjointWith [ rdf:type owl:Class ;
+                                   owl:unionOf ( evo:Cooking
+                                                 evo:Preparatory
+                                               )
+                                 ] .
+
+
+###  http://www.evorecipes.org#Poultry
+evo:Poultry rdf:type owl:Class ;
+            rdfs:subClassOf evo:Meats .
+
+
+###  http://www.evorecipes.org#Preparatory
+evo:Preparatory rdf:type owl:Class ;
+                rdfs:subClassOf owl:Action ;
+                owl:disjointWith [ rdf:type owl:Class ;
+                                   owl:unionOf ( evo:Cooking
+                                                 evo:PostCooking
+                                               )
+                                 ] .
+
+
+###  http://www.evorecipes.org#Preserves
+evo:Preserves rdf:type owl:Class ;
+              rdfs:subClassOf evo:Flavorings ,
+                              evo:Fruits .
+
+
+###  http://www.evorecipes.org#Procedure
+evo:Procedure rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty evo:hasProcedureAction ;
+                                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                owl:onClass owl:Action
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty evo:hasProcedureName ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string
+                              ] .
+
+
+###  http://www.evorecipes.org#ProcessedChesse
+evo:ProcessedChesse rdf:type owl:Class ;
+                    rdfs:subClassOf evo:Cheese .
+
+
+###  http://www.evorecipes.org#Refine
+evo:Refine rdf:type owl:Class ;
+           rdfs:subClassOf evo:Preparatory ;
+           rdfs:comment """Sift
+Sieve
+Strain
+Filter
+Skim"""^^xsd:string .
+
+
+###  http://www.evorecipes.org#Remove
+evo:Remove rdf:type owl:Class ;
+           rdfs:subClassOf evo:Preparatory ;
+           rdfs:comment """Drain:
+Clear:
+Remove:
+Drop
+Discard"""@en .
+
+
+###  http://www.evorecipes.org#Rice
+evo:Rice rdf:type owl:Class ;
+         rdfs:subClassOf evo:Grains .
+
+
+###  http://www.evorecipes.org#Roots
+evo:Roots rdf:type owl:Class ;
+          rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.evorecipes.org#Rye
+evo:Rye rdf:type owl:Class ;
+        rdfs:subClassOf evo:Grains .
+
+
+###  http://www.evorecipes.org#SaladGreens
+evo:SaladGreens rdf:type owl:Class ;
+                rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.evorecipes.org#Sausages
+evo:Sausages rdf:type owl:Class ;
+             rdfs:subClassOf evo:CurvedMeats .
+
+
+###  http://www.evorecipes.org#Scramble
+evo:Scramble rdf:type owl:Class ;
+             rdfs:subClassOf evo:Cooking .
+
+
+###  http://www.evorecipes.org#SeaVegetables
+evo:SeaVegetables rdf:type owl:Class ;
+                  rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.evorecipes.org#Season
+evo:Season rdf:type owl:Class ;
+           rdfs:subClassOf evo:Preparatory ;
+           rdfs:comment """Season
+Flavor
+Salt
+Spice
+Re-spice
+Re-season"""@en .
+
+
+###  http://www.evorecipes.org#Seeds
+evo:Seeds rdf:type owl:Class ;
+          rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.evorecipes.org#SemiFirmCheese
+evo:SemiFirmCheese rdf:type owl:Class ;
+                   rdfs:subClassOf evo:Cheese .
+
+
+###  http://www.evorecipes.org#SemiSoftCheese
+evo:SemiSoftCheese rdf:type owl:Class ;
+                   rdfs:subClassOf evo:Cheese .
+
+
+###  http://www.evorecipes.org#ShellFish
+evo:ShellFish rdf:type owl:Class ;
+              rdfs:subClassOf evo:Fish .
+
+
+###  http://www.evorecipes.org#SideIngredient
+evo:SideIngredient rdf:type owl:Class ;
+                   rdfs:subClassOf evo:IngredientType .
+
+
+###  http://www.evorecipes.org#SnapBeans
+evo:SnapBeans rdf:type owl:Class ;
+              rdfs:subClassOf evo:Legumes ,
+                              evo:Vegetable .
+
+
+###  http://www.evorecipes.org#Soak
+evo:Soak rdf:type owl:Class ;
+         rdfs:subClassOf evo:Preparatory ;
+         rdfs:comment """Soak
+Marrinate
+Steep
+Immerse"""^^xsd:string .
+
+
+###  http://www.evorecipes.org#SoftCheese
+evo:SoftCheese rdf:type owl:Class ;
+               rdfs:subClassOf evo:Cheese .
+
+
+###  http://www.evorecipes.org#SoyProducts
+evo:SoyProducts rdf:type owl:Class ;
+                rdfs:subClassOf evo:Legumes .
+
+
+###  http://www.evorecipes.org#Spelt
+evo:Spelt rdf:type owl:Class ;
+          rdfs:subClassOf evo:Grains .
+
+
+###  http://www.evorecipes.org#Spices
+evo:Spices rdf:type owl:Class ;
+           rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.evorecipes.org#Sprouts
+evo:Sprouts rdf:type owl:Class ;
+            rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.evorecipes.org#StalkVegetables
+evo:StalkVegetables rdf:type owl:Class ;
+                    rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.evorecipes.org#StarchThickener
+evo:StarchThickener rdf:type owl:Class ;
+                    rdfs:subClassOf evo:Thickener .
+
+
+###  http://www.evorecipes.org#Stems
+evo:Stems rdf:type owl:Class ;
+          rdfs:subClassOf evo:Vegetable ;
+          rdfs:comment "Ginger, Turmeric, Galangal, Lesser galangal, Finger Root"@en .
+
+
+###  http://www.evorecipes.org#Stocks
+evo:Stocks rdf:type owl:Class ;
+           rdfs:subClassOf evo:Liquids .
+
+
+###  http://www.evorecipes.org#StoneFruit
+evo:StoneFruit rdf:type owl:Class ;
+               rdfs:subClassOf evo:Fruits .
+
+
+###  http://www.evorecipes.org#Storage
+evo:Storage rdf:type owl:Class ;
+            rdfs:subClassOf evo:PostCooking ;
+            rdfs:comment """Bottle
+Bowl
+Store
+Save"""@en .
+
+
+###  http://www.evorecipes.org#SummerSquash
+evo:SummerSquash rdf:type owl:Class ;
+                 rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.evorecipes.org#SweetPepper
+evo:SweetPepper rdf:type owl:Class ;
+                rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.evorecipes.org#Thickener
+evo:Thickener rdf:type owl:Class ;
+              rdfs:subClassOf evo:GrainProducts .
+
+
+###  http://www.evorecipes.org#Tomatoes
+evo:Tomatoes rdf:type owl:Class ;
+             rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.evorecipes.org#Triticale
+evo:Triticale rdf:type owl:Class ;
+              rdfs:subClassOf evo:Grains .
+
+
+###  http://www.evorecipes.org#Tubers
+evo:Tubers rdf:type owl:Class ;
+           rdfs:subClassOf evo:Vegetable .
+
+
+###  http://www.evorecipes.org#VarietyMeats
+evo:VarietyMeats rdf:type owl:Class ;
+                 rdfs:subClassOf evo:Meats .
+
+
+###  http://www.evorecipes.org#Veal
+evo:Veal rdf:type owl:Class ;
+         rdfs:subClassOf evo:Meats .
+
+
+###  http://www.evorecipes.org#Vegetable
+evo:Vegetable rdf:type owl:Class ;
+              rdfs:subClassOf evo:Ingredient .
+
+
+###  http://www.evorecipes.org#Vinegar
+evo:Vinegar rdf:type owl:Class ;
+            rdfs:subClassOf evo:Flavorings ,
+                            evo:Liquids .
+
+
+###  http://www.evorecipes.org#WaterAndSoda
+evo:WaterAndSoda rdf:type owl:Class ;
+                 rdfs:subClassOf evo:Liquids .
+
+
+###  http://www.evorecipes.org#Wheat
+evo:Wheat rdf:type owl:Class ;
+          rdfs:subClassOf evo:Grains .
+
+
+###  http://www.evorecipes.org#WheatFlour
+evo:WheatFlour rdf:type owl:Class ;
+               rdfs:subClassOf evo:GrainProducts .
+
+
+###  http://www.evorecipes.org#Wines
+evo:Wines rdf:type owl:Class ;
+          rdfs:subClassOf evo:Flavorings .
+
+
+###  http://www.evorecipes.org#WinterSquash
+evo:WinterSquash rdf:type owl:Class ;
+                 rdfs:subClassOf evo:FruitVegetables .
+
+
+###  http://www.w3.org/2002/07/owl#Action
+owl:Action rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty evo:hasActionName ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ;
+           rdfs:comment "Scramble: cook (eggs) by beating them with a little liquid and then cooking and stirring them gently."@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.evorecipes.org#AR-grilled-pizza
+evo:AR-grilled-pizza rdf:type owl:NamedIndividual ,
+                              <http://schema.org/AggregateRating> ;
+                     <http://schema.org/ratingCount> "109.0"^^xsd:double ;
+                     <http://schema.org/reviewCount> "114.0"^^xsd:double .
+
+
+###  http://www.evorecipes.org#Add
+evo:Add rdf:type owl:NamedIndividual ,
+                 evo:Mix ;
+        seq:directlyPrecedes evo:Add2 .
+
+
+###  http://www.evorecipes.org#Add2
+evo:Add2 rdf:type owl:NamedIndividual ,
+                  evo:Mix ;
+         seq:directlyPrecedes evo:Knead .
+
+
+###  http://www.evorecipes.org#Add3
+evo:Add3 rdf:type owl:NamedIndividual ;
+         seq:directlyPrecedes evo:Cook .
+
+
+###  http://www.evorecipes.org#All-purpose_flour
+evo:All-purpose_flour rdf:type owl:NamedIndividual ,
+                               evo:WheatFlour ;
+                      evo:hasAction evo:Add2 ,
+                                    evo:Combine ;
+                      evo:hasQuantity evo:Q1 .
+
+
+###  http://www.evorecipes.org#Brush
+evo:Brush rdf:type owl:NamedIndividual ,
+                   evo:Preparatory ;
+          seq:directlyPrecedes evo:Cook .
+
+
+###  http://www.evorecipes.org#CT
+evo:CT rdf:type owl:NamedIndividual ;
+       owl:has_duration evo:U4 ;
+       qudt:hasNumericValue "3 to 4"^^xsd:string .
+
+
+###  http://www.evorecipes.org#Combine
+evo:Combine rdf:type owl:NamedIndividual ,
+                     evo:Mix ;
+            seq:directlyPrecedes evo:Add .
+
+
+###  http://www.evorecipes.org#Cook
+evo:Cook rdf:type owl:NamedIndividual ,
+                  evo:Microwave ;
+         seq:directlyPrecedes evo:Sauce ;
+         evo:hasCookingAction evo:CT .
+
+
+###  http://www.evorecipes.org#Divide
+evo:Divide rdf:type owl:NamedIndividual ,
+                    evo:Preparatory ;
+           seq:directlyPrecedes evo:Pat .
+
+
+###  http://www.evorecipes.org#Knead
+evo:Knead rdf:type owl:NamedIndividual ,
+                   evo:Apply ;
+          seq:directlyPrecedes evo:Divide .
+
+
+###  http://www.evorecipes.org#Oil
+evo:Oil rdf:type owl:NamedIndividual ,
+                 evo:OilsAndCookingSprays ;
+        evo:hasAction evo:Add ,
+                      evo:Brush ;
+        evo:hasQuantity evo:Q2 .
+
+
+###  http://www.evorecipes.org#Pat
+evo:Pat rdf:type owl:NamedIndividual ,
+                 evo:Preparatory ;
+        seq:directlyPrecedes evo:Brush .
+
+
+###  http://www.evorecipes.org#Q1
+evo:Q1 rdf:type owl:NamedIndividual ,
+                qudt:Quantity ;
+       qudt:hasQuantityValue evo:QV1 ;
+       qudt:hasUnit evo:U1 .
+
+
+###  http://www.evorecipes.org#Q2
+evo:Q2 rdf:type owl:NamedIndividual ,
+                qudt:Quantity ;
+       qudt:hasQuantityValue evo:QV2 ;
+       qudt:hasUnit evo:U1 .
+
+
+###  http://www.evorecipes.org#Q3
+evo:Q3 rdf:type owl:NamedIndividual ,
+                qudt:Quantity ;
+       qudt:hasQuantityValue evo:QV3 ;
+       qudt:hasUnit evo:U2 .
+
+
+###  http://www.evorecipes.org#Q4
+evo:Q4 rdf:type owl:NamedIndividual ,
+                qudt:Quantity ;
+       qudt:hasQuantityValue evo:QV3 ;
+       qudt:hasUnit evo:U3 .
+
+
+###  http://www.evorecipes.org#Q5
+evo:Q5 rdf:type owl:NamedIndividual ,
+                qudt:Quantity ;
+       qudt:hasQuantityValue evo:Qv4 ;
+       qudt:hasUnit evo:U3 .
+
+
+###  http://www.evorecipes.org#Q6
+evo:Q6 rdf:type owl:NamedIndividual ,
+                qudt:Quantity ;
+       qudt:hasUnit evo:U5 .
+
+
+###  http://www.evorecipes.org#QV1
+evo:QV1 rdf:type owl:NamedIndividual ,
+                 qudt:QuantityValue ;
+        qudt:hasNumericValue "3.5"^^xsd:double .
+
+
+###  http://www.evorecipes.org#QV2
+evo:QV2 rdf:type owl:NamedIndividual ,
+                 qudt:QuantityValue ;
+        qudt:hasNumericValue "0.3"^^xsd:double .
+
+
+###  http://www.evorecipes.org#QV3
+evo:QV3 rdf:type owl:NamedIndividual ,
+                 qudt:QuantityValue ;
+        qudt:hasNumericValue "1.0"^^xsd:double .
+
+
+###  http://www.evorecipes.org#Qv4
+evo:Qv4 rdf:type owl:NamedIndividual ,
+                 qudt:QuantityValue ;
+        qudt:hasNumericValue "1.5"^^xsd:double .
+
+
+###  http://www.evorecipes.org#Salt
+evo:Salt rdf:type owl:NamedIndividual ,
+                  evo:Flavorings ;
+         qudt:hasQuantityValue evo:Qv4 ;
+         qudt:hasUnit evo:U3 ;
+         evo:hasAction evo:Combine .
+
+
+###  http://www.evorecipes.org#Sauce
+evo:Sauce rdf:type owl:NamedIndividual ,
+                   evo:Flavorings ;
+          qudt:hasUnit evo:U5 ;
+          evo:hasAction evo:Add3 ;
+          evo:hasQuantity evo:Q6 .
+
+
+###  http://www.evorecipes.org#Sugar
+evo:Sugar rdf:type owl:NamedIndividual ,
+                   evo:Flavorings ;
+          qudt:hasUnit evo:U3 ;
+          evo:hasAction evo:Combine ;
+          evo:hasQuantity evo:Q4 .
+
+
+###  http://www.evorecipes.org#U1
+evo:U1 rdf:type owl:NamedIndividual ,
+                qudt:Unit ;
+       qudt:hasUnit evo:U1 ;
+       qudt:Abbreviation "cup"^^xsd:string .
+
+
+###  http://www.evorecipes.org#U2
+evo:U2 rdf:type owl:NamedIndividual ,
+                qudt:Unit ;
+       qudt:hasUnit evo:U2 ;
+       qudt:Abbreviation "Envelope"^^xsd:string .
+
+
+###  http://www.evorecipes.org#U3
+evo:U3 rdf:type owl:NamedIndividual ,
+                qudt:Unit ;
+       qudt:hasUnit evo:U3 ;
+       qudt:Abbreviation "tablespoon"^^xsd:string .
+
+
+###  http://www.evorecipes.org#U4
+evo:U4 rdf:type owl:NamedIndividual ;
+       qudt:hasUnit evo:U4 ;
+       qudt:Abbreviation "mins"^^xsd:string .
+
+
+###  http://www.evorecipes.org#U5
+evo:U5 rdf:type owl:NamedIndividual ,
+                qudt:Unit ;
+       qudt:Abbreviation "Lightly"^^xsd:string .
+
+
+###  http://www.evorecipes.org#Water
+evo:Water rdf:type owl:NamedIndividual ,
+                   evo:WaterAndSoda ;
+          evo:hasAction evo:Add .
+
+
+###  http://www.evorecipes.org#grilled-pizza
+evo:grilled-pizza rdf:type owl:NamedIndividual ,
+                           <http://schema.org/Recipe> ;
+                  evo:hasAggregateRating evo:AR-grilled-pizza ;
+                  evo:hasIngredient evo:All-purpose_flour ,
+                                    evo:Oil ,
+                                    evo:Salt ,
+                                    evo:Sugar ,
+                                    evo:Water ,
+                                    <http://www.evorecipes.org#Fleischmann's_Pizza_Crust_Yeast> ;
+                  <http://schema.org/name> "Grilled Pizza"^^xsd:string .
+
+
+###  http://www.evorecipes.org#Fleischmann's_Pizza_Crust_Yeast
+<http://www.evorecipes.org#Fleischmann's_Pizza_Crust_Yeast> rdf:type owl:NamedIndividual ,
+                                                                     evo:BakedGoods ;
+                                                            evo:hasAction evo:Combine ;
+                                                            evo:hasQuantity evo:Q3 .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
