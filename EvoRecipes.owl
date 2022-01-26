@@ -81,46 +81,11 @@ qudt:hasUnit rdf:type owl:ObjectProperty ;
                            rdfs:label "author"@en .
 
 
-###  http://schema.org/calories
-<http://schema.org/calories> rdf:type owl:ObjectProperty ;
-                             rdfs:domain <http://schema.org/NutritionInformation> ;
-                             rdfs:range qudt:Quantity ;
-                             rdfs:label "calories"@en .
-
-
-###  http://schema.org/carbohydrateContent
-<http://schema.org/carbohydrateContent> rdf:type owl:ObjectProperty ;
-                                        rdfs:domain <http://schema.org/NutritionInformation> ;
-                                        rdfs:range qudt:Quantity ;
-                                        rdfs:label "carbon hydrae content"@en .
-
-
-###  http://schema.org/cholesterolContent
-<http://schema.org/cholesterolContent> rdf:type owl:ObjectProperty ;
-                                       rdfs:domain <http://schema.org/NutritionInformation> ;
-                                       rdfs:range qudt:Quantity ;
-                                       rdfs:label "cholesterol content"@en .
-
-
 ###  http://schema.org/cookTime
 <http://schema.org/cookTime> rdf:type owl:ObjectProperty ;
                              rdfs:domain <http://schema.org/Recipe> ;
                              rdfs:range qudt:Quantity ;
                              rdfs:label "cook time"@en .
-
-
-###  http://schema.org/fatContent
-<http://schema.org/fatContent> rdf:type owl:ObjectProperty ;
-                               rdfs:domain <http://schema.org/NutritionInformation> ;
-                               rdfs:range qudt:Quantity ;
-                               rdfs:label "fat content"@en .
-
-
-###  http://schema.org/fiberContent
-<http://schema.org/fiberContent> rdf:type owl:ObjectProperty ;
-                                 rdfs:domain <http://schema.org/NutritionInformation> ;
-                                 rdfs:range qudt:Quantity ;
-                                 rdfs:label "fiber content"@en .
 
 
 ###  http://schema.org/nutrition
@@ -137,54 +102,11 @@ qudt:hasUnit rdf:type owl:ObjectProperty ;
                              rdfs:label "prep time"@en .
 
 
-###  http://schema.org/proteinContent
-<http://schema.org/proteinContent> rdf:type owl:ObjectProperty ;
-                                   rdfs:domain <http://schema.org/NutritionInformation> ;
-                                   rdfs:range qudt:Quantity ;
-                                   rdfs:label "protien content"@en .
-
-
-###  http://schema.org/saturatedFatContent
-<http://schema.org/saturatedFatContent> rdf:type owl:ObjectProperty ;
-                                        rdfs:domain <http://schema.org/NutritionInformation> ;
-                                        rdfs:range qudt:Quantity ;
-                                        rdfs:label "saturated fat content"@en .
-
-
-###  http://schema.org/sodiumContent
-<http://schema.org/sodiumContent> rdf:type owl:ObjectProperty ;
-                                  rdfs:domain <http://schema.org/NutritionInformation> ;
-                                  rdfs:range qudt:Quantity ;
-                                  rdfs:label "sodium content"@en .
-
-
-###  http://schema.org/sugarContent
-<http://schema.org/sugarContent> rdf:type owl:ObjectProperty ;
-                                 rdfs:domain <http://schema.org/NutritionInformation> ;
-                                 rdfs:range qudt:Quantity ;
-                                 rdfs:label "sugar content"@en .
-
-
 ###  http://schema.org/totalTime
 <http://schema.org/totalTime> rdf:type owl:ObjectProperty ;
                               rdfs:domain <http://schema.org/Recipe> ;
                               rdfs:range qudt:Quantity ;
                               rdfs:label "total time"@en .
-
-
-###  http://schema.org/transFatContent
-<http://schema.org/transFatContent> rdf:type owl:ObjectProperty ;
-                                    rdfs:domain <http://schema.org/NutritionInformation> ;
-                                    rdfs:range qudt:Quantity ;
-                                    rdfs:label "trans fat content"@en .
-
-
-###  http://schema.org/unsaturatedFatContent
-<http://schema.org/unsaturatedFatContent> rdf:type owl:ObjectProperty ,
-                                                   owl:AsymmetricProperty ;
-                                          rdfs:domain <http://schema.org/NutritionInformation> ;
-                                          rdfs:range qudt:Quantity ;
-                                          rdfs:label "unsaturated fat content"@en .
 
 
 ###  http://schema.org/yield
@@ -209,27 +131,6 @@ evo:alternateAction rdf:type owl:ObjectProperty ,
                     rdfs:label "Alternate Action"@en .
 
 
-###  https://msaadlak.github.io/EvoRecipes#calciumContent
-evo:calciumContent rdf:type owl:ObjectProperty ;
-                   rdfs:domain <http://schema.org/NutritionInformation> ;
-                   rdfs:range qudt:Quantity ;
-                   rdfs:label "Calcium Content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#carbsContent
-evo:carbsContent rdf:type owl:ObjectProperty ;
-                 rdfs:domain <http://schema.org/NutritionInformation> ;
-                 rdfs:range qudt:Quantity ;
-                 rdfs:label "carb Content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#dietaryFiberContent
-evo:dietaryFiberContent rdf:type owl:ObjectProperty ;
-                        rdfs:domain <http://schema.org/NutritionInformation> ;
-                        rdfs:range qudt:Quantity ;
-                        rdfs:label "Dietry FIber Content"@en .
-
-
 ###  https://msaadlak.github.io/EvoRecipes#directlyFollowsProcedure
 evo:directlyFollowsProcedure rdf:type owl:ObjectProperty ;
                              owl:inverseOf evo:directlyPrecedesProcedure ;
@@ -243,13 +144,6 @@ evo:directlyPrecedesProcedure rdf:type owl:ObjectProperty ;
                               rdfs:domain evo:Procedure ;
                               rdfs:range evo:Procedure ;
                               rdfs:label "directly precedes procedure"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#fiberCarbsContent
-evo:fiberCarbsContent rdf:type owl:ObjectProperty ;
-                      rdfs:domain <http://schema.org/NutritionInformation> ;
-                      rdfs:range qudt:Quantity ;
-                      rdfs:label "fiber cars contents"@en .
 
 
 ###  https://msaadlak.github.io/EvoRecipes#hasAction
@@ -330,6 +224,18 @@ evo:hasMainIngredient rdf:type owl:ObjectProperty ;
                       rdfs:label "has main ingredient"@en .
 
 
+###  https://msaadlak.github.io/EvoRecipes#hasNutrientQuantity
+evo:hasNutrientQuantity rdf:type owl:ObjectProperty ;
+                        rdfs:domain evo:Nutrient ;
+                        rdfs:range qudt:Quantity .
+
+
+###  https://msaadlak.github.io/EvoRecipes#hasNutrientType
+evo:hasNutrientType rdf:type owl:ObjectProperty ;
+                    rdfs:domain <http://schema.org/NutritionInformation> ;
+                    rdfs:range evo:Nutrient .
+
+
 ###  https://msaadlak.github.io/EvoRecipes#hasPostCookingAction
 evo:hasPostCookingAction rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf evo:hasAction ;
@@ -387,141 +293,6 @@ evo:hasType rdf:type owl:ObjectProperty ;
             rdfs:domain evo:Ingredient ;
             rdfs:range evo:IngredientType ;
             rdfs:label "has type"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#ironContent
-evo:ironContent rdf:type owl:ObjectProperty ;
-                rdfs:domain <http://schema.org/NutritionInformation> ;
-                rdfs:range qudt:Quantity ;
-                rdfs:label "iron content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#magnessiumContent
-evo:magnessiumContent rdf:type owl:ObjectProperty ;
-                      rdfs:domain <http://schema.org/NutritionInformation> ;
-                      rdfs:range qudt:Quantity ;
-                      rdfs:label "magnessium content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#phosphorousContent
-evo:phosphorousContent rdf:type owl:ObjectProperty ;
-                       rdfs:domain <http://schema.org/NutritionInformation> ;
-                       rdfs:range qudt:Quantity ;
-                       rdfs:label "phosphorous content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#potassiumContent
-evo:potassiumContent rdf:type owl:ObjectProperty ;
-                     rdfs:domain <http://schema.org/NutritionInformation> ;
-                     rdfs:range qudt:Quantity ;
-                     rdfs:label "potassium content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#sugarCarbsContent
-evo:sugarCarbsContent rdf:type owl:ObjectProperty ;
-                      rdfs:domain <http://schema.org/NutritionInformation> ;
-                      rdfs:range qudt:Quantity ;
-                      rdfs:label "sugar carbs content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#totalCarbsContent
-evo:totalCarbsContent rdf:type owl:ObjectProperty ;
-                      rdfs:domain <http://schema.org/NutritionInformation> ;
-                      rdfs:range qudt:Quantity ;
-                      rdfs:label "total carbs content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#totalFatContent
-evo:totalFatContent rdf:type owl:ObjectProperty ;
-                    rdfs:domain <http://schema.org/NutritionInformation> ;
-                    rdfs:range qudt:Quantity ;
-                    rdfs:label "total fat content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#vitaminAContent
-evo:vitaminAContent rdf:type owl:ObjectProperty ;
-                    rdfs:domain <http://schema.org/NutritionInformation> ;
-                    rdfs:range qudt:Quantity ;
-                    rdfs:label "vitamin A Content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#vitaminB12Content
-evo:vitaminB12Content rdf:type owl:ObjectProperty ,
-                               owl:AsymmetricProperty ;
-                      rdfs:domain <http://schema.org/NutritionInformation> ;
-                      rdfs:range qudt:Quantity ;
-                      rdfs:label "vitamin B12 content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#vitaminB1Content
-evo:vitaminB1Content rdf:type owl:ObjectProperty ,
-                              owl:AsymmetricProperty ;
-                     rdfs:domain <http://schema.org/NutritionInformation> ;
-                     rdfs:range qudt:Quantity ;
-                     rdfs:label "vitamin B1 content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#vitaminB2Content
-evo:vitaminB2Content rdf:type owl:ObjectProperty ,
-                              owl:AsymmetricProperty ;
-                     rdfs:domain <http://schema.org/NutritionInformation> ;
-                     rdfs:range qudt:Quantity ;
-                     rdfs:label "vitamin B2 content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#vitaminB3Content
-evo:vitaminB3Content rdf:type owl:ObjectProperty ,
-                              owl:AsymmetricProperty ;
-                     rdfs:domain <http://schema.org/NutritionInformation> ;
-                     rdfs:range qudt:Quantity ;
-                     rdfs:label "vitamin B3 content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#vitaminB6Content
-evo:vitaminB6Content rdf:type owl:ObjectProperty ,
-                              owl:AsymmetricProperty ;
-                     rdfs:domain <http://schema.org/NutritionInformation> ;
-                     rdfs:range qudt:Quantity ;
-                     rdfs:label "vitamin B6 content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#vitaminB9Content
-evo:vitaminB9Content rdf:type owl:ObjectProperty ,
-                              owl:AsymmetricProperty ;
-                     rdfs:domain <http://schema.org/NutritionInformation> ;
-                     rdfs:range qudt:Quantity ;
-                     rdfs:label "vitamin B9 content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#vitaminCContent
-evo:vitaminCContent rdf:type owl:ObjectProperty ,
-                             owl:AsymmetricProperty ;
-                    rdfs:domain <http://schema.org/NutritionInformation> ;
-                    rdfs:range qudt:Quantity ;
-                    rdfs:label "vitamin C content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#vitaminEContent
-evo:vitaminEContent rdf:type owl:ObjectProperty ,
-                             owl:AsymmetricProperty ;
-                    rdfs:domain <http://schema.org/NutritionInformation> ;
-                    rdfs:range qudt:Quantity ;
-                    rdfs:label "vitamin E content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#vitaminKContent
-evo:vitaminKContent rdf:type owl:ObjectProperty ,
-                             owl:AsymmetricProperty ;
-                    rdfs:domain <http://schema.org/NutritionInformation> ;
-                    rdfs:range qudt:Quantity ;
-                    rdfs:label "vitamin K content"@en .
-
-
-###  https://msaadlak.github.io/EvoRecipes#zincContent
-evo:zincContent rdf:type owl:ObjectProperty ;
-                rdfs:domain <http://schema.org/NutritionInformation> ;
-                rdfs:range qudt:Quantity ;
-                rdfs:label "zinc content"@en .
 
 
 #################################################################
@@ -661,6 +432,12 @@ evo:hasMealType rdf:type owl:DatatypeProperty ;
                 rdfs:label "has meal type"@en .
 
 
+###  https://msaadlak.github.io/EvoRecipes#hasNutrientName
+evo:hasNutrientName rdf:type owl:DatatypeProperty ;
+                    rdfs:domain evo:Nutrient ;
+                    rdfs:range xsd:string .
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -717,171 +494,6 @@ qudt:Unit rdf:type owl:Class ;
 
 ###  http://schema.org/NutritionInformation
 <http://schema.org/NutritionInformation> rdf:type owl:Class ;
-                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                           owl:onProperty <http://schema.org/calories> ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty <http://schema.org/carbohydrateContent> ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty <http://schema.org/cholesterolContent> ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty <http://schema.org/fatContent> ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty <http://schema.org/fiberContent> ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty <http://schema.org/proteinContent> ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty <http://schema.org/saturatedFatContent> ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty <http://schema.org/sodiumContent> ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty <http://schema.org/sugarContent> ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty <http://schema.org/transFatContent> ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty <http://schema.org/unsaturatedFatContent> ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:calciumContent ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:carbsContent ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:dietaryFiberContent ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:fiberCarbsContent ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:ironContent ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:magnessiumContent ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:phosphorousContent ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:potassiumContent ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:sugarCarbsContent ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:totalCarbsContent ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:totalFatContent ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:vitaminAContent ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:vitaminB12Content ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:vitaminB1Content ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:vitaminB2Content ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:vitaminB3Content ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:vitaminB6Content ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:vitaminB9Content ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:vitaminCContent ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:vitaminEContent ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:vitaminKContent ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ,
-                                                         [ rdf:type owl:Restriction ;
-                                                           owl:onProperty evo:zincContent ;
-                                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                           owl:onClass qudt:Quantity
-                                                         ] ;
                                          rdfs:label "NuitritionInformation"^^xsd:string .
 
 
@@ -950,7 +562,7 @@ qudt:Unit rdf:type owl:Class ;
                                            [ rdf:type owl:Restriction ;
                                              owl:onProperty <http://schema.org/recipeYield> ;
                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                             owl:onDataRange xsd:string
+                                             owl:onDataRange xsd:integer
                                            ] ,
                                            [ rdf:type owl:Restriction ;
                                              owl:onProperty <http://schema.org/url> ;
@@ -1081,12 +693,7 @@ evo:Bacon rdf:type owl:Class ;
 
 ###  https://msaadlak.github.io/EvoRecipes#Bake
 evo:Bake rdf:type owl:Class ;
-         rdfs:subClassOf evo:Cooking ;
-         rdfs:comment """Cooking by dry heat, especially in some kind of oven
-
-Like 
-Blind Bake or Pre Bake"""@en ;
-         rdfs:label "Bake"^^xsd:string .
+         rdfs:subClassOf evo:Cooking .
 
 
 ###  https://msaadlak.github.io/EvoRecipes#BakedGoods
@@ -1153,7 +760,6 @@ Steam:"""@en ;
 
 ###  https://msaadlak.github.io/EvoRecipes#Bread
 evo:Bread rdf:type owl:Class ;
-	owl:equivalentClass owl:Bread;
           rdfs:subClassOf evo:BakedGoods ;
           rdfs:label "Bread"^^xsd:string .
 
@@ -1389,13 +995,6 @@ Grill
 Roast
 Grill"""@en ;
                rdfs:label "DirectHeat"^^xsd:string .
-
-
-###  https://msaadlak.github.io/EvoRecipes#Dough
-evo:Dough rdf:type owl:Class ;
-	owl:equivalentClass owl:Dough;
-          rdfs:subClassOf evo:GrainProducts ;
-          rdfs:label "Dough"^^xsd:string .
 
 
 ###  https://msaadlak.github.io/EvoRecipes#DriedBeans
@@ -1847,6 +1446,10 @@ evo:NonWheatFlour rdf:type owl:Class ;
                   rdfs:label "NoonWheatFlour"^^xsd:string .
 
 
+###  https://msaadlak.github.io/EvoRecipes#Nutrient
+evo:Nutrient rdf:type owl:Class .
+
+
 ###  https://msaadlak.github.io/EvoRecipes#Nuts
 evo:Nuts rdf:type owl:Class ;
          rdfs:subClassOf evo:Flavorings ;
@@ -2281,10 +1884,372 @@ evo:WinterSquash rdf:type owl:Class ;
 
 
 #################################################################
+#    Individuals
+#################################################################
+
+###  https://msaadlak.github.io/EvoRecipes#
+evo: rdf:type owl:NamedIndividual ,
+              qudt:Unit .
+
+
+###  https://msaadlak.github.io/EvoRecipes#AR
+evo:AR rdf:type owl:NamedIndividual ,
+                <http://schema.org/AggregateRating> ;
+       <http://schema.org/ratingCount> 5 ;
+       <http://schema.org/reviewCount> 5 .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Add
+evo:Add rdf:type owl:NamedIndividual ,
+                 evo:Preparatory ;
+        seq:directlyPrecedes evo:Cook .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Add2
+evo:Add2 rdf:type owl:NamedIndividual ,
+                  evo:Preparatory ;
+         seq:directlyPrecedes evo:Simmer1 .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Add3
+evo:Add3 rdf:type owl:NamedIndividual ,
+                  evo:Preparatory ;
+         seq:directlyPrecedes evo:Simmer2 .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Bake
+evo:Bake rdf:type owl:NamedIndividual ,
+                  evo:Cooking .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Basil
+evo:Basil rdf:type owl:NamedIndividual ,
+                   evo:Ingredient ;
+          evo:hasPreparatoryAction evo:Add ;
+          evo:hasQuantity <https://msaadlak.github.io/EvoRecipes#1By2Teaspoon> ;
+          evo:hasSideIngredient evo:Side .
+
+
+###  https://msaadlak.github.io/EvoRecipes#BeefBroth
+evo:BeefBroth rdf:type owl:NamedIndividual ,
+                       evo:Ingredient ;
+              evo:hasPreparatoryAction evo:Add3 ;
+              evo:hasQuantity <https://msaadlak.github.io/EvoRecipes#1Can> ;
+              evo:hasSideIngredient evo:Side .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Can
+evo:Can rdf:type owl:NamedIndividual ,
+                 qudt:Unit .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Cook
+evo:Cook rdf:type owl:NamedIndividual ,
+                  evo:Cooking ;
+         seq:directlyPrecedes evo:Stir .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Cup
+evo:Cup rdf:type owl:NamedIndividual ,
+                 qudt:Unit .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Divide
+evo:Divide rdf:type owl:NamedIndividual ,
+                    evo:Preparatory ;
+           seq:directlyPrecedes evo:Bake .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Flavor
+evo:Flavor rdf:type owl:NamedIndividual ,
+                    evo:FlavorIngredient .
+
+
+###  https://msaadlak.github.io/EvoRecipes#FrenchBaguette
+evo:FrenchBaguette rdf:type owl:NamedIndividual ,
+                            evo:Ingredient ;
+                   evo:hasPreparatoryAction evo:Split ;
+                   evo:hasQuantity <https://msaadlak.github.io/EvoRecipes#1-> ;
+                   evo:hasSideIngredient evo:Side .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Garlic
+evo:Garlic rdf:type owl:NamedIndividual ,
+                    evo:Ingredient ;
+           evo:hasFlavorIngredient evo:Flavor ;
+           evo:hasPreparatoryAction evo:Add ;
+           evo:hasQuantity <https://msaadlak.github.io/EvoRecipes#1Tablespoon> .
+
+
+###  https://msaadlak.github.io/EvoRecipes#GarlicAndHerbBoursinCheese
+evo:GarlicAndHerbBoursinCheese rdf:type owl:NamedIndividual ,
+                                        evo:Ingredient ;
+                               evo:hasMainIngredient evo:Main ;
+                               evo:hasPreparatoryAction evo:Spread ;
+                               evo:hasQuantity <https://msaadlak.github.io/EvoRecipes#1Package> .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Heat
+evo:Heat rdf:type owl:NamedIndividual ,
+                  evo:Cooking ;
+         seq:directlyPrecedes evo:Add .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Heat2
+evo:Heat2 rdf:type owl:NamedIndividual ,
+                   evo:Cooking ;
+          seq:directlyPrecedes evo:Split .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Lb
+evo:Lb rdf:type owl:NamedIndividual ,
+                qudt:Unit .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Lorraine
+evo:Lorraine rdf:type owl:NamedIndividual ,
+                      <http://schema.org/Person> ;
+             <http://schema.org/datePublished> "27-1-2009"^^xsd:string ;
+             <http://schema.org/givenName> "Lorraine L"^^xsd:string .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Main
+evo:Main rdf:type owl:NamedIndividual ,
+                  evo:MainIngredient .
+
+
+###  https://msaadlak.github.io/EvoRecipes#OliveOil
+evo:OliveOil rdf:type owl:NamedIndividual ,
+                      evo:Ingredient ;
+             evo:hasCookingAction evo:Heat ;
+             evo:hasQuantity <https://msaadlak.github.io/EvoRecipes#2Teaspoon> ;
+             evo:hasSideIngredient evo:Side .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Onion
+evo:Onion rdf:type owl:NamedIndividual ,
+                   evo:Ingredient ;
+          evo:hasFlavorIngredient evo:Flavor ;
+          evo:hasPreparatoryAction evo:Add ;
+          evo:hasQuantity <https://msaadlak.github.io/EvoRecipes#2Tablespoon> .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Package
+evo:Package rdf:type owl:NamedIndividual ,
+                     qudt:Unit .
+
+
+###  https://msaadlak.github.io/EvoRecipes#ROAST-BEEF-DIP-SANDWICH-WITH-HERBED-GARLIC-AU-JUS
+evo:ROAST-BEEF-DIP-SANDWICH-WITH-HERBED-GARLIC-AU-JUS rdf:type owl:NamedIndividual ,
+                                                               <http://schema.org/Recipe> ;
+                                                      <http://schema.org/author> evo:Lorraine ;
+                                                      evo:hasAggregateRating evo:AR ;
+                                                      evo:hasIngredient evo:BeefBroth ,
+                                                                        evo:FrenchBaguette ,
+                                                                        evo:Garlic ,
+                                                                        evo:GarlicAndHerbBoursinCheese ,
+                                                                        evo:OliveOil ,
+                                                                        evo:Onion ,
+                                                                        evo:RedWine ,
+                                                                        evo:RoastBeef ,
+                                                                        evo:SoySauce ,
+                                                                        evo:WorcestershireSauce ;
+                                                      <http://schema.org/recipeCuisine> "French"^^xsd:string ;
+                                                      <http://schema.org/recipeYield> 4 ;
+                                                      <http://schema.org/servingSize> "4.0"^^xsd:double ;
+                                                      <http://schema.org/url> "https://www.food.com/recipe/roast-beef-dip-sandwich-with-herbed-garlic-au-jus-352204"^^xsd:string .
+
+
+###  https://msaadlak.github.io/EvoRecipes#RedWine
+evo:RedWine rdf:type owl:NamedIndividual ,
+                     evo:Ingredient ;
+            evo:hasPreparatoryAction evo:Add2 ;
+            evo:hasQuantity <https://msaadlak.github.io/EvoRecipes#1By4Cup> ;
+            evo:hasSideIngredient evo:Side .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Refrigerate
+evo:Refrigerate rdf:type owl:NamedIndividual ,
+                         evo:PostCooking ;
+                seq:directlyPrecedes evo:Heat2 .
+
+
+###  https://msaadlak.github.io/EvoRecipes#RoastBeef
+evo:RoastBeef rdf:type owl:NamedIndividual ,
+                       evo:Ingredient ;
+              evo:hasMainIngredient evo:Main ;
+              evo:hasPreparatoryAction evo:Divide ;
+              evo:hasQuantity <https://msaadlak.github.io/EvoRecipes#1Lb> .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Side
+evo:Side rdf:type owl:NamedIndividual ,
+                  evo:SideIngredient .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Simmer1
+evo:Simmer1 rdf:type owl:NamedIndividual ,
+                     evo:Cooking ;
+            seq:directlyPrecedes evo:Add3 .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Simmer2
+evo:Simmer2 rdf:type owl:NamedIndividual ,
+                     evo:Cooking ;
+            seq:directlyPrecedes evo:Refrigerate .
+
+
+###  https://msaadlak.github.io/EvoRecipes#SoySauce
+evo:SoySauce rdf:type owl:NamedIndividual ,
+                      evo:Ingredient ;
+             evo:hasFlavorIngredient evo:Flavor ;
+             evo:hasPreparatoryAction evo:Add2 ;
+             evo:hasQuantity <https://msaadlak.github.io/EvoRecipes#2Tablespoon> .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Split
+evo:Split rdf:type owl:NamedIndividual ,
+                   evo:Preparatory ;
+          seq:directlyPrecedes evo:Spread .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Spread
+evo:Spread rdf:type owl:NamedIndividual ,
+                    evo:Preparatory ;
+           seq:directlyPrecedes evo:Divide .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Stir
+evo:Stir rdf:type owl:NamedIndividual ,
+                  evo:Preparatory ;
+         seq:directlyPrecedes evo:Add2 .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Tablespoon
+evo:Tablespoon rdf:type owl:NamedIndividual ,
+                        qudt:Unit .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Teaspoon
+evo:Teaspoon rdf:type owl:NamedIndividual ,
+                      qudt:Unit .
+
+
+###  https://msaadlak.github.io/EvoRecipes#Thyme
+evo:Thyme rdf:type owl:NamedIndividual ,
+                   evo:Ingredient ;
+          evo:hasFlavorIngredient evo:Flavor ;
+          evo:hasPreparatoryAction evo:Add ;
+          evo:hasQuantity <https://msaadlak.github.io/EvoRecipes#1By2Teaspoon> .
+
+
+###  https://msaadlak.github.io/EvoRecipes#WorcestershireSauce
+evo:WorcestershireSauce rdf:type owl:NamedIndividual ,
+                                 evo:Ingredient ;
+                        evo:hasPreparatoryAction evo:Add2 ;
+                        evo:hasQuantity <https://msaadlak.github.io/EvoRecipes#2Teaspoon> ;
+                        evo:hasSideIngredient evo:Side .
+
+
+###  https://msaadlak.github.io/EvoRecipes#1
+<https://msaadlak.github.io/EvoRecipes#1> rdf:type owl:NamedIndividual ,
+                                                   qudt:QuantityValue ;
+                                          qudt:hasNumericValue "1.0"^^xsd:double .
+
+
+###  https://msaadlak.github.io/EvoRecipes#1By2
+<https://msaadlak.github.io/EvoRecipes#1By2> rdf:type owl:NamedIndividual ,
+                                                      qudt:QuantityValue ;
+                                             qudt:hasNumericValue "0.5"^^xsd:double .
+
+
+###  https://msaadlak.github.io/EvoRecipes#1By2Teaspoon
+<https://msaadlak.github.io/EvoRecipes#1By2Teaspoon> rdf:type owl:NamedIndividual ,
+                                                              qudt:Quantity ;
+                                                     qudt:hasQuantityValue <https://msaadlak.github.io/EvoRecipes#1By2> ;
+                                                     qudt:hasUnit evo:Teaspoon .
+
+
+###  https://msaadlak.github.io/EvoRecipes#1By4
+<https://msaadlak.github.io/EvoRecipes#1By4> rdf:type owl:NamedIndividual ,
+                                                      qudt:QuantityValue ;
+                                             qudt:hasNumericValue "0.25"^^xsd:double .
+
+
+###  https://msaadlak.github.io/EvoRecipes#1By4Cup
+<https://msaadlak.github.io/EvoRecipes#1By4Cup> rdf:type owl:NamedIndividual ,
+                                                         qudt:Quantity ;
+                                                qudt:hasQuantityValue <https://msaadlak.github.io/EvoRecipes#1By4> ;
+                                                qudt:hasUnit evo:Cup .
+
+
+###  https://msaadlak.github.io/EvoRecipes#1Can
+<https://msaadlak.github.io/EvoRecipes#1Can> rdf:type owl:NamedIndividual ,
+                                                      qudt:Quantity ;
+                                             qudt:hasQuantityValue <https://msaadlak.github.io/EvoRecipes#1> ;
+                                             qudt:hasUnit evo:Can .
+
+
+###  https://msaadlak.github.io/EvoRecipes#1Lb
+<https://msaadlak.github.io/EvoRecipes#1Lb> rdf:type owl:NamedIndividual ,
+                                                     qudt:Quantity ;
+                                            qudt:hasQuantityValue <https://msaadlak.github.io/EvoRecipes#1> ;
+                                            qudt:hasUnit evo:Lb .
+
+
+###  https://msaadlak.github.io/EvoRecipes#1Package
+<https://msaadlak.github.io/EvoRecipes#1Package> rdf:type owl:NamedIndividual ,
+                                                          qudt:Quantity ;
+                                                 qudt:hasQuantityValue <https://msaadlak.github.io/EvoRecipes#1> ;
+                                                 qudt:hasUnit evo:Package .
+
+
+###  https://msaadlak.github.io/EvoRecipes#1Tablespoon
+<https://msaadlak.github.io/EvoRecipes#1Tablespoon> rdf:type owl:NamedIndividual ,
+                                                             qudt:Quantity ;
+                                                    qudt:hasQuantityValue <https://msaadlak.github.io/EvoRecipes#1> ;
+                                                    qudt:hasUnit evo:Tablespoon .
+
+
+###  https://msaadlak.github.io/EvoRecipes#1-
+<https://msaadlak.github.io/EvoRecipes#1-> rdf:type owl:NamedIndividual ,
+                                                    qudt:Quantity ;
+                                           qudt:hasQuantityValue <https://msaadlak.github.io/EvoRecipes#1> ;
+                                           qudt:hasUnit evo: .
+
+
+###  https://msaadlak.github.io/EvoRecipes#2
+<https://msaadlak.github.io/EvoRecipes#2> rdf:type owl:NamedIndividual ,
+                                                   qudt:QuantityValue ;
+                                          qudt:hasNumericValue "2.0"^^xsd:double .
+
+
+###  https://msaadlak.github.io/EvoRecipes#2Tablespoon
+<https://msaadlak.github.io/EvoRecipes#2Tablespoon> rdf:type owl:NamedIndividual ,
+                                                             qudt:Quantity ;
+                                                    qudt:hasQuantityValue <https://msaadlak.github.io/EvoRecipes#2> ;
+                                                    qudt:hasUnit evo:Tablespoon .
+
+
+###  https://msaadlak.github.io/EvoRecipes#2Teaspoon
+<https://msaadlak.github.io/EvoRecipes#2Teaspoon> rdf:type owl:NamedIndividual ,
+                                                           qudt:Quantity ;
+                                                  qudt:hasQuantityValue <https://msaadlak.github.io/EvoRecipes#2> ;
+                                                  qudt:hasUnit evo:Teaspoon .
+
+
+#################################################################
 #    Annotations
 #################################################################
 
 owl:topObjectProperty rdfs:label "Top Object Property"@en .
+
+
+evo:Bake rdfs:label "Bake"^^xsd:string ;
+         rdfs:comment """Cooking by dry heat, especially in some kind of oven
+
+Like 
+Blind Bake or Pre Bake"""@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
