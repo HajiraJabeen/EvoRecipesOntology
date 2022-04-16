@@ -7,9 +7,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix qudt: <http://qudt.org/2.1/schema/qudt#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://hajirajabeen.github.io/EvoRecipesOntology> .
+@base <https://hajirajabeen.github.io/EvoRecipesOntology#> .
 
-<https://hajirajabeen.github.io/EvoRecipesOntology> rdf:type owl:Ontology .
+<https://hajirajabeen.github.io/EvoRecipesOntology#> rdf:type owl:Ontology .
 
 #################################################################
 #    Annotation properties
