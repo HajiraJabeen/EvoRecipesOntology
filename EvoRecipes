@@ -1,4 +1,4 @@
-@prefix : <https://hajirajabeen.github.io/RecipeOn#> .
+@prefix : <https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix po: <http://purl.obolibrary.org/obo/po.owl#> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -11,9 +11,9 @@
 @prefix qudt: <http://qudt.org/2.1/schema/qudt#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix foodon: <http://purl.obolibrary.org/obo/foodon.owl#> .
-@base <https://hajirajabeen.github.io/RecipeOn#> .
+@base <https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> .
 
-<https://hajirajabeen.github.io/RecipeOn#> rdf:type owl:Ontology ;
+<https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> rdf:type owl:Ontology ;
                                             dc:contributor "Fahad Maqbool"@en ,
                                                            "Hajira Jabeen"@en ,
                                                            "Saad Razzaq"@en ;
