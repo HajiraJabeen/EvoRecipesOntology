@@ -13,7 +13,7 @@
 @prefix terms: <http://purl.org/dc/terms/> .
 @base <https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> .
 
-<https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> rdf:type owl:Ontology ;
+<https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> a owl:Ontology ;
                                rdfs:label "The MEX Vocabulary (mex-algo)"@en ,
                                           "Vocabulario MEX (mex-algo)"@pt ;
                                dct:created "2014-02-02"^^xsd:date ;
