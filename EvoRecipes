@@ -13,8 +13,7 @@
 @prefix terms: <http://purl.org/dc/terms/> .
 @base <https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> .
 
-<https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> rdf:type owl:Ontology ;
-					     
+<https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> rdf:type owl:Ontology;
 	rdfs:label "The RecipeOn Ontology (RecipeOn)"@en ;
                                dct:created "2022-06-15"^^xsd:date ;
                                dct:modified "2023-03-22" ;
