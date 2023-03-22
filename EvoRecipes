@@ -26,7 +26,7 @@
 					    owl:versionIRI <https://hajirajabeen.github.io/RecipeOn>;
 			 terms:description "RecipeOn, on one hand, to assist machines in understanding the semantics of recipes, and on the other hand, to encode the information crucial for personalized recipe generation. This includes e.g. nutritional information, ingredient-action relations, ingredient-diet relations, ingredient substitutions, and cooking time."@en ;
                                              terms:license <https://creativecommons.org/licenses/by/3.0/> ;
-                                             terms:title "Recipe Ontology"@en ;
+                                             dc:title "Recipe Ontology"@en ;
                                              oboInOwl:default-namespace "RecipeOn"^^xsd:string .
 
 #################################################################
