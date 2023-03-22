@@ -13,14 +13,14 @@
 @prefix terms: <http://purl.org/dc/terms/> .
 @base <https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> .
 
-<https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> rdf:type owl:Ontology ;
+<https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> rdf:type owl:Ontology .
 				 owl:versionIRI <https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> ;
-					dc:contributor "Saad Razzaq", "Fahad Maqbool", "Hajira Jabeen".
-###                                                        terms:date "2022-06-15"^^xsd:date ,
-###							"2023-03-22"^^xsd:date;
-###			 terms:description "RecipeOn, on one hand, to assist machines in understanding the semantics of recipes, and on the other hand, to encode the information crucial for personalized recipe generation. This includes e.g. nutritional information, ingredient-action relations, ingredient-diet relations, ingredient substitutions, and cooking time."@en ;
-###                                             terms:license <https://creativecommons.org/licenses/by/3.0/> ;
-###                                             terms:title "Recipe Ontology"@en .
+					dc:contributor "Saad Razzaq", "Fahad Maqbool", "Hajira Jabeen";
+                                                        terms:date "2022-06-15"^^xsd:date ,
+							"2023-03-22"^^xsd:date;
+			 terms:description "RecipeOn, on one hand, to assist machines in understanding the semantics of recipes, and on the other hand, to encode the information crucial for personalized recipe generation. This includes e.g. nutritional information, ingredient-action relations, ingredient-diet relations, ingredient substitutions, and cooking time."@en ;
+                                             terms:license <https://creativecommons.org/licenses/by/3.0/> ;
+                                             terms:title "Recipe Ontology"@en .
 
 #################################################################
 #    Annotation properties
