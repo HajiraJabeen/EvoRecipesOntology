@@ -29,7 +29,7 @@
                                             rdf:about "https://hajirajabeen.github.io/EvoRecipesOntology/"@en ,
                                                       "https://hajirajabeen.github.io/RecipeOn" ;
                                             rdfs:comment "The purpose of the development of this ontology is, on one hand, to assist machines in understanding the semantics of recipes, and on the other hand, to encode the information crucial for personalized recipe generation. This includes e.g. nutritional information, ingredient-action relations, ingredient-diet relations, ingredient substitutions, and cooking time."@en ;
-                                            rdfs:label "Recipe Ontology"@en ;
+                                            terms:title "Recipe Ontology"@en ;
                                             owl:versionInfo "1.0" ;
 			 terms:description "RecipeOn, on one hand, to assist machines in understanding the semantics of recipes, and on the other hand, to encode the information crucial for personalized recipe generation. This includes e.g. nutritional information, ingredient-action relations, ingredient-diet relations, ingredient substitutions, and cooking time."@en ;
                                              terms:license <https://creativecommons.org/licenses/by/3.0/> ;
