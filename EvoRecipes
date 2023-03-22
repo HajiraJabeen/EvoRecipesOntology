@@ -13,14 +13,22 @@
 @prefix terms: <http://purl.org/dc/terms/> .
 @base <https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> .
 
-<https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> rdf:type owl:Ontology .
-				 owl:versionIRI <https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> ;
-					dc:contributor "Saad Razzaq", "Fahad Maqbool", "Hajira Jabeen";
-                                                        terms:date "2022-06-15"^^xsd:date ,
-							"2023-03-22"^^xsd:date;
-			 terms:description "RecipeOn, on one hand, to assist machines in understanding the semantics of recipes, and on the other hand, to encode the information crucial for personalized recipe generation. This includes e.g. nutritional information, ingredient-action relations, ingredient-diet relations, ingredient substitutions, and cooking time."@en ;
-                                             terms:license <https://creativecommons.org/licenses/by/3.0/> ;
-                                             terms:title "Recipe Ontology"@en .
+<https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> rdf:type owl:Ontology ;
+					     
+	rdfs:label "The MEX Vocabulary (mex-algo)"@en ,
+                                          "Vocabulario MEX (mex-algo)"@pt ;
+                               dct:created "2014-02-02"^^xsd:date ;
+                               dct:modified "2016-05-01" ;
+                               dct:creator <http://aksw.org/DiegoEsteves.html> ;
+                               owl:versionInfo "1.0.2" ;
+                               dc:publisher "AKSW Research Group - Leipzig University"@en ;
+                               dct:title "MEX Algorithm Ontology (mex-algo)"@en ;
+                               rdfs:comment "MEX is an RDF vocabulary designed to facilitate interoperability between published machine learning experiments results on the Web. The mex-algo layer represents the algorithm information existing into a basic machine learning experiment."@en ;
+                               dc:publisher "AKSW Grupo de Pesquisa - Universidade de Leipzig"@pt ;
+                               rdfs:comment "MEX e um vocabulario modelado para facilitar a interoperabilidade entre resultados de experimentos de aprendizado de maquinas publicados na Web. A camada mex-algo representa informacaos de algoritmos existentes em um experimento de aprendizado de maquina."@pt ;
+                               rdf:about "http://mex.aksw.org/mex-doc-algo#" ;
+                               dct:contributor <http://aksw.org/DiegoMoussallem.html> ,
+                                               <http://aksw.org/JensLehmann.html> ;
 
 #################################################################
 #    Annotation properties
