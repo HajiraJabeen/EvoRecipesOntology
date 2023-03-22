@@ -5,14 +5,13 @@
 @prefix evo: <https://hajirajabeen.github.io/RecipeOn#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns/> .
-@prefix seq: <http://ontologydesignpatterns.org/cp/owl/sequence.owl#> .
+@prefix seq: <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix qudt: <http://qudt.org/2.1/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix foodon: <http://purl.obolibrary.org/obo/foodon.owl#> .
 @prefix terms: <http://purl.org/dc/terms/> .
-@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
 @base <https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> .
 
 <https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> rdf:type owl:Ontology ;
@@ -22,8 +21,7 @@
 							"2023-03-22"^^xsd:date;
 			 terms:description "RecipeOn, on one hand, to assist machines in understanding the semantics of recipes, and on the other hand, to encode the information crucial for personalized recipe generation. This includes e.g. nutritional information, ingredient-action relations, ingredient-diet relations, ingredient substitutions, and cooking time."@en ;
                                              terms:license <https://creativecommons.org/licenses/by/3.0/> ;
-                                             terms:title "Recipe Ontology"@en ;
-                                             oboInOwl:default-namespace "RecipeOn"^^xsd:string .
+                                             terms:title "Recipe Ontology"@en .
 
 #################################################################
 #    Annotation properties
