@@ -15,18 +15,21 @@
 
 <https://raw.githubusercontent.com/HajiraJabeen/EvoRecipesOntology/main/EvoRecipes> rdf:type owl:Ontology ;
 					     
-	rdfs:label "The MEX Vocabulary (mex-algo)"@en ;
-                               dct:created "2012-06-15"^^xsd:date ;
+	rdfs:label "The RecipeOn Ontology (RecipeOn)"@en ;
+                               dct:created "2022-06-15"^^xsd:date ;
                                dct:modified "2023-03-22" ;
                                dct:creator <https://github.com/msaadlak> ;
                                owl:versionInfo "1.0" ;
-                               dc:publisher ""@en ;
+                               dc:publisher "Recipe Evolution Group"@en ;
                                dct:title "RecipeOn Ontology"@en ;
                                rdfs:comment "RecipeOn on one hand assist machines in understanding the semantics of recipes, and on the other hand encodes the information crucial for personalized recipe generation. This includes e.g. nutritional information, ingredient-action relations, ingredient-diet relations, ingredient substitutions, and cooking time."@en ;
                                rdf:about "https://hajirajabeen.github.io/RecipeOn" ;
                                dct:contributor <https://github.com/msaadlak> ,
                                                <https://hajirajabeen.github.io>,
-					       <https://github.com/fahad-maqbool> .
+					       <https://github.com/fahad-maqbool> ;
+				owl:imports rdfs:,
+					xsd:,
+					owl: .
 
 #################################################################
 #    Annotation properties
