@@ -26,6 +26,7 @@
                                             dct:modified "2023-03-22"^^xsd:date ;
 			terms:date "2023-03-22"^^xsd:date ,
                                                         "2022-06-15"^^xsd:date ;
+					rdf:about "https://hajirajabeen.github.io/RecipeOn"@en ;
                                             rdfs:comment "The purpose of the development of this ontology is, on one hand, to assist machines in understanding the semantics of recipes, and on the other hand, to encode the information crucial for personalized recipe generation. This includes e.g. nutritional information, ingredient-action relations, ingredient-diet relations, ingredient substitutions, and cooking time."@en ;
                                             rdfs:label "Recipe Ontology"@en ;
                                             owl:versionInfo "1.0" ;
