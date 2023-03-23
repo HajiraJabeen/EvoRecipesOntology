@@ -1,0 +1,3287 @@
+@prefix : <https://purl.org/net/recipeon/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix po: <http://purl.obolibrary.org/obo/po.owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns/> .
+@prefix seq: <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix qudt: <http://qudt.org/2.1/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix foodon: <http://purl.obolibrary.org/obo/foodon.owl#> .
+@base <http://www.w3.org/2000/01/rdf-schema> .
+
+<http://www.w3.org/2000/01/rdf-schema> rdf:type owl:Ontology ;
+                                        owl:versionIRI <https://purl.org/net/recipeon/v/1.0> ;
+                                        owl:imports <http://www.w3.org/2000/01/rdf-schema> ;
+                                        dc:publisher "Recipe Evolution Group" ;
+                                        dc:title "RecipeOn Ontology" ;
+                                        terms:contributor <https://hajirajabeen.github.io> ,
+                                                          <https://github.com/fahad-maqbool> ,
+                                                          <https://github.com/msaadlak> ;
+                                        terms:created "2022/06/15"^^xsd:date ;
+                                        terms:creator <https://github.com/msaadlak> ;
+                                        terms:description "ML-Schema is a collaborative, community effort with a mission to develop, maintain, and promote standard schemas for data mining and machine learning algorithms, datasets, and experiments" ;
+                                        terms:hasVersion 1.0 ;
+                                        terms:license <https://creativecommons.org/licenses/by/4.0/> ;
+                                        terms:modified "2023/03/22" ;
+                                        terms:title "The RecipeOn Ontology (recipeon)"@en ;
+                                        rdf:type owl:Ontology ;
+                                        rdfs:comment """
+  RecipeOn, on one hand, to assist machines in understanding the semantics of recipes, 
+and on the other hand, to encode the information crucial for personalized recipe generation. 
+This includes e.g. nutritional information, ingredient-action relations, ingredient-diet relations, ingredient substitutions, and cooking time.
+   """ ;
+                                        rdfs:isDefinedBy <https://purl.org/net/recipeon> ;
+                                        rdfs:label "The RecipeOn Ontology"@en ;
+                                        rdfs:seeAlso <https://hajirajabeen.github.io/EvoRecipesOntology/> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/publisher
+dc:publisher rdf:type owl:AnnotationProperty ;
+             rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty ;
+         rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+terms:contributor rdf:type owl:AnnotationProperty ;
+                  rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+terms:created rdf:type owl:AnnotationProperty ;
+              rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+terms:creator rdf:type owl:AnnotationProperty ;
+              rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+terms:description rdf:type owl:AnnotationProperty ;
+                  rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/hasVersion
+terms:hasVersion rdf:type owl:AnnotationProperty ;
+                 rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty ;
+              rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+terms:modified rdf:type owl:AnnotationProperty ;
+               rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+terms:title rdf:type owl:AnnotationProperty ;
+            rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns/about
+rdf:about rdf:type owl:AnnotationProperty ;
+          rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns/type
+rdf:type rdf:type owl:AnnotationProperty ;
+         rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://qudt.org/2.1/schema/qudt/hasQuantityValue
+qudt:hasQuantityValue rdf:type owl:ObjectProperty ;
+                      rdfs:domain qudt:Quantity ;
+                      rdfs:range qudt:QuantityValue ;
+                      rdf:type owl:AsymmetricProperty ,
+                               owl:ObjectProperty ;
+                      rdfs:label "has quantity value"@en .
+
+
+###  http://qudt.org/2.1/schema/qudt/hasUnit
+qudt:hasUnit rdf:type owl:ObjectProperty ;
+             rdfs:domain qudt:Quantity ;
+             rdfs:range qudt:Unit ;
+             rdf:type owl:ObjectProperty ;
+             rdfs:label "has unit"@en .
+
+
+###  http://schema.org/author
+<http://schema.org/author> rdf:type owl:ObjectProperty ;
+                           rdfs:domain <http://schema.org/Recipe> ;
+                           rdfs:range <http://schema.org/Person> ;
+                           rdf:type owl:ObjectProperty ;
+                           rdfs:label "author"@en .
+
+
+###  http://schema.org/cookTime
+<http://schema.org/cookTime> rdf:type owl:ObjectProperty ;
+                             rdfs:domain <http://schema.org/Recipe> ;
+                             rdfs:range qudt:Quantity ;
+                             rdf:type owl:ObjectProperty ;
+                             rdfs:label "cook time"@en .
+
+
+###  http://schema.org/hasPart
+<http://schema.org/hasPart> rdf:type owl:ObjectProperty ;
+                            rdfs:domain <http://schema.org/Recipe> ;
+                            rdfs:range [ rdf:type owl:Class ;
+                                         owl:unionOf ( :Ingredient
+                                                       :Procedure
+                                                     )
+                                       ] ;
+                            rdf:type owl:ObjectProperty .
+
+
+###  http://schema.org/nutrition
+<http://schema.org/nutrition> rdf:type owl:ObjectProperty ;
+                              rdfs:domain <http://schema.org/Recipe> ;
+                              rdfs:range <http://schema.org/NutritionInformation> ;
+                              rdf:type owl:ObjectProperty ;
+                              rdfs:label "nutrition"@en .
+
+
+###  http://schema.org/prepTime
+<http://schema.org/prepTime> rdf:type owl:ObjectProperty ;
+                             rdfs:domain <http://schema.org/Recipe> ;
+                             rdfs:range qudt:Quantity ;
+                             rdf:type owl:ObjectProperty ;
+                             rdfs:label "prep time"@en .
+
+
+###  http://schema.org/totalTime
+<http://schema.org/totalTime> rdf:type owl:ObjectProperty ;
+                              rdfs:domain <http://schema.org/Recipe> ;
+                              rdfs:range qudt:Quantity ;
+                              rdf:type owl:ObjectProperty ;
+                              rdfs:label "total time"@en .
+
+
+###  http://schema.org/yield
+<http://schema.org/yield> rdf:type owl:ObjectProperty ;
+                          rdfs:domain <http://schema.org/Recipe> ;
+                          rdfs:range qudt:Quantity ;
+                          rdf:type owl:ObjectProperty ;
+                          rdfs:label "yield"@en .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows
+seq:directlyFollows rdf:type owl:ObjectProperty ;
+                    owl:inverseOf seq:directlyPrecedes ;
+                    rdfs:domain owl:Action ;
+                    rdfs:range owl:Action ;
+                    rdf:type owl:ObjectProperty ;
+                    rdfs:label "directily follows"@en .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes
+seq:directlyPrecedes rdf:type owl:ObjectProperty ;
+                     rdfs:domain owl:Action ;
+                     rdfs:range owl:Action ;
+                     rdf:type owl:ObjectProperty ;
+                     rdfs:label "directly precedes"@en .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows
+seq:follows rdf:type owl:ObjectProperty ;
+            owl:inverseOf seq:precedes ;
+            rdfs:domain owl:Action ;
+            rdfs:range owl:Action ;
+            owl:propertyChainAxiom ( seq:directlyFollows
+                                     seq:directlyFollows
+                                   ) ;
+            rdf:type owl:ObjectProperty ;
+            rdfs:label "follows"@en .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes
+seq:precedes rdf:type owl:ObjectProperty ;
+             rdfs:domain owl:Action ;
+             rdfs:range owl:Action ;
+             owl:propertyChainAxiom ( seq:directlyPrecedes
+                                      seq:directlyPrecedes
+                                    ) ;
+             rdf:type owl:ObjectProperty ;
+             rdfs:label "precedes"@en .
+
+
+###  http://www.w3.org/2002/07/owl#has_duration
+owl:has_duration rdf:type owl:ObjectProperty ;
+                 rdfs:domain owl:Action ;
+                 rdfs:range qudt:Quantity ;
+                 rdf:type owl:ObjectProperty ;
+                 rdfs:label "has duration"@en .
+
+
+###  https://purl.org/net/recipeon/alternateAction
+:alternateAction rdf:type owl:ObjectProperty ;
+                 rdfs:domain owl:Action ;
+                 rdfs:range owl:Action ;
+                 rdf:type owl:ObjectProperty ,
+                          owl:SymmetricProperty ;
+                 rdfs:label "Alternate Action"@en .
+
+
+###  https://purl.org/net/recipeon/directlyFollowsProcedure
+:directlyFollowsProcedure rdf:type owl:ObjectProperty ;
+                          owl:inverseOf :directlyPrecedesProcedure ;
+                          rdfs:domain :Procedure ;
+                          rdfs:range :Procedure ;
+                          rdf:type owl:ObjectProperty ;
+                          rdfs:label "directly follows procedures"@en .
+
+
+###  https://purl.org/net/recipeon/directlyPrecedesProcedure
+:directlyPrecedesProcedure rdf:type owl:ObjectProperty ;
+                           rdfs:domain :Procedure ;
+                           rdfs:range :Procedure ;
+                           rdf:type owl:ObjectProperty ;
+                           rdfs:label "directly precedes procedure"@en .
+
+
+###  https://purl.org/net/recipeon/hasAction
+:hasAction rdf:type owl:ObjectProperty ;
+           owl:inverseOf :hasActionIngredient ;
+           rdfs:domain :Ingredient ;
+           rdfs:range owl:Action ;
+           rdf:type owl:ObjectProperty ;
+           rdfs:label "has action"@en .
+
+
+###  https://purl.org/net/recipeon/hasActionIngredient
+:hasActionIngredient rdf:type owl:ObjectProperty ;
+                     rdfs:domain owl:Action ;
+                     rdfs:range :Ingredient ;
+                     rdf:type owl:ObjectProperty ;
+                     rdfs:label "has action ingredient"@en .
+
+
+###  https://purl.org/net/recipeon/hasActionProcedure
+:hasActionProcedure rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :hasProcedureAction ;
+                    rdfs:domain owl:Action ;
+                    rdfs:range :Procedure ;
+                    rdf:type owl:ObjectProperty ;
+                    rdfs:label "has action procedure"@en .
+
+
+###  https://purl.org/net/recipeon/hasAggregateRating
+:hasAggregateRating rdf:type owl:ObjectProperty ;
+                    rdfs:domain <http://schema.org/Recipe> ;
+                    rdfs:range <http://schema.org/AggregateRating> ;
+                    rdf:type owl:FunctionalProperty ,
+                             owl:ObjectProperty ;
+                    rdfs:label "has aggregate rating"@en .
+
+
+###  https://purl.org/net/recipeon/hasAlternateIngredient
+:hasAlternateIngredient rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Ingredient ;
+                        rdfs:range :Ingredient ;
+                        rdf:type owl:ObjectProperty ,
+                                 owl:SymmetricProperty ;
+                        rdfs:label "has alternate ingredient"@en .
+
+
+###  https://purl.org/net/recipeon/hasAlternateProcedure
+:hasAlternateProcedure rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Procedure ;
+                       rdfs:range :Procedure ;
+                       rdf:type owl:ObjectProperty ,
+                                owl:SymmetricProperty ;
+                       rdfs:label "has alternate procedure"@en .
+
+
+###  https://purl.org/net/recipeon/hasCookingAction
+:hasCookingAction rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasAction ;
+                  rdfs:domain :Ingredient ;
+                  rdfs:range :Cooking ;
+                  rdf:type owl:ObjectProperty ;
+                  rdfs:label "has cooking action"@en .
+
+
+###  https://purl.org/net/recipeon/hasFlavorIngredient
+:hasFlavorIngredient rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasType ;
+                     rdfs:domain :Ingredient ;
+                     rdfs:range :FlavorIngredient ;
+                     rdf:type owl:ObjectProperty ;
+                     rdfs:label "has flavor ingredient"@en .
+
+
+###  https://purl.org/net/recipeon/hasIngredient
+:hasIngredient rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://schema.org/hasPart> ;
+               rdfs:domain <http://schema.org/Recipe> ;
+               rdfs:range :Ingredient ;
+               rdf:type owl:ObjectProperty ;
+               rdfs:label "has ingredient"@en .
+
+
+###  https://purl.org/net/recipeon/hasMainIngredient
+:hasMainIngredient rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :hasType ;
+                   rdfs:domain :Ingredient ;
+                   rdfs:range :MainIngredient ;
+                   rdf:type owl:ObjectProperty ;
+                   rdfs:label "has main ingredient"@en .
+
+
+###  https://purl.org/net/recipeon/hasNutrientQuantity
+:hasNutrientQuantity rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Nutrient ;
+                     rdfs:range qudt:Quantity ;
+                     rdf:type owl:ObjectProperty .
+
+
+###  https://purl.org/net/recipeon/hasNutrientType
+:hasNutrientType rdf:type owl:ObjectProperty ;
+                 rdfs:domain <http://schema.org/NutritionInformation> ;
+                 rdfs:range :Nutrient ;
+                 rdf:type owl:ObjectProperty .
+
+
+###  https://purl.org/net/recipeon/hasPostCookingAction
+:hasPostCookingAction rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :hasAction ;
+                      rdfs:domain :Ingredient ;
+                      rdfs:range :PostCooking ;
+                      rdf:type owl:ObjectProperty ;
+                      rdfs:label "has post cooking action"@en .
+
+
+###  https://purl.org/net/recipeon/hasPreparatoryAction
+:hasPreparatoryAction rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :hasAction ;
+                      rdfs:domain :Ingredient ;
+                      rdfs:range :Preparatory ;
+                      rdf:type owl:ObjectProperty ;
+                      rdfs:label "has preparatory action"@en .
+
+
+###  https://purl.org/net/recipeon/hasProcedure
+:hasProcedure rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://schema.org/hasPart> ;
+              rdfs:domain <http://schema.org/Recipe> ;
+              rdfs:range :Procedure ;
+              rdf:type owl:ObjectProperty ;
+              rdfs:label "has procedure"@en .
+
+
+###  https://purl.org/net/recipeon/hasProcedureAction
+:hasProcedureAction rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Procedure ;
+                    rdfs:range owl:Action ;
+                    rdf:type owl:ObjectProperty ;
+                    rdfs:label "has procedure action"@en .
+
+
+###  https://purl.org/net/recipeon/hasProcedureIngredient
+:hasProcedureIngredient rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Procedure ;
+                        rdfs:range :Ingredient ;
+                        rdf:type owl:ObjectProperty ;
+                        rdfs:label "hasProcedureAction"@en .
+
+
+###  https://purl.org/net/recipeon/hasQuantity
+:hasQuantity rdf:type owl:ObjectProperty ;
+             rdfs:domain :Ingredient ;
+             rdfs:range qudt:Quantity ;
+             rdf:type owl:ObjectProperty ;
+             rdfs:label "has quantity"@en .
+
+
+###  https://purl.org/net/recipeon/hasSideIngredient
+:hasSideIngredient rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :hasType ;
+                   rdfs:domain :Ingredient ;
+                   rdfs:range :SideIngredient ;
+                   rdf:type owl:ObjectProperty ;
+                   rdfs:label "has side ingredient"@en .
+
+
+###  https://purl.org/net/recipeon/hasType
+:hasType rdf:type owl:ObjectProperty ;
+         rdfs:domain :Ingredient ;
+         rdfs:range :IngredientType ;
+         rdf:type owl:ObjectProperty ;
+         rdfs:label "has type"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://qudt.org/2.1/schema/qudt/Abbreviation
+qudt:Abbreviation rdf:type owl:DatatypeProperty ;
+                  rdfs:domain qudt:Unit ;
+                  rdfs:range xsd:string ;
+                  rdf:type owl:DatatypeProperty ;
+                  rdfs:label "Abbrevation"@en .
+
+
+###  http://qudt.org/2.1/schema/qudt/hasNumericValue
+qudt:hasNumericValue rdf:type owl:DatatypeProperty ;
+                     rdfs:domain qudt:QuantityValue ;
+                     rdfs:range xsd:double ;
+                     rdf:type owl:DatatypeProperty ;
+                     rdfs:label "has numeric value"@en .
+
+
+###  http://schema.org/cookingMethod
+<http://schema.org/cookingMethod> rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain <http://schema.org/Recipe> ;
+                                  rdfs:range xsd:string ;
+                                  rdf:type owl:DatatypeProperty ;
+                                  rdfs:label "Cooking Method"@en .
+
+
+###  http://schema.org/datePublished
+<http://schema.org/datePublished> rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain <http://schema.org/Recipe> ;
+                                  rdfs:range xsd:string ;
+                                  rdf:type owl:DatatypeProperty ;
+                                  rdfs:label "Date Published"@en .
+
+
+###  http://schema.org/email
+<http://schema.org/email> rdf:type owl:DatatypeProperty ;
+                          rdfs:domain <http://schema.org/Person> ;
+                          rdfs:range xsd:string ;
+                          rdf:type owl:DatatypeProperty ;
+                          rdfs:label "email"@en .
+
+
+###  http://schema.org/givenName
+<http://schema.org/givenName> rdf:type owl:DatatypeProperty ;
+                              rdfs:domain <http://schema.org/Person> ;
+                              rdfs:range xsd:string ;
+                              rdf:type owl:DatatypeProperty ;
+                              rdfs:label "given name"@en .
+
+
+###  http://schema.org/keywords
+<http://schema.org/keywords> rdf:type owl:DatatypeProperty ;
+                             rdfs:domain <http://schema.org/Recipe> ;
+                             rdfs:range xsd:string ;
+                             rdf:type owl:DatatypeProperty ;
+                             rdfs:label "key words"@en .
+
+
+###  http://schema.org/ratingCount
+<http://schema.org/ratingCount> rdf:type owl:DatatypeProperty ;
+                                rdfs:domain <http://schema.org/AggregateRating> ;
+                                rdfs:range xsd:integer ;
+                                rdf:type owl:DatatypeProperty ;
+                                rdfs:label "rating count"@en .
+
+
+###  http://schema.org/recipeCategory
+<http://schema.org/recipeCategory> rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain <http://schema.org/Recipe> ;
+                                   rdfs:range xsd:string ;
+                                   rdf:type owl:DatatypeProperty ;
+                                   rdfs:label "recipe category"@en .
+
+
+###  http://schema.org/recipeCuisine
+<http://schema.org/recipeCuisine> rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain <http://schema.org/Recipe> ;
+                                  rdfs:range xsd:string ;
+                                  rdf:type owl:DatatypeProperty ;
+                                  rdfs:label "recipe cusine"@en .
+
+
+###  http://schema.org/recipeYield
+<http://schema.org/recipeYield> rdf:type owl:DatatypeProperty ;
+                                rdfs:domain <http://schema.org/Recipe> ;
+                                rdfs:range xsd:integer ;
+                                rdf:type owl:DatatypeProperty ;
+                                rdfs:label "recipe yield"@en .
+
+
+###  http://schema.org/reviewCount
+<http://schema.org/reviewCount> rdf:type owl:DatatypeProperty ;
+                                rdfs:domain <http://schema.org/AggregateRating> ;
+                                rdfs:range xsd:integer ;
+                                rdf:type owl:DatatypeProperty ;
+                                rdfs:label "review count"@en .
+
+
+###  http://schema.org/servingSize
+<http://schema.org/servingSize> rdf:type owl:DatatypeProperty ;
+                                rdfs:domain <http://schema.org/Recipe> ;
+                                rdfs:range xsd:double ;
+                                rdf:type owl:DatatypeProperty ;
+                                rdfs:label "serving size"@en .
+
+
+###  http://schema.org/suitableForDiet
+<http://schema.org/suitableForDiet> rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain <http://schema.org/Recipe> ;
+                                    rdfs:range xsd:string ;
+                                    rdf:type owl:DatatypeProperty ;
+                                    rdfs:label "suitable for diet"@en .
+
+
+###  http://schema.org/tool
+<http://schema.org/tool> rdf:type owl:DatatypeProperty ;
+                         rdfs:domain <http://schema.org/Recipe> ;
+                         rdfs:range xsd:string ;
+                         rdf:type owl:DatatypeProperty ;
+                         rdfs:label "tool"@en .
+
+
+###  http://schema.org/url
+<http://schema.org/url> rdf:type owl:DatatypeProperty ;
+                        rdfs:domain <http://schema.org/Recipe> ;
+                        rdfs:range xsd:string ;
+                        rdf:type owl:DatatypeProperty ;
+                        rdfs:label "url"@en .
+
+
+###  https://purl.org/net/recipeon/hasCourseName
+:hasCourseName rdf:type owl:DatatypeProperty ;
+               rdfs:domain <http://schema.org/Recipe> ;
+               rdfs:range xsd:string ;
+               rdf:type owl:DatatypeProperty ;
+               rdfs:label "has course name"@en .
+
+
+###  https://purl.org/net/recipeon/hasDifficultyLevel
+:hasDifficultyLevel rdf:type owl:DatatypeProperty ;
+                    rdfs:domain <http://schema.org/Recipe> ;
+                    rdfs:range xsd:string ;
+                    rdf:type owl:DatatypeProperty ;
+                    rdfs:label "has difficulty level"@en .
+
+
+###  https://purl.org/net/recipeon/hasMealType
+:hasMealType rdf:type owl:DatatypeProperty ;
+             rdfs:domain <http://schema.org/Recipe> ;
+             rdfs:range xsd:string ;
+             rdf:type owl:DatatypeProperty ;
+             rdfs:label "has meal type"@en .
+
+
+###  https://purl.org/net/recipeon/hasNutrientName
+:hasNutrientName rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Nutrient ;
+                 rdfs:range xsd:string ;
+                 rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/foodon.owl#00001151
+<http://purl.obolibrary.org/obo/foodon.owl#00001151> rdf:type owl:Class ;
+                                                     owl:equivalentClass :CitrusFruit ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#00001222
+<http://purl.obolibrary.org/obo/foodon.owl#00001222> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Sausages ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#00002141
+<http://purl.obolibrary.org/obo/foodon.owl#00002141> rdf:type owl:Class ;
+                                                     owl:equivalentClass :FruitVegetables ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#00002277
+<http://purl.obolibrary.org/obo/foodon.owl#00002277> rdf:type owl:Class ;
+                                                     owl:equivalentClass :StoneFruit ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#00002711
+<http://purl.obolibrary.org/obo/foodon.owl#00002711> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Cracker ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#00002956
+<http://purl.obolibrary.org/obo/foodon.owl#00002956> rdf:type owl:Class ;
+                                                     owl:equivalentClass :GameMeat ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#00003041
+<http://purl.obolibrary.org/obo/foodon.owl#00003041> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Pear ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#00003042
+<http://purl.obolibrary.org/obo/foodon.owl#00003042> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Herbs ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#00003083
+<http://purl.obolibrary.org/obo/foodon.owl#00003083> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Veal ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#00003154
+<http://purl.obolibrary.org/obo/foodon.owl#00003154> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Spelt ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#00003415
+<http://purl.obolibrary.org/obo/foodon.owl#00003415> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Cucumber ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#00003434
+<http://purl.obolibrary.org/obo/foodon.owl#00003434> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Rice ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#00003564
+<http://purl.obolibrary.org/obo/foodon.owl#00003564> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Nuts ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#00003618
+<http://purl.obolibrary.org/obo/foodon.owl#00003618> rdf:type owl:Class ;
+                                                     owl:equivalentClass :EggPlants ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#00003816
+<http://purl.obolibrary.org/obo/foodon.owl#00003816> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Vegetable ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#00003946
+<http://purl.obolibrary.org/obo/foodon.owl#00003946> rdf:type owl:Class ;
+                                                     owl:equivalentClass :WinterSquash ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03301051
+<http://purl.obolibrary.org/obo/foodon.owl#03301051> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Candy ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03301116
+<http://purl.obolibrary.org/obo/foodon.owl#03301116> rdf:type owl:Class ;
+                                                     owl:equivalentClass :WheatFlour ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03301372
+<http://purl.obolibrary.org/obo/foodon.owl#03301372> rdf:type owl:Class ;
+                                                     owl:equivalentClass :DriedPeas ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03301514
+<http://purl.obolibrary.org/obo/foodon.owl#03301514> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Cheese ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03301575
+<http://purl.obolibrary.org/obo/foodon.owl#03301575> rdf:type owl:Class ;
+                                                     owl:equivalentClass :PomeFruit ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03301585
+<http://purl.obolibrary.org/obo/foodon.owl#03301585> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Cookie ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03301705
+<http://purl.obolibrary.org/obo/foodon.owl#03301705> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Vinegar ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03302735
+<http://purl.obolibrary.org/obo/foodon.owl#03302735> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Pork ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03303380
+<http://purl.obolibrary.org/obo/foodon.owl#03303380> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Spices ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03305656
+<http://purl.obolibrary.org/obo/foodon.owl#03305656> rdf:type owl:Class ;
+                                                     owl:equivalentClass :DriedFruit ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03306236
+<http://purl.obolibrary.org/obo/foodon.owl#03306236> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Flavorings ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03306347
+<http://purl.obolibrary.org/obo/foodon.owl#03306347> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Pasta ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03306429
+<http://purl.obolibrary.org/obo/foodon.owl#03306429> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Meats ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03306818
+<http://purl.obolibrary.org/obo/foodon.owl#03306818> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Ham ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03307240
+<http://purl.obolibrary.org/obo/foodon.owl#03307240> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Chocolate ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03309370
+<http://purl.obolibrary.org/obo/foodon.owl#03309370> rdf:type owl:Class ;
+                                                     owl:equivalentClass :OilCookingSprays ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03310107
+<http://purl.obolibrary.org/obo/foodon.owl#03310107> rdf:type owl:Class ;
+                                                     owl:equivalentClass :SummerSquash ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03310294
+<http://purl.obolibrary.org/obo/foodon.owl#03310294> rdf:type owl:Class ;
+                                                     owl:equivalentClass :DriedMeats ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03310789
+<http://purl.obolibrary.org/obo/foodon.owl#03310789> rdf:type owl:Class ;
+                                                     owl:equivalentClass :SaladGreens ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03315218
+<http://purl.obolibrary.org/obo/foodon.owl#03315218> rdf:type owl:Class ;
+                                                     owl:equivalentClass :EdiblePods ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03315883
+<http://purl.obolibrary.org/obo/foodon.owl#03315883> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Poultry ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03316433
+<http://purl.obolibrary.org/obo/foodon.owl#03316433> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Bread ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03316532
+<http://purl.obolibrary.org/obo/foodon.owl#03316532> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Tomatoes ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03317509
+<http://purl.obolibrary.org/obo/foodon.owl#03317509> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Olive ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03400101
+<http://purl.obolibrary.org/obo/foodon.owl#03400101> rdf:type owl:Class ;
+                                                     owl:equivalentClass :CulturedMilkProducts ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03400432
+<http://purl.obolibrary.org/obo/foodon.owl#03400432> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Nutrient ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03400778
+<http://purl.obolibrary.org/obo/foodon.owl#03400778> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Dairy ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03411222
+<http://purl.obolibrary.org/obo/foodon.owl#03411222> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Fish ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03411669
+<http://purl.obolibrary.org/obo/foodon.owl#03411669> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Lamb ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03420183
+<http://purl.obolibrary.org/obo/foodon.owl#03420183> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Sprouts ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03450002
+<http://purl.obolibrary.org/obo/foodon.owl#03450002> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Cooking ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03541021
+<http://purl.obolibrary.org/obo/foodon.owl#03541021> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Legumes ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03541092
+<http://purl.obolibrary.org/obo/foodon.owl#03541092> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Lentils ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03541733
+<http://purl.obolibrary.org/obo/foodon.owl#03541733> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Avocados ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/foodon.owl#03541916
+<http://purl.obolibrary.org/obo/foodon.owl#03541916> rdf:type owl:Class ;
+                                                     owl:equivalentClass :Beef ;
+                                                     rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/ncit.owl#C45298
+<http://purl.obolibrary.org/obo/ncit.owl#C45298> rdf:type owl:Class ;
+                                                 owl:equivalentClass :Liquids ;
+                                                 rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/po.owl#0009001
+<http://purl.obolibrary.org/obo/po.owl#0009001> rdf:type owl:Class ;
+                                                owl:equivalentClass :Fruits ;
+                                                rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/po.owl#0025522
+<http://purl.obolibrary.org/obo/po.owl#0025522> rdf:type owl:Class ;
+                                                owl:equivalentClass :Tubers ;
+                                                rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/po.owl#0030110
+<http://purl.obolibrary.org/obo/po.owl#0030110> rdf:type owl:Class ;
+                                                owl:equivalentClass :PomeFruit ;
+                                                rdf:type owl:Class .
+
+
+###  http://qudt.org/2.1/schema/qudt/Quantity
+qudt:Quantity rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty qudt:hasQuantityValue ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass qudt:QuantityValue
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty qudt:hasUnit ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass qudt:Unit
+                              ] ;
+              rdf:about "https://en.wikipedia.org/wiki/Quantity"@en ;
+              rdf:type owl:Class ;
+              rdfs:comment "Quantity or amount is a property that can exist as a multitude or magnitude, which illustrate discontinuity and continuity. Quantities can be compared in terms of \"more\", \"less\", or \"equal\", or by assigning a numerical value multiple of a unit of measurement. Mass, time, distance, heat, and angle are among the familiar examples of quantitative properties."@en ;
+              rdfs:isDefinedBy "https://qudt.org/2.1/schema/qudt"@en ;
+              rdfs:label "Quantity"^^xsd:string .
+
+
+###  http://qudt.org/2.1/schema/qudt/QuantityValue
+qudt:QuantityValue rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty qudt:hasNumericValue ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onDataRange xsd:double
+                                   ] ;
+                   rdf:type owl:Class ;
+                   rdfs:comment "Single non-negative integer value"@en ;
+                   rdfs:isDefinedBy "https://qudt.org/2.1/schema/qudt"@en ;
+                   rdfs:label "QuantatiyValue"^^xsd:string .
+
+
+###  http://qudt.org/2.1/schema/qudt/Unit
+qudt:Unit rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty qudt:Abbreviation ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] ;
+          rdf:about "https://en.wikipedia.org/wiki/Unit_of_measurement"@en ;
+          rdf:type owl:Class ;
+          rdfs:comment "A unit of measurement is a definite magnitude of a quantity, defined and adopted by convention or by law, that is used as a standard for measurement of the same kind of quantity. Any other quantity of that kind can be expressed as a multiple of the unit of measurement."@en ;
+          rdfs:isDefinedBy "https://qudt.org/2.1/schema/qudt"@en ;
+          rdfs:label "Unit"^^xsd:string .
+
+
+###  http://schema.org/AggregateRating
+<http://schema.org/AggregateRating> rdf:type owl:Class ;
+                                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://schema.org/ratingCount> ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onDataRange xsd:integer
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://schema.org/reviewCount> ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onDataRange xsd:integer
+                                                    ] ;
+                                    rdf:type owl:Class ;
+                                    rdfs:comment "The average rating based on multiple ratings or reviews."@en ;
+                                    rdfs:isDefinedBy "https://schema.org/"@en ;
+                                    rdfs:label "AggregateRating"^^xsd:string .
+
+
+###  http://schema.org/NutritionInformation
+<http://schema.org/NutritionInformation> rdf:type owl:Class ;
+                                         rdf:about "https://schema.org/NutritionInformation"@en ;
+                                         rdf:type owl:Class ;
+                                         rdfs:comment "Nutritional information about the recipe."@en ;
+                                         rdfs:isDefinedBy "https://schema.org/"@en ;
+                                         rdfs:label "NuitritionInformation"^^xsd:string .
+
+
+###  http://schema.org/Person
+<http://schema.org/Person> rdf:type owl:Class ;
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/email> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/givenName> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ;
+                           rdf:about "https://schema.org/Person"@en ;
+                           rdf:type owl:Class ;
+                           rdfs:comment "A person (alive, dead, undead, or fictional)."@en ;
+                           rdfs:isDefinedBy "https://schema.org/"@en ;
+                           rdfs:label "Person"^^xsd:string .
+
+
+###  http://schema.org/Recipe
+<http://schema.org/Recipe> rdf:type owl:Class ;
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty :hasIngredient ;
+                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass :Ingredient
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/author> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass <http://schema.org/Person>
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :hasAggregateRating ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass <http://schema.org/AggregateRating>
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/cookTime> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass qudt:Quantity
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/prepTime> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass qudt:Quantity
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/totalTime> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass qudt:Quantity
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/yield> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass qudt:Quantity
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/datePublished> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/recipeCuisine> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/recipeYield> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:integer
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/url> ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :hasDifficultyLevel ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/cookingMethod> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/keywords> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/recipeCategory> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/servingSize> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:double
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://schema.org/suitableForDiet> ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :hasCourseName ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :hasMealType ;
+                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ;
+                           rdf:about "https://en.wikipedia.org/wiki/Recipe"@en ;
+                           rdf:type owl:Class ;
+                           rdfs:comment "A recipe is a set of instructions that describes how to prepare or make something, especially a dish of prepared food."@en ;
+                           rdfs:isDefinedBy "https://schema.org"@en ;
+                           rdfs:label "Recipe"^^xsd:string .
+
+
+###  http://www.w3.org/2002/07/owl#Action
+owl:Action rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Class ;
+                             owl:unionOf ( [ rdf:type owl:Restriction ;
+                                             owl:onProperty seq:directlyFollows ;
+                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass owl:Action
+                                           ]
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :hasActionIngredient ;
+                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass :Ingredient
+                                           ]
+                                         )
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty owl:has_duration ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass qudt:Quantity
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasActionProcedure ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Procedure
+                           ] ;
+           rdf:type owl:Class ;
+           rdfs:comment "Scramble: cook (eggs) by beating them with a little liquid and then cooking and stirring them gently."@en ;
+           rdfs:label "Action"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Alcohol
+:Alcohol rdf:type owl:Class ;
+         rdfs:subClassOf :Liquids ;
+         rdf:type owl:Class ;
+         rdfs:label "Alcohol"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Apple
+:Apple rdf:type owl:Class ;
+       rdfs:subClassOf :PomeFruit ;
+       owl:disjointWith :Pear ;
+       rdf:type owl:Class ;
+       rdfs:label "Apple"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Apply
+:Apply rdf:type owl:Class ;
+       rdfs:subClassOf :Preparatory ;
+       rdf:type owl:Class ;
+       rdfs:comment """Apply:
+Knead:
+Spread:
+Massage:
+Rub:
+Pat:
+Butter"""^^xsd:string ;
+       rdfs:label "Apply"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/AsianNoodle
+:AsianNoodle rdf:type owl:Class ;
+             rdfs:subClassOf :GrainProducts ;
+             rdf:about "https://en.wikipedia.org/wiki/Noodle"@en ;
+             rdf:type owl:Class ;
+             rdfs:comment "Noodles are a type of food made from unleavened dough which is either rolled flat and cut, stretched, or extruded, into long strips or strings."@en ;
+             rdfs:label "Asian Noodle"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/AsianSquash
+:AsianSquash rdf:type owl:Class ;
+             rdfs:subClassOf :FruitVegetables ;
+             rdf:type owl:Class ;
+             rdfs:label "Asian Squash"@en .
+
+
+###  https://purl.org/net/recipeon/Avocados
+:Avocados rdf:type owl:Class ;
+          rdfs:subClassOf :FruitVegetables ;
+          rdf:type owl:Class ;
+          rdfs:label "Avocados"@en .
+
+
+###  https://purl.org/net/recipeon/Bacon
+:Bacon rdf:type owl:Class ;
+       rdfs:subClassOf :CurvedMeats ;
+       rdf:type owl:Class ;
+       rdfs:label "Bacon"@en .
+
+
+###  https://purl.org/net/recipeon/Bake
+:Bake rdf:type owl:Class ;
+      rdfs:subClassOf :Cooking .
+
+
+###  https://purl.org/net/recipeon/BakedGoods
+:BakedGoods rdf:type owl:Class ;
+            rdfs:subClassOf :Ingredient ;
+            rdf:about "Baked goods are foods made from dough or batter and cooked by baking, a method of cooking food that uses prolonged dry heat, normally in an oven, but also in hot ashes, or on hot stones."@en ,
+                      "https://en.wikipedia.org/wiki/List_of_baked_goods"@en ;
+            rdf:type owl:Class ;
+            rdfs:label "Baked Goods"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Barley
+:Barley rdf:type owl:Class ;
+        rdfs:subClassOf :Grains ;
+        rdf:about "https://en.wikipedia.org/wiki/Barley"@en ;
+        rdf:type owl:Class ;
+        rdfs:comment "Barley is a member of the grass family, it is a major cereal grain grown in temperate climates globally."@en ;
+        rdfs:label "Barley"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/BeanProducts
+:BeanProducts rdf:type owl:Class ;
+              rdfs:subClassOf :Legumes ;
+              rdf:type owl:Class ;
+              rdfs:label "BeanProducts"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Beef
+:Beef rdf:type owl:Class ;
+      rdfs:subClassOf :Meats ;
+      rdf:about "https://en.wikipedia.org/wiki/Beef"@en ;
+      rdf:type owl:Class ;
+      rdfs:comment "Beef is the culinary name for meat from cattle."@en ;
+      rdfs:label "Beef"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Bend
+:Bend rdf:type owl:Class ;
+      rdfs:subClassOf :Preparatory ;
+      rdf:type owl:Class ;
+      rdfs:comment """Bend:
+Turn:
+Fold:
+Unfold
+Flip
+Rotate
+Mold
+Unmold"""@en ;
+      rdfs:label "Bend"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Berries
+:Berries rdf:type owl:Class ;
+         rdfs:subClassOf :Fruits ;
+         rdf:about "https://en.wikipedia.org/wiki/Berry"@en ;
+         rdf:type owl:Class ;
+         rdfs:comment "berries are juicy, rounded, brightly colored, sweet, sour or tart. Its a fruit."@en ;
+         rdfs:label "Berries"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/BlueCheese
+:BlueCheese rdf:type owl:Class ;
+            rdfs:subClassOf :Cheese ;
+            rdf:type owl:Class ;
+            rdfs:label "Blue Cheese"@en .
+
+
+###  https://purl.org/net/recipeon/Boil
+:Boil rdf:type owl:Class ;
+      rdfs:subClassOf :Cooking ;
+      rdf:about "https://en.wikipedia.org/wiki/Boiling"@en ;
+      rdf:type owl:Class ;
+      rdfs:comment "Boiling is the rapid phase transition from liquid to gas or vapor; the reverse of boiling is condensation. Boiling occurs when a liquid is heated to its boiling point, when the temperature at which the vapour pressure of the liquid is equal to the pressure exerted on the liquid by the surrounding atmosphere."@en ;
+      rdfs:label "Boil"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Bread
+:Bread rdf:type owl:Class ;
+       rdfs:subClassOf :BakedGoods ;
+       rdf:about "https://en.wikipedia.org/wiki/Bread"@en ;
+       rdf:type owl:Class ;
+       rdfs:comment "Bread is a staple food prepared from a dough of flour (usually wheat) and water, usually by baking."@en ;
+       rdfs:label "Bread"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/BuckWheat
+:BuckWheat rdf:type owl:Class ;
+           rdfs:subClassOf :Grains ;
+           rdf:about "https://en.wikipedia.org/wiki/Buckwheat"@en ;
+           rdf:type owl:Class ;
+           rdfs:comment "Buck Wheat is a pseudocereal because its seeds culinary use is the same as cereals, owing to their high starch content."@en ;
+           rdfs:label "Buck Wheat"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Bulb
+:Bulb rdf:type owl:Class ;
+      rdfs:subClassOf :Vegetable ;
+      rdf:type owl:Class ;
+      rdfs:comment "Garlic, Onion"@en ;
+      rdfs:label "Bulb"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Burn
+:Burn rdf:type owl:Class ;
+      rdfs:subClassOf :Cooking ;
+      rdf:about "https://dictionary.cambridge.org/us/thesaurus/articles/to-burn-food"@en ;
+      rdf:type owl:Class ;
+      rdfs:comment """Brown:
+Caramelize:
+Sear:
+Toast:
+Glaze: A glaze is a sauce that is cooked onto a protein or vegetable so that the sugars caramelize, get slightly sticky, and adhere to whatever it is that you're cooking."""@en ;
+      rdfs:label "Burn"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Cake
+:Cake rdf:type owl:Class ;
+      rdfs:subClassOf :BakedGoods ;
+      rdf:about "https://en.wikipedia.org/wiki/Cake"@en ;
+      rdf:type owl:Class ;
+      rdfs:comment "Cake is a flour confection made from flour, sugar, and other ingredients, and is usually baked. In their oldest forms, cakes were modifications of bread, but cakes now cover a wide range of preparations that can be simple or elaborate, and which share features with desserts such as pastries, meringues, custards, and pies."@en ;
+      rdfs:label "Cake"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Candy
+:Candy rdf:type owl:Class ;
+       rdfs:subClassOf :Flavorings ;
+       rdf:type owl:Class ;
+       rdfs:label "Candy"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/CaviarRoe
+:CaviarRoe rdf:type owl:Class ;
+           rdfs:subClassOf :Fish ;
+           rdf:type owl:Class ;
+           rdfs:label "Caviar Roe"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Cheese
+:Cheese rdf:type owl:Class ;
+        rdfs:subClassOf :Dairy ;
+        rdf:about "https://en.wikipedia.org/wiki/Cheese"@en ;
+        rdf:type owl:Class ;
+        rdfs:comment "Cheese is a dairy product produced in wide ranges of flavors, textures, and forms by coagulation of the milk protein casein."@en ;
+        rdfs:label "Cheese"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/CheeseSubstitute
+:CheeseSubstitute rdf:type owl:Class ;
+                  rdfs:subClassOf :Cheese ;
+                  rdf:type owl:Class ;
+                  rdfs:label "Cheese Substitute"@en .
+
+
+###  https://purl.org/net/recipeon/Chocolate
+:Chocolate rdf:type owl:Class ;
+           rdfs:subClassOf :Flavorings ;
+           rdf:about "https://en.wikipedia.org/wiki/Chocolate"@en ;
+           rdf:type owl:Class ;
+           rdfs:comment "Chocolate is a food made from roasted and ground cacao seed kernels that is available as a liquid, solid, or paste, either on its own or as a flavoring agent in other foods."@en ;
+           rdfs:label "Chocolate"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/CitrusFruit
+:CitrusFruit rdf:type owl:Class ;
+             rdfs:subClassOf :Fruits ;
+             rdf:about "https://en.wikipedia.org/wiki/Citrus#Fruit"@en ;
+             rdf:type owl:Class ;
+             rdfs:comment "Citrus is a fruit it has various varities including  oranges, lemons, grapefruits, pomelos, and limes."@en ;
+             rdfs:label "Citrus Fruit"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Clean
+:Clean rdf:type owl:Class ;
+       rdfs:subClassOf :Preparatory ;
+       rdf:type owl:Class ;
+       rdfs:comment """Clean:
+Wash:
+Scrub:
+Sterilize:
+Rinse:
+Wipe:"""@en ;
+       rdfs:label "Clean"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Coat
+:Coat rdf:type owl:Class ;
+      rdfs:subClassOf :Preparatory ;
+      rdf:type owl:Class ;
+      rdfs:comment """Coat
+Glaze
+Color
+Frost
+Deglaze"""^^xsd:string ;
+      rdfs:label "Coat"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/ColdCuts
+:ColdCuts rdf:type owl:Class ;
+          rdfs:subClassOf :CurvedMeats ;
+          rdf:type owl:Class ;
+          rdfs:label "Cold Cuts"@en .
+
+
+###  https://purl.org/net/recipeon/CommonTropicalFruit
+:CommonTropicalFruit rdf:type owl:Class ;
+                     rdfs:subClassOf :Fruits ;
+                     rdf:type owl:Class ;
+                     rdfs:label "CommonTropicalFruit"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Cookie
+:Cookie rdf:type owl:Class ;
+        rdfs:subClassOf :BakedGoods ;
+        rdf:about "A cookie (American English), or a biscuit (British English), is a baked or cooked snack or dessert that is typically small, flat and sweet. It usually contains flour, sugar, egg, and some type of oil, fat, or butter. It may include other ingredients such as raisins, oats, chocolate chips, nuts, etc."@en ,
+                  "https://en.wikipedia.org/wiki/Cookie"@en ;
+        rdf:type owl:Class ;
+        rdfs:label "Cookie"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Cooking
+:Cooking rdf:type owl:Class ;
+         rdfs:subClassOf owl:Action ;
+         owl:disjointWith [ rdf:type owl:Class ;
+                            owl:unionOf ( :PostCooking
+                                          :Preparatory
+                                        )
+                          ] ;
+         rdf:about "https://en.wikipedia.org/wiki/Cooking"@en ;
+         rdf:type owl:Class ;
+         rdfs:comment "Cooking, cookery, or culinary arts is the art, science and craft of using heat to prepare food for consumption. Cooking techniques and ingredients vary widely, from grilling food over an open fire to using electric stoves, to baking in various types of ovens, reflecting local conditions."@en ;
+         rdfs:label "Cooking"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/CookingGreens
+:CookingGreens rdf:type owl:Class ;
+               rdfs:subClassOf :Vegetable ;
+               rdf:type owl:Class ;
+               rdfs:label "Cooking Greens"@en .
+
+
+###  https://purl.org/net/recipeon/Cool
+:Cool rdf:type owl:Class ;
+      rdfs:subClassOf :PostCooking ;
+      rdf:type owl:Class ;
+      rdfs:comment """Cool:
+Chill:
+Refrigerate:
+Fan:
+Freeze:
+Frost"""@en ;
+      rdfs:label "Cool"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Corn
+:Corn rdf:type owl:Class ;
+      rdfs:subClassOf :Grains ;
+      rdf:about "https://en.wikipedia.org/wiki/Maize"@en ;
+      rdf:type owl:Class ;
+      rdfs:comment "It is a cereal grain also called as Maize. The six major types of maize are dent corn, flint corn, pod corn, popcorn, flour corn, and sweet corn."@en ;
+      rdfs:label "Corn"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Cracker
+:Cracker rdf:type owl:Class ;
+         rdfs:subClassOf :BakedGoods ;
+         rdf:about "https://en.wikipedia.org/wiki/Cracker_(food)"@en ;
+         rdf:type owl:Class ;
+         rdfs:comment "A cracker is a flat, dry baked biscuit typically made with flour. Flavorings or seasonings, such as salt, herbs, seeds, or cheese, may be added to the dough or sprinkled on top before baking."@en ;
+         rdfs:label "Cracker"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Crumb
+:Crumb rdf:type owl:Class ;
+       rdfs:subClassOf :BakedGoods ;
+       rdf:type owl:Class ;
+       rdfs:label "Crumb"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Cucumber
+:Cucumber rdf:type owl:Class ;
+          rdfs:subClassOf :FruitVegetables ;
+          rdf:type owl:Class ;
+          rdfs:label "Cucumbers"@en .
+
+
+###  https://purl.org/net/recipeon/CulturedMilkProducts
+:CulturedMilkProducts rdf:type owl:Class ;
+                      rdfs:subClassOf :Dairy ;
+                      rdf:about "https://en.wikipedia.org/wiki/Fermented_milk_products"@en ;
+                      rdf:type owl:Class ;
+                      rdfs:comment "Fermented milk products or fermented dairy products, also known as cultured dairy products."@en ;
+                      rdfs:label "Cultured Milk Products"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/CurvedMeats
+:CurvedMeats rdf:type owl:Class ;
+             rdfs:subClassOf :Meats ;
+             rdf:type owl:Class ;
+             rdfs:label "Curved Meats"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Cut
+:Cut rdf:type owl:Class ;
+     rdfs:subClassOf :Preparatory ;
+     rdf:type owl:Class ;
+     rdfs:comment """Cut:
+Chop:
+Mince:
+Cube:
+Dice:
+Split:
+Shred:
+Strip:
+Slice
+Crush
+Grind
+Grate
+Quarter"""@en ;
+     rdfs:label "Cut"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Dairy
+:Dairy rdf:type owl:Class ;
+       rdfs:subClassOf :Ingredient ;
+       rdf:type owl:Class ;
+       rdfs:label "Dairy"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/DairyMilkCream
+:DairyMilkCream rdf:type owl:Class ;
+                rdfs:subClassOf :MilkCream ;
+                rdf:type owl:Class ;
+                rdfs:label "Dairy Milk Cream"@en .
+
+
+###  https://purl.org/net/recipeon/Dip
+:Dip rdf:type owl:Class ;
+     rdfs:subClassOf :Preparatory ;
+     rdf:type owl:Class ;
+     rdfs:comment """Dip:
+Douse:
+Plunge:
+Soak:
+Submerge:
+Immerse:"""@en ;
+     rdfs:label "Dip"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/DirectHeat
+:DirectHeat rdf:type owl:Class ;
+            rdfs:subClassOf :Cooking ;
+            rdf:type owl:Class ;
+            rdfs:comment """Direct heat means to cook the food directly over the heat source (whether charcoal, gas, or wood). Direct heat will get you great grill marks over a fast flame.
+
+Examples include
+Barbecue:
+Broil
+Charbroil
+Grill
+Roast
+Grill"""@en ;
+            rdfs:label "DirectHeat"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/DriedBeans
+:DriedBeans rdf:type owl:Class ;
+            rdfs:subClassOf :Legumes ;
+            rdf:type owl:Class ;
+            rdfs:label "DriedBeans"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/DriedChile
+:DriedChile rdf:type owl:Class ;
+            rdfs:subClassOf :FruitVegetables ;
+            rdf:type owl:Class ;
+            rdfs:label "Dried Chile"@en .
+
+
+###  https://purl.org/net/recipeon/DriedFruit
+:DriedFruit rdf:type owl:Class ;
+            rdfs:subClassOf :Fruits ;
+            rdf:about "https://en.wikipedia.org/wiki/Dried_fruit"@en ;
+            rdf:type owl:Class ;
+            rdfs:comment "Dried fruit is fruit from which the majority of the original water content has been removed"@en ;
+            rdfs:label "Dried Fruit"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/DriedMeats
+:DriedMeats rdf:type owl:Class ;
+            rdfs:subClassOf :Meats ;
+            rdf:type owl:Class ;
+            rdfs:label "DriedMeats"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/DriedPeas
+:DriedPeas rdf:type owl:Class ;
+           rdfs:subClassOf :Legumes ;
+           rdf:type owl:Class ;
+           rdfs:label "DriedPeas"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/EdiblePods
+:EdiblePods rdf:type owl:Class ;
+            rdfs:subClassOf :Legumes ,
+                            :Vegetable ;
+            rdf:type owl:Class ;
+            rdfs:comment "Sugar Pea, Chinese Pea, Ladyfinger"@en ,
+                         "the seed-pod of the flowering plant species Pisum sativum. Each pod contains several peas, which can be green or yellow."@en ;
+            rdfs:label "EdiblePods"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/EggPlants
+:EggPlants rdf:type owl:Class ;
+           rdfs:subClassOf :FruitVegetables ;
+           rdf:type owl:Class ;
+           rdfs:label "Egg Plants"@en .
+
+
+###  https://purl.org/net/recipeon/ExoticTropicalFruit
+:ExoticTropicalFruit rdf:type owl:Class ;
+                     rdfs:subClassOf :Fruits ;
+                     rdf:type owl:Class ;
+                     rdfs:label "Exotic Tropical Fruit"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/ExtractsEssences
+:ExtractsEssences rdf:type owl:Class ;
+                  rdfs:subClassOf :Flavorings ;
+                  rdf:type owl:Class ;
+                  rdfs:label "Extracts Essences"@en .
+
+
+###  https://purl.org/net/recipeon/Fats
+:Fats rdf:type owl:Class ;
+      rdfs:subClassOf :FatsOils ;
+      rdf:type owl:Class ;
+      rdfs:comment "Fats in oils are normally due to results of animal fats or vegetable fats."@en ;
+      rdfs:label "Fats"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/FatsOils
+:FatsOils rdf:type owl:Class ;
+          rdfs:subClassOf :Ingredient ;
+          rdf:type owl:Class ;
+          rdfs:label "Fats Oils"@en .
+
+
+###  https://purl.org/net/recipeon/FattyFirmTextured
+:FattyFirmTextured rdf:type owl:Class ;
+                   rdfs:subClassOf :Fish ;
+                   rdf:type owl:Class ;
+                   rdfs:label "Fatty Firm Textured"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/FattyFlakyTextured
+:FattyFlakyTextured rdf:type owl:Class ;
+                    rdfs:subClassOf :Fish ;
+                    rdf:type owl:Class ;
+                    rdfs:label "FattyFlakyTextured"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Finish
+:Finish rdf:type owl:Class ;
+        rdfs:subClassOf :PostCooking ;
+        rdf:type owl:Class ;
+        rdfs:comment """Dust:
+Sprinkle:
+Garnish:
+Dredge:
+Dust:
+Spray:
+Top:
+Drizzle:
+Layer:"""@en ;
+        rdfs:label "Finish"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/FirmCheese
+:FirmCheese rdf:type owl:Class ;
+            rdfs:subClassOf :Cheese ;
+            rdf:type owl:Class ;
+            rdfs:label "Firm Cheese"@en .
+
+
+###  https://purl.org/net/recipeon/Fish
+:Fish rdf:type owl:Class ;
+      rdfs:subClassOf :Ingredient ;
+      rdf:type owl:Class ;
+      rdfs:label "Fish"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/FlatBread
+:FlatBread rdf:type owl:Class ;
+           rdfs:subClassOf :BakedGoods ;
+           rdf:type owl:Class ;
+           rdfs:label "FlatBread"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/FlavorIngredient
+:FlavorIngredient rdf:type owl:Class ;
+                  rdfs:subClassOf :IngredientType ;
+                  owl:disjointWith [ rdf:type owl:Class ;
+                                     owl:unionOf ( :MainIngredient
+                                                   :SideIngredient
+                                                 )
+                                   ] ;
+                  rdf:type owl:Class ;
+                  rdfs:label "Flavor Ingredient"^^xsd:string ,
+                             "If an ingredient role is of flavoring in a recipe then it come unders the flavor ingredient."@en .
+
+
+###  https://purl.org/net/recipeon/Flavorings
+:Flavorings rdf:type owl:Class ;
+            rdfs:subClassOf :Ingredient ;
+            rdf:type owl:Class ;
+            rdfs:label "Flavorings"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/FoodWrapper
+:FoodWrapper rdf:type owl:Class ;
+             rdfs:subClassOf :GrainProducts ;
+             rdf:type owl:Class ;
+             rdfs:label "FoodWrapper"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/FreshBeans
+:FreshBeans rdf:type owl:Class ;
+            rdfs:subClassOf :Legumes ,
+                            :Vegetable ;
+            rdf:type owl:Class ;
+            rdfs:comment "Soybean, Beer bean"@en ;
+            rdfs:label "FreshBeans"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/FreshCheese
+:FreshCheese rdf:type owl:Class ;
+             rdfs:subClassOf :Cheese ;
+             rdf:type owl:Class ;
+             rdfs:label "Fresh Cheese"@en .
+
+
+###  https://purl.org/net/recipeon/FreshChile
+:FreshChile rdf:type owl:Class ;
+            rdfs:subClassOf :FruitVegetables ;
+            rdf:type owl:Class ;
+            rdfs:label "Fresh Chile"@en .
+
+
+###  https://purl.org/net/recipeon/FreshPeas
+:FreshPeas rdf:type owl:Class ;
+           rdfs:subClassOf :Legumes ,
+                           :Vegetable ;
+           rdf:type owl:Class ;
+           rdfs:label "FreshPeas"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/FruitButters
+:FruitButters rdf:type owl:Class ;
+              rdfs:subClassOf :Fruits ;
+              rdf:about "https://en.wikipedia.org/wiki/Fruit_butter"@en ;
+              rdf:type owl:Class ;
+              rdfs:comment "A fruit butter is a sweet spread made of fruit cooked to a paste, then lightly sweetened."@en ;
+              rdfs:label "Fruit Butters"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/FruitJuices
+:FruitJuices rdf:type owl:Class ;
+             rdfs:subClassOf :Fruits ;
+             rdf:about "https://en.wikipedia.org/wiki/Juice"@en ;
+             rdf:type owl:Class ;
+             rdfs:comment "Juice is a drink made from the extraction or pressing of the natural liquid contained in fruit and vegetables."@en ;
+             rdfs:label "Fruit Jucies"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/FruitVegetables
+:FruitVegetables rdf:type owl:Class ;
+                 rdfs:subClassOf :Fruits ,
+                                 :Vegetable ;
+                 rdf:type owl:Class ;
+                 rdfs:label "Fruit Vegetables"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Fruits
+:Fruits rdf:type owl:Class ;
+        rdfs:subClassOf :Ingredient ;
+        rdf:type owl:Class ,
+                 owl:NamedIndividual ;
+        rdfs:label "Fruit"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Fry
+:Fry rdf:type owl:Class ;
+     rdfs:subClassOf :Cooking ;
+     rdf:about "https://en.wikipedia.org/wiki/Frying"@en ;
+     rdf:type owl:Class ;
+     rdfs:comment """Frying is the cooking of food in oil or another fat. Similar to sautéing, pan-fried foods are generally turned over once or twice during cooking to make sure that the food is well-made, using tongs or a spatula, while sautéed foods are cooked by \"tossing in the pan\". A large variety of foods may be fried.
+Examples include
+StirFry:
+Saute: fry quickly in a little hot fat.
+DeepFry:
+ShallowFry:
+AirFry:
+PanFry:
+Braise: fry (food) lightly and then stew it slowly in a closed container."""@en ;
+     rdfs:label "Fry"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/GameMeat
+:GameMeat rdf:type owl:Class ;
+          rdfs:subClassOf :Meats ;
+          rdf:type owl:Class ;
+          rdfs:label "GameMeat"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Gelatin
+:Gelatin rdf:type owl:Class ;
+         rdfs:subClassOf :Thickener ;
+         owl:disjointWith :StarchThickener ;
+         rdf:type owl:Class ;
+         rdfs:label "Gleatin"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/GrainProducts
+:GrainProducts rdf:type owl:Class ;
+               rdfs:subClassOf :Ingredient ;
+               rdf:type owl:Class ;
+               rdfs:label "GrainProducts"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Grains
+:Grains rdf:type owl:Class ;
+        rdfs:subClassOf :Ingredient ;
+        rdf:type owl:Class ;
+        rdfs:label "Grains"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Ham
+:Ham rdf:type owl:Class ;
+     rdfs:subClassOf :CurvedMeats ;
+     rdf:type owl:Class ;
+     rdfs:label "Ham"@en .
+
+
+###  https://purl.org/net/recipeon/HerbSpiceMix
+:HerbSpiceMix rdf:type owl:Class ;
+              rdfs:subClassOf :Flavorings ;
+              rdf:about "https://en.wikipedia.org/wiki/Herb"@en ;
+              rdf:type owl:Class ;
+              rdfs:comment "Herbs generally refers to the leafy green or flowering parts of a plant (either fresh or dried), while spices are usually dried and produced from other parts of the plant, including seeds, bark, roots and fruits"@en ;
+              rdfs:label "Herb Spice Mix"@en .
+
+
+###  https://purl.org/net/recipeon/Herbs
+:Herbs rdf:type owl:Class ;
+       rdfs:subClassOf :Flavorings ;
+       rdf:about "https://en.wikipedia.org/wiki/Herb"@en ;
+       rdf:type owl:Class ;
+       rdfs:comment "Herbs generally refers to the leafy green or flowering parts of a plant"@en ;
+       rdfs:label "Herbs"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/InflorescentVegetables
+:InflorescentVegetables rdf:type owl:Class ;
+                        rdfs:subClassOf :Vegetable ;
+                        rdf:type owl:Class ;
+                        rdfs:label "InflorescentVegetables"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Ingredient
+:Ingredient rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAction ;
+                              owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass owl:Action
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasQuantity ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass qudt:Quantity
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasType ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :IngredientType
+                            ] ;
+            rdf:type owl:Class ;
+            rdfs:label "Ingredient"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/IngredientType
+:IngredientType rdf:type owl:Class ;
+                rdf:type owl:Class ;
+                rdfs:label "IngredientType"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Juices
+:Juices rdf:type owl:Class ;
+        rdfs:subClassOf :Flavorings ,
+                        :Liquids ;
+        rdf:about "https://en.wikipedia.org/wiki/Juice"@en ;
+        rdf:type owl:Class ;
+        rdfs:comment "Juice is made from the extraction or pressing of the natural liquid contained in fruit and vegetables. It can also refer to liquids that are flavored with concentrate or other biological food sources"@en ;
+        rdfs:label "Juices"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Kamut
+:Kamut rdf:type owl:Class ;
+       rdfs:subClassOf :Grains ;
+       rdf:about "https://en.wikipedia.org/wiki/Khorasan_wheat"@en ;
+       rdf:type owl:Class ;
+       rdfs:comment "Kamut is a wheat. The grain is twice the size of modern-day wheat, and has a rich, nutty flavor"@en ;
+       rdfs:label "Kamut"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Lamb
+:Lamb rdf:type owl:Class ;
+      rdfs:subClassOf :Meats ;
+      rdf:about "https://en.wikipedia.org/wiki/Lamb_and_mutton"@en ;
+      rdf:type owl:Class ;
+      rdfs:comment "Lamb, hogget, and mutton, generically refer to sheep meat."@en ;
+      rdfs:label "Lamb"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/LeanFirmTextured
+:LeanFirmTextured rdf:type owl:Class ;
+                  rdfs:subClassOf :Fish ;
+                  rdf:type owl:Class ;
+                  rdfs:label "LearnFirmTextured"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/LeanFlakyTextured
+:LeanFlakyTextured rdf:type owl:Class ;
+                   rdfs:subClassOf :Fish ;
+                   rdf:type owl:Class ;
+                   rdfs:label "LeanFlakyTextured"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Legumes
+:Legumes rdf:type owl:Class ;
+         rdfs:subClassOf :Ingredient ;
+         rdf:type owl:Class ;
+         rdfs:label "Legumes"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Lentils
+:Lentils rdf:type owl:Class ;
+         rdfs:subClassOf :Ingredient ;
+         rdf:about "https://en.wikipedia.org/wiki/Lentil"@en ;
+         rdf:type owl:Class ;
+         rdfs:comment "lentil  is an edible legume."@en ;
+         rdfs:label "Lentils"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/LiquidSweetner
+:LiquidSweetner rdf:type owl:Class ;
+                rdfs:subClassOf :Liquids ;
+                rdf:type owl:Class ;
+                rdfs:label "LiquidSweetner"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/LiquidSweetners
+:LiquidSweetners rdf:type owl:Class ;
+                 rdfs:subClassOf :Flavorings ;
+                 rdf:about "https://en.wikipedia.org/wiki/Syrup"@en ;
+                 rdf:type owl:Class ;
+                 rdfs:comment """It acts as a condiment that is a thick, viscous liquid consisting primarily of a solution of sugar in water.  There are variety of syrups available in food industry like
+Agave syrup
+Cane syrup 
+Chocolate syrup
+Corn syrup
+Glucose syrup
+Golden syrup, a by-product of refining crystallized sugar
+High fructose corn syrup"""@en ;
+                 rdfs:label "Liquid Sweetners"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Liquids
+:Liquids rdf:type owl:Class ;
+         rdfs:subClassOf :Ingredient ;
+         rdf:type owl:Class ;
+         rdfs:label "Liquids"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Liquors
+:Liquors rdf:type owl:Class ;
+         rdfs:subClassOf :Flavorings ;
+         rdf:type owl:Class ;
+         rdfs:label "Liquors"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Lubricate
+:Lubricate rdf:type owl:Class ;
+           rdfs:subClassOf :Preparatory ;
+           rdf:type owl:Class ;
+           rdfs:comment """Grease:
+
+Oil:
+
+Smear:"""@en ;
+           rdfs:label "Lubricate"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/MainIngredient
+:MainIngredient rdf:type owl:Class ;
+                rdfs:subClassOf :IngredientType ;
+                owl:disjointWith [ rdf:type owl:Class ;
+                                   owl:unionOf ( :FlavorIngredient
+                                                 :SideIngredient
+                                               )
+                                 ] ;
+                rdf:type owl:Class ;
+                rdfs:label "Main Ingredient"^^xsd:string ,
+                           "if any ingredient name is the part of recipe title then this ingredient would be classified as main ingredient."@en .
+
+
+###  https://purl.org/net/recipeon/MeatSpecific
+:MeatSpecific rdf:type owl:Class ;
+              rdfs:subClassOf :Preparatory ;
+              rdf:type owl:Class ;
+              rdfs:comment """Bone:
+DeBone:"""@en ;
+              rdfs:label "MeatSpecific"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Meats
+:Meats rdf:type owl:Class ;
+       rdfs:subClassOf :Ingredient ;
+       rdf:type owl:Class ;
+       rdfs:label "Meat"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Melons
+:Melons rdf:type owl:Class ;
+        rdfs:subClassOf :Fruits ;
+        rdf:type owl:Class ;
+        rdfs:comment "A melon is any of various plants of the ground family with sweet, edible, and fleshy fruit."@en ;
+        rdfs:label "Melons"^^xsd:string ,
+                   "https://en.wikipedia.org/wiki/Melon"@en .
+
+
+###  https://purl.org/net/recipeon/Melt
+:Melt rdf:type owl:Class ;
+      rdfs:subClassOf :Preparatory ;
+      rdf:type owl:Class ;
+      rdfs:comment """Melt:
+Liquefy:
+Defrost:
+Thaw:
+Unfreeze:
+Soften:"""@en ;
+      rdfs:label "Melt"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Microwave
+:Microwave rdf:type owl:Class ;
+           rdfs:subClassOf :Cooking ;
+           rdf:about "https://en.wikipedia.org/wiki/Microwave_oven"@en ;
+           rdf:type owl:Class ;
+           rdfs:comment """Microwave ovens are a common kitchen appliance and are popular for reheating previously cooked foods and cooking a variety of foods. They rapidly heat foods which can easily burn or turn lumpy if cooked in conventional pans, such as hot butter, fats, chocolate or porridge. Microwave ovens usually do not directly brown or caramelize food, since they rarely attain the necessary temperature to produce Maillard reactions.
+Examples include
+Heat
+Preheat"""@en ;
+           rdfs:label "Microwave"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/MilkCream
+:MilkCream rdf:type owl:Class ;
+           rdfs:subClassOf :Dairy ;
+           rdf:about "https://en.wikipedia.org/wiki/Cream"@en ;
+           rdf:type owl:Class ;
+           rdfs:comment "Cream is a dairy product composed of the higher-fat layer skimmed from the top of milk."@en ;
+           rdfs:label "Milk Cream"@en .
+
+
+###  https://purl.org/net/recipeon/Mix
+:Mix rdf:type owl:Class ;
+     rdfs:subClassOf :Preparatory ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty seq:directlyFollows ;
+                       owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                       owl:onClass owl:Action
+                     ] ;
+     rdf:type owl:Class ;
+     rdfs:comment """Mix:
+Blend:
+Stir:
+Whip:
+Wisk:
+Beat:
+Add:
+Pour:
+Combine:
+Shake"""@en ;
+     rdfs:label "Mix"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Mushrooms
+:Mushrooms rdf:type owl:Class ;
+           rdfs:subClassOf :Vegetable ;
+           rdf:about "https://en.wikipedia.org/wiki/Mushroom"@en ;
+           rdf:type owl:Class ;
+           rdfs:comment "A mushroom is the fleshy, spore-bearing fruiting body of a fungus, typically produced above ground"@en ;
+           rdfs:label "Mushrooms"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/NonDairyMilkCream
+:NonDairyMilkCream rdf:type owl:Class ;
+                   rdfs:subClassOf :Liquids ;
+                   rdf:type owl:Class ;
+                   rdfs:label "Non Dairy Milk Cream"@en .
+
+
+###  https://purl.org/net/recipeon/NonWheatFlour
+:NonWheatFlour rdf:type owl:Class ;
+               rdfs:subClassOf :GrainProducts ;
+               rdf:type owl:Class ;
+               rdfs:label "NoonWheatFlour"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Nutrient
+:Nutrient rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasNutrientQuantity ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass qudt:Quantity
+                          ] ;
+          rdf:about "https://en.wikipedia.org/wiki/Nutrient"@en ;
+          rdf:type owl:Class ;
+          rdfs:comment "A nutrient is a substance used by an organism to survive, grow, and reproduce. The requirement for dietary nutrient intake applies to animals, plants, fungi, and protists. Nutrients can be incorporated into cells for metabolic purposes or excreted by cells to create non-cellular structures, such as hair, scales, feathers, or exoskeletons. Some nutrients can be metabolically converted to smaller molecules in the process of releasing energy, such as for carbohydrates, lipids, proteins, and fermentation products (ethanol or vinegar), leading to end-products of water and carbon dioxide."@en ;
+          rdfs:label "Nutrient"@en .
+
+
+###  https://purl.org/net/recipeon/Nuts
+:Nuts rdf:type owl:Class ;
+      rdfs:subClassOf :Flavorings ;
+      rdf:type owl:Class ;
+      rdfs:label "Nuts"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Oat
+:Oat rdf:type owl:Class ;
+     rdfs:subClassOf :Grains ;
+     rdf:about "https://en.wikipedia.org/wiki/Oat"@en ;
+     rdf:type owl:Class ;
+     rdfs:comment "oat, is a species of cereal grain grown for its seed. Oats are a nutrient-rich food associated with lower blood cholesterol when consumed regularly"@en ;
+     rdfs:label "Oat"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/OilCookingSprays
+:OilCookingSprays rdf:type owl:Class ;
+                  rdfs:subClassOf :FatsOils ;
+                  rdf:about "https://en.wikipedia.org/wiki/Cooking_spray"@en ;
+                  rdf:type owl:Class ;
+                  rdfs:comment "Cooking spray is a spray form of an oil as a lubricant"@en ;
+                  rdfs:label "Oil Cooking Sprays"@en .
+
+
+###  https://purl.org/net/recipeon/Olive
+:Olive rdf:type owl:Class ;
+       rdfs:subClassOf :FruitVegetables ;
+       rdf:type owl:Class ;
+       rdfs:label "Olive"@en .
+
+
+###  https://purl.org/net/recipeon/Pasta
+:Pasta rdf:type owl:Class ;
+       rdfs:subClassOf :GrainProducts ;
+       rdf:about "https://en.wikipedia.org/wiki/Pasta"@en ;
+       rdf:type owl:Class ;
+       rdfs:comment "It a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs.  Rice flour, or legumes such as beans or lentils, are sometimes used in place of wheat flour to yield a different taste and texture"@en ;
+       rdfs:label "Pasta"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Pear
+:Pear rdf:type owl:Class ;
+      rdfs:subClassOf :PomeFruit ;
+      rdf:type owl:Class ;
+      rdfs:label "Peer"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Peel
+:Peel rdf:type owl:Class ;
+      rdfs:subClassOf :Preparatory ;
+      rdf:type owl:Class ;
+      rdfs:comment """Peel: remove the outer covering or skin from (a fruit or vegetable).
+
+Shave: cut (a thin slice or slices) from the surface of something.
+
+Hull: The hull or calyx is the green leafy top of the strawberry, which is generally removed before cooking or serving.
+
+Pare:
+
+Skin:
+
+Strip:
+
+Trim: Remove all unwanted or inedible parts (i.e. sinews, skin, fat etc.) from meat, fish poultry or vegetables.
+
+Shell:
+
+Husk:
+
+Shuck:"""@en ;
+      rdfs:label "Peel"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Placement
+:Placement rdf:type owl:Class ;
+           rdfs:subClassOf :Preparatory ;
+           rdf:type owl:Class ;
+           rdfs:comment """Place:
+Position:
+Set:
+Lay:
+Put:
+Leave:
+Arrange:
+Alternate:"""@en ;
+           rdfs:label "Placement"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/PomeFruit
+:PomeFruit rdf:type owl:Class ;
+           rdfs:subClassOf :Fruits ;
+           rdf:about "https://en.wikipedia.org/wiki/Pome"@en ;
+           rdf:type owl:Class ;
+           rdfs:comment "Pome fruit trees are deciduous, and undergo a dormant winter period that requires cold temperatures to break dormancy in spring"@en ;
+           rdfs:label "Pome Fruit"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Pork
+:Pork rdf:type owl:Class ;
+      rdfs:subClassOf :Meats ;
+      rdf:type owl:Class ;
+      rdfs:label "Pork"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/PostCooking
+:PostCooking rdf:type owl:Class ;
+             rdfs:subClassOf owl:Action ;
+             owl:disjointWith [ rdf:type owl:Class ;
+                                owl:unionOf ( :Cooking
+                                              :Preparatory
+                                            )
+                              ] ;
+             rdf:type owl:Class ;
+             rdfs:comment "Set of actions that will be executed after the heating process"@en ;
+             rdfs:label "PostCooking"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Poultry
+:Poultry rdf:type owl:Class ;
+         rdfs:subClassOf :Meats ;
+         rdf:about "https://en.wikipedia.org/wiki/Poultry"@en ;
+         rdf:type owl:Class ;
+         rdfs:comment "Poultry is one of the most common source of meat."@en ;
+         rdfs:label "Poultry"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Preparatory
+:Preparatory rdf:type owl:Class ;
+             rdfs:subClassOf owl:Action ;
+             owl:disjointWith [ rdf:type owl:Class ;
+                                owl:unionOf ( :Cooking
+                                              :PostCooking
+                                            )
+                              ] ;
+             rdf:type owl:Class ;
+             rdfs:comment "Set of actions that are involved in prearing a recipe before cooking"@en ;
+             rdfs:label "Preparatory"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Preserves
+:Preserves rdf:type owl:Class ;
+           rdfs:subClassOf :Flavorings ,
+                           :Fruits ;
+           rdf:type owl:Class ;
+           rdfs:label "Preservers"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Procedure
+:Procedure rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasProcedureAction ;
+                             owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                             owl:onClass owl:Action
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasProcedureIngredient ;
+                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Ingredient
+                           ] ;
+           rdf:type owl:Class ;
+           rdfs:label "Procedure"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/ProcessedChesse
+:ProcessedChesse rdf:type owl:Class ;
+                 rdfs:subClassOf :Cheese ;
+                 rdf:type owl:Class ;
+                 rdfs:label "Processed Chesse"@en .
+
+
+###  https://purl.org/net/recipeon/Refine
+:Refine rdf:type owl:Class ;
+        rdfs:subClassOf :Preparatory ;
+        rdf:type owl:Class ;
+        rdfs:comment """Sift
+Sieve
+Strain
+Filter
+Skim"""^^xsd:string ;
+        rdfs:label "Refine"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Remove
+:Remove rdf:type owl:Class ;
+        rdfs:subClassOf :Preparatory ;
+        rdf:type owl:Class ;
+        rdfs:comment """Drain:
+Clear:
+Remove:
+Drop
+Discard"""@en ;
+        rdfs:label "Remove"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Rice
+:Rice rdf:type owl:Class ;
+      rdfs:subClassOf :Grains ;
+      rdf:about "https://en.wikipedia.org/wiki/Rice"@en ;
+      rdf:type owl:Class ;
+      rdfs:comment "Rice is the seed of the grass species. There are many varieties of rice and culinary preferences across the globe."@en ;
+      rdfs:label "Rice"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Roots
+:Roots rdf:type owl:Class ;
+       rdfs:subClassOf :Vegetable ;
+       rdf:about "https://en.wikipedia.org/wiki/Root_vegetable"@en ;
+       rdf:type owl:Class ;
+       rdfs:comment "Root vegetables are underground plant parts eaten by humans as food"@en ;
+       rdfs:label "Roots"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Rye
+:Rye rdf:type owl:Class ;
+     rdfs:subClassOf :Grains ;
+     rdf:about "https://en.wikipedia.org/wiki/Rye"@en ;
+     rdf:type owl:Class ;
+     rdfs:comment "It is a grass grown extensively as a grain. It is a cereal grain."@en ;
+     rdfs:label "Rye"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/SaladGreens
+:SaladGreens rdf:type owl:Class ;
+             rdfs:subClassOf :Vegetable ;
+             rdf:about "https://en.wikipedia.org/wiki/Salad"@en ;
+             rdf:type owl:Class ;
+             rdfs:comment "Green or Garden salads use a base of leafy greens such as lettuce, arugula/rocket, kale or spinach;"@en ;
+             rdfs:label "Salad Greens"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Sausages
+:Sausages rdf:type owl:Class ;
+          rdfs:subClassOf :CurvedMeats ;
+          rdf:type owl:Class ;
+          rdfs:label "Sausages"@en .
+
+
+###  https://purl.org/net/recipeon/Scramble
+:Scramble rdf:type owl:Class ;
+          rdfs:subClassOf :Cooking ;
+          rdf:type owl:Class ;
+          rdfs:comment "To cook the mixed whites and yolks of eggs by stirring them while frying."@en ;
+          rdfs:label "Scramble"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/SeaVegetables
+:SeaVegetables rdf:type owl:Class ;
+               rdfs:subClassOf :Vegetable ;
+               rdf:about "https://en.wikipedia.org/wiki/Edible_seaweed"@en ;
+               rdf:type owl:Class ;
+               rdfs:comment "sea vegetables, are seaweeds that can be eaten and used for culinary purposes"@en ;
+               rdfs:label "Sea Vegetables"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Season
+:Season rdf:type owl:Class ;
+        rdfs:subClassOf :Preparatory ;
+        rdf:type owl:Class ;
+        rdfs:comment """Season
+Flavor
+Salt
+Spice
+Re-spice
+Re-season"""@en ;
+        rdfs:label "Season"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Seeds
+:Seeds rdf:type owl:Class ;
+       rdfs:subClassOf :Flavorings ;
+       rdf:type owl:Class ;
+       rdfs:label "Seeds"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/SemiFirmCheese
+:SemiFirmCheese rdf:type owl:Class ;
+                rdfs:subClassOf :Cheese ;
+                rdf:type owl:Class ;
+                rdfs:label "Semi Firm Cheese"@en .
+
+
+###  https://purl.org/net/recipeon/SemiSoftCheese
+:SemiSoftCheese rdf:type owl:Class ;
+                rdfs:subClassOf :Cheese ;
+                rdf:type owl:Class ;
+                rdfs:label "Semi Soft Cheese"@en .
+
+
+###  https://purl.org/net/recipeon/ShellFish
+:ShellFish rdf:type owl:Class ;
+           rdfs:subClassOf :Fish ;
+           rdf:type owl:Class ;
+           rdfs:label "ShellFish"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/SideIngredient
+:SideIngredient rdf:type owl:Class ;
+                rdfs:subClassOf :IngredientType ;
+                owl:disjointWith [ rdf:type owl:Class ;
+                                   owl:unionOf ( :FlavorIngredient
+                                                 :MainIngredient
+                                               )
+                                 ] ;
+                rdf:type owl:Class ;
+                rdfs:label "Side Ingredient"^^xsd:string ,
+                           "The ingredients other than main and flavoring ingredient are considered as side ingredients."@en .
+
+
+###  https://purl.org/net/recipeon/SnapBeans
+:SnapBeans rdf:type owl:Class ;
+           rdfs:subClassOf :Legumes ,
+                           :Vegetable ;
+           rdf:type owl:Class ;
+           rdfs:label "Snap Beans"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Soak
+:Soak rdf:type owl:Class ;
+      rdfs:subClassOf :Preparatory ;
+      rdf:type owl:Class ;
+      rdfs:comment """Soak
+Marrinate
+Steep
+Immerse"""^^xsd:string ;
+      rdfs:label "Soak"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/SoftCheese
+:SoftCheese rdf:type owl:Class ;
+            rdfs:subClassOf :Cheese ;
+            rdf:type owl:Class ;
+            rdfs:label "Soft Cheese"@en .
+
+
+###  https://purl.org/net/recipeon/SoyProducts
+:SoyProducts rdf:type owl:Class ;
+             rdfs:subClassOf :Legumes ;
+             rdf:type owl:Class ;
+             rdfs:label "SoyProducts"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Spelt
+:Spelt rdf:type owl:Class ;
+       rdfs:subClassOf :Grains ;
+       rdf:about "https://en.wikipedia.org/wiki/Spelt"@en ;
+       rdf:type owl:Class ;
+       rdfs:comment "It is a type of wheat."@en ;
+       rdfs:label "Spelt"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Spices
+:Spices rdf:type owl:Class ;
+        rdfs:subClassOf :Flavorings ;
+        rdf:about "https://en.wikipedia.org/wiki/Spice"@en ;
+        rdf:type owl:Class ;
+        rdfs:comment "A spice is a seed, fruit, root, bark, or other plant substance primarily used for flavoring or coloring food"@en ;
+        rdfs:label "Spices"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Sprouts
+:Sprouts rdf:type owl:Class ;
+         rdfs:subClassOf :Vegetable ;
+         rdf:about "https://en.wikipedia.org/wiki/Brussels_sprout"@en ;
+         rdf:type owl:Class ;
+         rdfs:comment "sprout is a type of cabbage."@en ;
+         rdfs:label "Sprouts"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/StalkVegetables
+:StalkVegetables rdf:type owl:Class ;
+                 rdfs:subClassOf :Vegetable ;
+                 rdf:about "https://en.wikipedia.org/wiki/Celery"@en ;
+                 rdf:type owl:Class ;
+                 rdfs:comment "Celery is a marshland plant and has been cultivated as a vegetable. Celery has a long fibrous stalk tapering into leaves."@en ;
+                 rdfs:label "Stalk Vegetables"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/StarchThickener
+:StarchThickener rdf:type owl:Class ;
+                 rdfs:subClassOf :Thickener ;
+                 rdf:type owl:Class ;
+                 rdfs:label "StarchThickener"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Stems
+:Stems rdf:type owl:Class ;
+       rdfs:subClassOf :Vegetable ;
+       rdf:type owl:Class ;
+       rdfs:comment "Ginger, Turmeric, Galangal, Lesser galangal, Finger Root"@en ;
+       rdfs:label "Stems"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Stocks
+:Stocks rdf:type owl:Class ;
+        rdfs:subClassOf :Liquids ;
+        rdf:type owl:Class ;
+        rdfs:label "Stocks"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/StoneFruit
+:StoneFruit rdf:type owl:Class ;
+            rdfs:subClassOf :Fruits ;
+            rdf:about "https://en.wikipedia.org/wiki/Drupe"@en ;
+            rdf:type owl:Class ;
+            rdfs:comment "stone fruit is an indehiscent fruit in which an outer fleshy part (exocarp, or skin, and mesocarp, or flesh) surrounds a single shell (the pit, stone, or pyrena) of hardened endocarp with a seed  inside."@en ;
+            rdfs:label "StoneFruit"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Storage
+:Storage rdf:type owl:Class ;
+         rdfs:subClassOf :PostCooking ;
+         rdf:type owl:Class ;
+         rdfs:comment """Bottle
+Bowl
+Store
+Save"""@en ;
+         rdfs:label "Storage"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/SummerSquash
+:SummerSquash rdf:type owl:Class ;
+              rdfs:subClassOf :FruitVegetables ;
+              rdf:type owl:Class ;
+              rdfs:label "Summer Squash"@en .
+
+
+###  https://purl.org/net/recipeon/SweetPepper
+:SweetPepper rdf:type owl:Class ;
+             rdfs:subClassOf :FruitVegetables ;
+             rdf:type owl:Class ;
+             rdfs:label "Sweet Pepper"@en .
+
+
+###  https://purl.org/net/recipeon/Thickener
+:Thickener rdf:type owl:Class ;
+           rdfs:subClassOf :GrainProducts ;
+           rdf:type owl:Class ;
+           rdfs:label "Thicker"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Tomatoes
+:Tomatoes rdf:type owl:Class ;
+          rdfs:subClassOf :FruitVegetables ;
+          rdf:type owl:Class ;
+          rdfs:label "Tomatoes"@en .
+
+
+###  https://purl.org/net/recipeon/Triticale
+:Triticale rdf:type owl:Class ;
+           rdfs:subClassOf :Grains ;
+           rdf:about "https://en.wikipedia.org/wiki/Triticale"@en ;
+           rdf:type owl:Class ;
+           rdfs:comment "It is a type of hybrid wheat."@en ;
+           rdfs:label "Triticale"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Tubers
+:Tubers rdf:type owl:Class ;
+        rdfs:subClassOf :Vegetable ;
+        rdf:about "https://en.wikipedia.org/wiki/Tuber"@en ;
+        rdf:type owl:Class ;
+        rdfs:comment "Tubers are a type of enlarged structure used as storage organs for nutrients in some plants."@en ;
+        rdfs:label "Tubers"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/VarietyMeats
+:VarietyMeats rdf:type owl:Class ;
+              rdfs:subClassOf :Meats ;
+              rdf:type owl:Class ;
+              rdfs:label "VarietyMeats"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Veal
+:Veal rdf:type owl:Class ;
+      rdfs:subClassOf :Meats ;
+      rdf:type owl:Class ;
+      rdfs:label "Veal"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Vegetable
+:Vegetable rdf:type owl:Class ;
+           rdfs:subClassOf :Ingredient ;
+           rdf:type owl:Class ;
+           rdfs:label "Vegetable"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Vinegar
+:Vinegar rdf:type owl:Class ;
+         rdfs:subClassOf :Flavorings ,
+                         :Liquids ;
+         rdf:about "https://en.wikipedia.org/wiki/Vinegar"@en ;
+         rdf:type owl:Class ;
+         rdfs:comment "Vinegar  is an aqueous solution of acetic acid and trace compounds that may include flavorings."@en ;
+         rdfs:label "Vinegar"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/WaterSoda
+:WaterSoda rdf:type owl:Class ;
+           rdfs:subClassOf :Liquids ;
+           rdf:type owl:Class ;
+           rdfs:label "Water Soda"@en .
+
+
+###  https://purl.org/net/recipeon/Wheat
+:Wheat rdf:type owl:Class ;
+       rdfs:subClassOf :Grains ;
+       rdf:about "https://en.wikipedia.org/wiki/Wheat"@en ;
+       rdf:type owl:Class ;
+       rdfs:comment "Wheat is a grass widely cultivated for its seed, a cereal grain. It has different varities."@en ;
+       rdfs:label "Wheat"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/WheatFlour
+:WheatFlour rdf:type owl:Class ;
+            rdfs:subClassOf :GrainProducts ;
+            rdf:about "https://en.wikipedia.org/wiki/Wheat_flour"@en ;
+            rdf:type owl:Class ;
+            rdfs:comment "Wheat flour is a powder made from the grinding of wheat used for human consumption."@en ;
+            rdfs:label "WheatFlour"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/Wines
+:Wines rdf:type owl:Class ;
+       rdfs:subClassOf :Flavorings ;
+       rdf:type owl:Class ;
+       rdfs:label "Wines"^^xsd:string .
+
+
+###  https://purl.org/net/recipeon/WinterSquash
+:WinterSquash rdf:type owl:Class ;
+              rdfs:subClassOf :FruitVegetables ;
+              rdf:type owl:Class ;
+              rdfs:label "Winter Squash"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://purl.org/net/recipeon/nounit
+:nounit a qudt:Unit .
+
+
+###  https://purl.org/net/recipeon/1
+:1 a qudt:QuantityValue ;
+                                  qudt:hasNumericValue "1.0"^^xsd:double .
+
+
+###  https://purl.org/net/recipeon/1By2
+:1By2 a qudt:QuantityValue ;
+                                     qudt:hasNumericValue "0.5"^^xsd:double  .
+
+###  https://purl.org/net/recipeon/1By2Teaspoon
+:1By2Teaspoon qudt:hasQuantityValue :1By2 ;
+                                             qudt:hasUnit :Teaspoon ;
+                                             a qudt:Quantity .
+
+
+###  https://purl.org/net/recipeon/1By4
+:1By4 qudt:hasNumericValue "0.25"^^xsd:double ;
+                                     a qudt:QuantityValue  .
+
+
+###  https://purl.org/net/recipeon/1By4Cup
+:1By4Cup qudt:hasQuantityValue :1By4 ;
+                                        qudt:hasUnit :Cup ;
+                                        a qudt:Quantity  .
+
+
+###  https://purl.org/net/recipeon/1Can
+:1Can qudt:hasQuantityValue :1 ;
+                                     qudt:hasUnit :Can ;
+                                     a qudt:Quantity .
+
+
+###  https://purl.org/net/recipeon/1Lb
+:1Lb qudt:hasQuantityValue :1 ;
+                                    qudt:hasUnit :Lb ;
+                                    a qudt:Quantity  .
+
+
+###  https://purl.org/net/recipeon/1Package
+:1Package qudt:hasQuantityValue :1 ;
+                                         qudt:hasUnit :Package ;
+                                         a qudt:Quantity .
+
+
+###  https://purl.org/net/recipeon/1Tablespoon
+:1Tablespoon qudt:hasQuantityValue :1 ;
+                                            qudt:hasUnit :Tablespoon ;
+                                            a qudt:Quantity .
+
+
+###  https://purl.org/net/recipeon/1-
+:1- qudt:hasQuantityValue :1 ;
+                                   qudt:hasUnit :nounit ;
+                                   a qudt:Quantity .
+
+
+###  https://purl.org/net/recipeon/2
+:2 qudt:hasNumericValue "2.0"^^xsd:double ;
+                                  a qudt:QuantityValue  .
+
+
+###  https://purl.org/net/recipeon/2Tablespoon
+:2Tablespoon qudt:hasQuantityValue :2 ;
+                                            qudt:hasUnit :Tablespoon ;
+                                            a qudt:Quantity .
+
+
+###  https://purl.org/net/recipeon/2Teaspoon
+:2Teaspoon qudt:hasQuantityValue :2 ;
+                                          qudt:hasUnit :Teaspoon ;
+                                          a qudt:Quantity .
+
+
+###  https://purl.org/net/recipeon/AR
+:AR <http://schema.org/ratingCount> 5 ;
+    <http://schema.org/reviewCount> 5 ;
+    a <http://schema.org/AggregateRating> .
+
+
+###  https://purl.org/net/recipeon/Add
+:Add seq:directlyPrecedes :Cook ;
+     a :Preparatory .
+
+
+###  https://purl.org/net/recipeon/Add2
+:Add2 seq:directlyPrecedes :Simmer1 ;
+      a :Preparatory .
+
+
+###  https://purl.org/net/recipeon/Add3
+:Add3 seq:directlyPrecedes :Simmer2 ;
+      a :Preparatory .
+
+
+###  https://purl.org/net/recipeon/Bake
+:Bake a :Cooking .
+
+
+###  https://purl.org/net/recipeon/Basil
+:Basil :hasFlavorIngredient :Flavor ;
+       :hasPreparatoryAction :Add ;
+       :hasQuantity :1By2Teaspoon ;
+       a :Herbs .
+
+
+###  https://purl.org/net/recipeon/BeefBroth
+:BeefBroth :hasPreparatoryAction :Add3 ;
+           :hasQuantity :1Can ;
+           :hasSideIngredient :Side ;
+           a :Stocks .
+
+
+###  https://purl.org/net/recipeon/Can
+:Can a qudt:Unit  .
+
+
+###  https://purl.org/net/recipeon/Cook
+:Cook seq:directlyPrecedes :Stir ;
+      a :Cooking .
+
+
+###  https://purl.org/net/recipeon/Cup
+:Cup a qudt:Unit .
+
+
+###  https://purl.org/net/recipeon/Divide
+:Divide seq:directlyPrecedes :Bake ;
+        a :Preparatory .
+
+
+###  https://purl.org/net/recipeon/Flavor
+:Flavor a  :FlavorIngredient .
+
+
+###  https://purl.org/net/recipeon/FrenchBaguette
+:FrenchBaguette :hasPreparatoryAction :Split ;
+                :hasQuantity :1- ;
+                :hasSideIngredient :Side ;
+                a :Bread .
+
+
+###  https://purl.org/net/recipeon/Garlic
+:Garlic :hasFlavorIngredient :Flavor ;
+        :hasPreparatoryAction :Add ;
+        :hasQuantity :1Tablespoon ;
+        a :Flavorings .
+
+
+###  https://purl.org/net/recipeon/GarlicAndHerbBoursinCheese
+:GarlicAndHerbBoursinCheese :hasMainIngredient :Main ;
+                            :hasPreparatoryAction :Spread ;
+                            :hasQuantity :1Package ;
+                            a :Cheese .
+
+
+###  https://purl.org/net/recipeon/Heat
+:Heat seq:directlyPrecedes :Add ;
+      a :Cooking .
+
+
+###  https://purl.org/net/recipeon/Heat2
+:Heat2 seq:directlyPrecedes :Split ;
+       a :Cooking .
+
+
+###  https://purl.org/net/recipeon/Lb
+:Lb a qudt:Unit .
+
+
+###  https://purl.org/net/recipeon/Lorraine
+:Lorraine <http://schema.org/datePublished> "27-1-2009"^^xsd:string ;
+          <http://schema.org/givenName> "Lorraine L"^^xsd:string ;
+          a <http://schema.org/Person> .
+
+
+###  https://purl.org/net/recipeon/Main
+:Main a :MainIngredient .
+
+
+###  https://purl.org/net/recipeon/OliveOil
+:OliveOil :hasCookingAction :Heat ;
+          :hasQuantity :2Teaspoon ;
+          :hasSideIngredient :Side ;
+          a :OilCookingSprays .
+
+
+###  https://purl.org/net/recipeon/Onion
+:Onion :hasFlavorIngredient :Flavor ;
+       :hasPreparatoryAction :Add ;
+       :hasQuantity :2Tablespoon ;
+       a :Vegetable .
+
+
+###  https://purl.org/net/recipeon/Package
+:Package a qudt:Unit .
+
+
+###  https://purl.org/net/recipeon/ROAST-BEEF-DIP-SANDWICH-WITH-HERBED-GARLIC-AU-JUS
+:ROAST-BEEF-DIP-SANDWICH-WITH-HERBED-GARLIC-AU-JUS a <http://schema.org/Recipe> ;
+			<http://schema.org/author> :Lorraine ;
+                                                   :hasAggregateRating :AR ;
+                                                   :hasIngredient :BeefBroth ,
+                                                                  :FrenchBaguette ,
+                                                                  :Garlic ,
+                                                                  :GarlicAndHerbBoursinCheese ,
+                                                                  :OliveOil ,
+                                                                  :Onion ,
+                                                                  :RedWine ,
+                                                                  :RoastBeef ,
+                                                                  :SoySauce ,
+                                                                  :WorcestershireSauce ,
+				  :Thyme ,
+				  :Basil	;
+                                                   <http://schema.org/recipeCuisine> "French"^^xsd:string ;
+                                                   <http://schema.org/recipeYield> 4 ;
+                                                   <http://schema.org/servingSize> "4.0"^^xsd:double ;
+                                                   <http://schema.org/url> "https://www.food.com/recipe/roast-beef-dip-sandwich-with-herbed-garlic-au-jus-352204"^^xsd:string .
+                                                   
+
+###  https://purl.org/net/recipeon/RedWine
+:RedWine :hasFlavorIngredient :Flavor ;
+         :hasPreparatoryAction :Add2 ;
+         :hasQuantity :1By4Cup ;
+         a :Alcohol .
+
+
+###  https://purl.org/net/recipeon/Refrigerate
+:Refrigerate seq:directlyPrecedes :Heat2 ;
+             a :PostCooking .
+
+
+###  https://purl.org/net/recipeon/RoastBeef
+:RoastBeef :hasMainIngredient :Main ;
+           :hasPreparatoryAction :Divide ;
+           :hasQuantity :1Lb ;
+           a :Beef .
+
+
+###  https://purl.org/net/recipeon/Side
+:Side a :SideIngredient .
+
+
+###  https://purl.org/net/recipeon/Simmer1
+:Simmer1 seq:directlyPrecedes :Add3 ;
+         a :Cooking .
+
+
+###  https://purl.org/net/recipeon/Simmer2
+:Simmer2 seq:directlyPrecedes :Refrigerate ;
+         a :Cooking .
+
+
+###  https://purl.org/net/recipeon/SoySauce
+:SoySauce :hasFlavorIngredient :Flavor ;
+          :hasPreparatoryAction :Add2 ;
+          :hasQuantity :2Tablespoon ;
+          a :Flavorings .
+
+
+###  https://purl.org/net/recipeon/Split
+:Split seq:directlyPrecedes :Spread ;
+       a :Preparatory .
+
+
+###  https://purl.org/net/recipeon/Spread
+:Spread seq:directlyPrecedes :Divide ;
+        a :Preparatory .
+
+
+###  https://purl.org/net/recipeon/Stir
+:Stir seq:directlyPrecedes :Add2 ;
+      a :Preparatory .
+
+
+###  https://purl.org/net/recipeon/Tablespoon
+:Tablespoon a qudt:Unit .
+
+
+###  https://purl.org/net/recipeon/Teaspoon
+:Teaspoon a qudt:Unit .
+
+
+###  https://purl.org/net/recipeon/Thyme
+:Thyme :hasFlavorIngredient :Flavor ;
+       :hasPreparatoryAction :Add ;
+       :hasQuantity :1By2Teaspoon ;
+       a :Herbs .
+
+
+###  https://purl.org/net/recipeon/WorcestershireSauce
+:WorcestershireSauce :hasFlavorIngredient :Flavor ;
+                     :hasPreparatoryAction :Add2 ;
+                     :hasQuantity :2Teaspoon ;
+                     a :Flavorings .
+
+
+
+
+
+[ rdf:type owl:Restriction
+] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Class
+ ] .
+
+[ rdf:type owl:Class
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Class
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Class
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Class
+ ] .
+
+[ rdf:type owl:Class
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Class
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Class
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Class
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Class
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Class
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Class
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Class
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+[ rdf:type owl:Class
+ ] .
+
+[ rdf:type owl:Class
+ ] .
+
+[ rdf:type owl:Restriction
+ ] .
+
+#################################################################
+#    Annotations
+#################################################################
+
+dc:contributor rdf:type owl:AnnotationProperty .
+
+
+owl:minQualifiedCardinality rdf:type owl:AnnotationProperty .
+
+
+owl:topObjectProperty rdfs:label "Top Object Property"@en .
+
+
+:Bake rdf:type owl:Class ;
+      rdfs:label "Bake"^^xsd:string ;
+      rdfs:comment """Baking is a method of preparing food that uses dry heat, typically in an oven, but can also be done in hot ashes, or on hot stones. The most common baked item is bread, but many other types of foods can be baked.
+For example
+Blind Bake or Pre Bake"""@en ;
+      rdf:type owl:NamedIndividual ,
+               :Cooking ;
+      rdf:about "https://en.wikipedia.org/wiki/Baking"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
