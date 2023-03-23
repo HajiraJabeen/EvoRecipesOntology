@@ -23,17 +23,13 @@
                                                           <https://github.com/msaadlak> ;
                                         terms:created "2022/06/15"^^xsd:date ;
                                         terms:creator <https://github.com/msaadlak> ;
-                                        terms:description "ML-Schema is a collaborative, community effort with a mission to develop, maintain, and promote standard schemas for data mining and machine learning algorithms, datasets, and experiments" ;
+                                        terms:description "RecipeOn assists machines in understanding the semantics of recipes to encode the information crucial for personalized recipe generation. This includes nutritional information, ingredient-action relations, ingredient-diet relations, ingredient substitutions, and cooking time." ;
                                         terms:hasVersion 1.0 ;
                                         terms:license <https://creativecommons.org/licenses/by/4.0/> ;
                                         terms:modified "2023/03/22" ;
                                         terms:title "The RecipeOn Ontology (recipeon)"@en ;
                                         rdf:type owl:Ontology ;
-                                        rdfs:comment """
-  RecipeOn, on one hand, to assist machines in understanding the semantics of recipes, 
-and on the other hand, to encode the information crucial for personalized recipe generation. 
-This includes e.g. nutritional information, ingredient-action relations, ingredient-diet relations, ingredient substitutions, and cooking time.
-   """ ;
+                                        rdfs:comment "RecipeOn assists machines in understanding the semantics of recipes to encode the information crucial for personalized recipe generation. This includes nutritional information, ingredient-action relations, ingredient-diet relations, ingredient substitutions, and cooking time." ;
                                         rdfs:isDefinedBy <https://purl.org/net/recipeon> ;
                                         rdfs:label "The RecipeOn Ontology"@en ;
                                         rdfs:seeAlso <https://hajirajabeen.github.io/EvoRecipesOntology/> .
