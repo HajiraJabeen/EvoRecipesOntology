@@ -1,0 +1,148 @@
+Write a recipe ingredients and instructions based on the rdf facts.
+###
+@prefix schema: <http://schema.org/> .
+@prefix recipeon: <https://purl.org/net/recipeon#> .
+@prefix seq: <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+recipeon:Recipe-9038301 a schema:Recipe ;
+    schema:name "Pan-Fried Lamb Chops With Minted Pea Salad"^^xsd:string ;
+    recipeon:hasIngredient recipeon:Ing-5216870,
+        recipeon:Ing-5216871,
+        recipeon:Ing-5216872,
+        recipeon:Ing-5216873,
+        recipeon:Ing-5216874,
+        recipeon:Ing-5216875,
+        recipeon:Ing-5216876,
+        recipeon:Ing-5216877,
+        recipeon:Ing-5216878,
+        recipeon:Ing-5216879,
+        recipeon:Ing-5216880,
+        recipeon:Ing-5216881,
+        recipeon:Ing-5216882,
+        recipeon:Ing-5216883 ;
+    recipeon:hasProcedure recipeon:Proc-64506,
+        recipeon:Proc-64507 .
+
+recipeon:Proc-64506 a recipeon:Procedure ;
+    recipeon:hasProcedureAction recipeon:Act-6173380,
+        recipeon:Act-6173380-5,
+        recipeon:Act-6173381,
+        recipeon:Act-6173382,
+        recipeon:Act-6173385,
+        recipeon:Act-6173387 ;
+    recipeon:hasProcedureIngredient recipeon:Ing-5216870,
+        recipeon:Ing-5216871,
+        recipeon:Ing-5216872,
+        recipeon:Ing-5216873,
+        recipeon:Ing-5216874,
+        recipeon:Ing-5216875,
+        recipeon:Ing-5216876,
+        recipeon:Ing-5216877,
+        recipeon:Ing-5216878 ;
+    recipeon:hasProcedureName "Lamb chops"^^xsd:string .
+
+recipeon:Proc-64507 a recipeon:Procedure ;
+    recipeon:hasProcedureAction recipeon:Act-6173388-5,
+        recipeon:Act-6173389,
+        recipeon:Act-6173390,
+        recipeon:Act-6173391 ;
+    recipeon:hasProcedureIngredient recipeon:Ing-5216879,
+        recipeon:Ing-5216880,
+        recipeon:Ing-5216881,
+        recipeon:Ing-5216882,
+        recipeon:Ing-5216883 ;
+    recipeon:hasProcedureName "Pea salad"^^xsd:string .
+
+recipeon:Act-6173380 a recipeon:Microwave ;
+    schema:name "Heat" ;
+    seq:directlyPrecedes recipeon:Act-6173380-5 .
+
+recipeon:Act-6173380-5 a recipeon:Coat ;
+    schema:name "coat" ;
+    seq:directlyPrecedes recipeon:Act-6173381 .
+
+recipeon:Act-6173381 a recipeon:Fry ;
+    schema:name "Saute" ;
+    seq:directlyPrecedes recipeon:Act-6173382 .
+
+recipeon:Act-6173382 a recipeon:Mix ;
+    schema:name "add" ;
+    seq:directlyPrecedes recipeon:Act-6173385 .
+
+recipeon:Act-6173385 a recipeon:Placement ;
+    schema:name "place" ;
+    seq:directlyPrecedes recipeon:Act-6173387 .
+
+recipeon:Act-6173387 a recipeon:Action ;
+    schema:name "-" ;
+    seq:directlyPrecedes recipeon:Act-6173388-5 .
+
+recipeon:Act-6173391 a recipeon:Action ;
+    schema:name "Pull" .
+
+recipeon:Ing-5216870 a recipeon:Sugars ;
+    schema:name "brown sugar" ;
+    recipeon:hasAction recipeon:Act-6173388-5 ;
+    recipeon:hasType recipeon:SideIngredient .
+
+recipeon:Ing-5216871 a recipeon:Lamb ;
+    schema:name "Lamb Drippings" ;
+    recipeon:hasAction recipeon:Act-6173380 ;
+    recipeon:hasType recipeon:MainIngredient .
+
+recipeon:Ing-5216872 a recipeon:Salt ;
+    schema:name "salt to taste" ;
+    recipeon:hasAction recipeon:Act-6173388-5 ;
+    recipeon:hasType recipeon:SideIngredient .
+
+recipeon:Ing-5216873 a recipeon:Herb ;
+    schema:name "dried basil" ;
+    recipeon:hasAction recipeon:Act-6173390 ;
+    recipeon:hasType recipeon:MainIngredient .
+
+recipeon:Ing-5216874 a recipeon:OilCookingSprays ;
+    schema:name "grape seed oil" ;
+    recipeon:hasType recipeon:SideIngredient .
+
+recipeon:Ing-5216875 a recipeon:Garlic ;
+    schema:name "garlic powder" ;
+    recipeon:hasType recipeon:SideIngredient .
+
+recipeon:Ing-5216876 a recipeon:Vinegar ;
+    schema:name "distilled white vinegar" ;
+    recipeon:hasAction recipeon:Act-6173388-5 ;
+    recipeon:hasType recipeon:SideIngredient .
+
+recipeon:Ing-5216877 a recipeon:Spices ;
+    schema:name "garam masala" ;
+    recipeon:hasAction recipeon:Act-6173388-5 ;
+    recipeon:hasType recipeon:SideIngredient .
+
+recipeon:Ing-5216878 a recipeon:Spices ;
+    schema:name "4 Thai chile peppers" ;
+    recipeon:hasAction recipeon:Act-6173388-5 ;
+    recipeon:hasType recipeon:SideIngredient .
+
+recipeon:Ing-5216880 a recipeon:FreshPeas ;
+    schema:name "thinly sliced sugar snap peas" ;
+    recipeon:hasAction recipeon:Act-6173389 ;
+    recipeon:hasType recipeon:SideIngredient .
+
+recipeon:Ing-5216883 a recipeon:Salt ;
+    schema:name "salt" ;
+    recipeon:hasAction recipeon:Act-6173388-5 ;
+    recipeon:hasType recipeon:SideIngredient .
+
+recipeon:Act-6173389 a recipeon:Cook ;
+    schema:name "cook" ;
+    seq:directlyPrecedes recipeon:Act-6173390 .
+
+recipeon:Act-6173390 a recipeon:Finish ;
+    schema:name "Sprinkle" ;
+    seq:directlyPrecedes recipeon:Act-6173391 .
+
+recipeon:Act-6173388-5 a recipeon:Season ;
+    schema:name "Season" ;
+    seq:directlyPrecedes recipeon:Act-6173389 . 
+###
